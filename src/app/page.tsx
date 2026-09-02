@@ -1,0 +1,165 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
+import { SoundToggle } from "@/components/SoundToggle";
+import { IntroLoader } from "@/components/IntroLoader";
+import { ArrowIcon } from "@/components/ArrowIcon";
+import { FeaturedCarousel } from "@/components/FeaturedCarousel";
+import { collections, coverImage, getPanchBhuta } from "@/data/collections";
+import { getProductBySlug } from "@/data/products";
+
+// Panch Bhuta's own cover is a placeholder gradient — use one of its real
+// elemental photos (Bhumi) as a nicer representative thumbnail on the
+// homepage's story grid instead.
+const panchBhutaThumb = getPanchBhuta().elements![0];
+
+// A curated set of real, photographed pieces spanning the catalogue's
+// breadth — the homepage's entry point into the full product range.
+const featuredSlugs = [
+  "trivik",
+  "sambhu-textured",
+  "swarnita",
+  "bodhi-deep-samuha",
+  "aatrey-flower",
+  "manas",
+  "pravala",
+  "ant-light-bada",
+  "eraya-iv",
+  "dhaarana",
+];
+const featuredProducts = featuredSlugs.map((slug) => getProductBySlug(slug)!).filter(Boolean);
+
+export default function ArrivalPage() {
+  return (
+    <>
+      <IntroLoader />
+      <Nav />
+
+      <section className="relative flex h-screen min-h-[560px] items-end overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/arrival-hero.svg"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/arrival-hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/30" />
+        <SoundToggle src="/audio/arrival-theme.mp3" />
+        <div className="pointer-events-none relative z-10 mx-auto w-full max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-16 text-white">
+          <p className="font-sans-ui mb-4 flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white/80">
+            An Evolving Practice of Life and Design
+          </p>
+          <h1 className="max-w-2xl text-4xl leading-tight sm:text-5xl md:text-6xl">
+            Objects that carry soul and story into spaces.
+          </h1>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-6 py-24 text-center sm:py-32">
+        <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+          Shailesh Rajput Studio
+        </p>
+        <p className="text-2xl leading-relaxed sm:text-3xl">
+          The purest expression of an idea, feeling, or experience distilled
+          to what truly matters.
+        </p>
+        <p className="mt-6 leading-relaxed text-[var(--ink)]/70">
+          Like Kabir, whose words held immense depth with remarkable
+          brevity, SRS seeks to distill emotion into forms that feel
+          effortless yet profound. Depth through simplicity. Meaning
+          through restraint.
+        </p>
+      </section>
+
+      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
+        <div className="mb-10 flex items-end justify-between gap-6">
+          <div>
+            <p className="font-sans-ui mb-2 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+              Featured Products
+            </p>
+            <h2 className="text-3xl sm:text-4xl">A first look at the work.</h2>
+          </div>
+          <Link
+            href="/products"
+            className="font-sans-ui hidden shrink-0 items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:inline-flex"
+          >
+            View all products
+            <ArrowIcon className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+
+        <FeaturedCarousel products={featuredProducts} />
+
+        <Link
+          href="/products"
+          className="font-sans-ui mt-10 flex items-center justify-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:hidden"
+        >
+          View all products
+          <ArrowIcon className="h-3.5 w-3.5" />
+        </Link>
+      </section>
+
+      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
+        <div className="mb-10 flex items-end justify-between gap-6">
+          <div>
+            <p className="font-sans-ui mb-2 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+              The Stories
+            </p>
+            <h2 className="text-3xl sm:text-4xl">Six stories, one practice.</h2>
+          </div>
+          <Link
+            href="/collections"
+            className="font-sans-ui hidden shrink-0 items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:inline-flex"
+          >
+            View all stories
+            <ArrowIcon className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+          {collections.map((c) => (
+            <Link key={c.slug} href={`/collections/${c.slug}`} className="group block">
+              <div className="mb-3 aspect-[4/5] overflow-hidden">
+                <Image
+                  src={c.elements ? coverImage(panchBhutaThumb) : coverImage(c)}
+                  alt={c.title}
+                  width={800}
+                  height={1000}
+                  unoptimized
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <p className="text-lg">{c.title}</p>
+              <p className="font-sans-ui text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+                {c.sanskritName}
+                {c.elements ? ` · ${c.elements.length} Elements` : " · Story Series"}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--line)] bg-[var(--ink)] px-6 py-24 text-center text-white">
+        <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] uppercase text-white/60">
+          The World We Are Building
+        </p>
+        <h2 className="mx-auto mb-8 max-w-2xl text-3xl leading-snug sm:text-4xl">
+          A place where creators, artisans, thinkers, and curious minds gather
+          to exchange ideas and create meaningful work.
+        </h2>
+        <Link
+          href="/acquire"
+          className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent)]"
+        >
+          Begin a Conversation
+        </Link>
+      </section>
+
+      <Footer />
+    </>
+  );
+}

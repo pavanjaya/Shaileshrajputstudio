@@ -1,0 +1,168 @@
+"use client";
+
+import { useState } from "react";
+import { studio } from "@/lib/studio";
+
+export type AcquirePieceOption = {
+  slug: string;
+  label: string;
+};
+
+const intents = [
+  "Personal collection",
+  "Interior / architecture project",
+  "Gallery or curatorial enquiry",
+  "Press or collaboration",
+];
+
+export function AcquireForm({
+  pieces,
+  initialCollection,
+  initialMessage,
+}: {
+  pieces: AcquirePieceOption[];
+  initialCollection?: string;
+  initialMessage?: string;
+}) {
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [piece, setPiece] = useState(initialCollection ?? "");
+  const [intent, setIntent] = useState(intents[0]);
+  const [geography, setGeography] = useState("");
+  const [message, setMessage] = useState(initialMessage ?? "");
+
+  function buildMessage() {
+    const pieceLabel =
+      pieces.find((p) => p.slug === piece)?.label || piece || "Not specified";
+    return [
+      `Hi, I'd like to begin a conversation with the studio.`,
+      ``,
+      `Name: ${name || "—"}`,
+      `Contact: ${contact || "—"}`,
+      `Collection of interest: ${pieceLabel}`,
+      `Intent: ${intent}`,
+      `Location: ${geography || "—"}`,
+      message ? `Message: ${message}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+  }
+
+  function handleWhatsApp() {
+    window.open(
+      `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(buildMessage())}`,
+      "_blank",
+    );
+  }
+
+  function handleEmail() {
+    const subject = encodeURIComponent("Enquiry — Shailesh Rajput Studio");
+    const body = encodeURIComponent(buildMessage());
+    window.location.href = `mailto:${studio.email}?subject=${subject}&body=${body}`;
+  }
+
+  return (
+    <div className="font-sans-ui mx-auto max-w-xl">
+      <div className="mb-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div>
+          <label className="mb-2 block text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+            Name
+          </label>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+          />
+        </div>
+        <div>
+          <label className="mb-2 block text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+            Email or Phone
+          </label>
+          <input
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+            className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+          />
+        </div>
+      </div>
+
+      <div className="mb-5">
+        <label className="mb-2 block text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+          Collection of Interest
+        </label>
+        <select
+          value={piece}
+          onChange={(e) => setPiece(e.target.value)}
+          className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+        >
+          <option value="">Not sure yet</option>
+          {pieces.map((p) => (
+            <option key={p.slug} value={p.slug}>
+              {p.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="mb-5">
+        <label className="mb-2 block text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+          Intent
+        </label>
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {intents.map((option) => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => setIntent(option)}
+              className={`rounded-lg border px-4 py-3 text-left text-sm transition ${
+                intent === option
+                  ? "border-[var(--ink)] bg-[var(--ink)] text-white"
+                  : "border-[var(--line)] bg-white text-[var(--ink)] hover:border-[var(--ink)]"
+              }`}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mb-5">
+        <label className="mb-2 block text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+          Location (City / Country)
+        </label>
+        <input
+          value={geography}
+          onChange={(e) => setGeography(e.target.value)}
+          className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+        />
+      </div>
+
+      <div className="mb-8">
+        <label className="mb-2 block text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+          Message (Optional)
+        </label>
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          rows={4}
+          className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+        />
+      </div>
+
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <button
+          onClick={handleWhatsApp}
+          className="flex-1 rounded-full bg-[var(--ink)] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--accent)] hover:text-[var(--ink)]"
+        >
+          Send via WhatsApp
+        </button>
+        <button
+          onClick={handleEmail}
+          className="flex-1 rounded-full border border-[var(--line)] bg-white px-6 py-3.5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink)]"
+        >
+          Send via Email
+        </button>
+      </div>
+    </div>
+  );
+}

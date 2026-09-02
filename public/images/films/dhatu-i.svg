@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="f-dhatu-film-1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5c4a1f"/>
+      <stop offset="1" stop-color="#b89552"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#f-dhatu-film-1)"/>
+  <circle cx="640" cy="360" r="64.8" fill="#ffffff22" stroke="#ffffff88" stroke-width="1.5"/>
+  <polygon points="617.32,327.6 617.32,392.4 675.64,360" fill="#ffffffdd"/>
+  <text x="640" y="698" font-family="sans-serif" font-size="13" letter-spacing="2" fill="#ffffffaa" text-anchor="middle">DHATU — FILM 1</text>
+</svg>

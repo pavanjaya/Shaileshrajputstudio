@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="f-aranya-film-2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3b2a"/>
+      <stop offset="1" stop-color="#7a9a68"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#f-aranya-film-2)"/>
+  <circle cx="640" cy="360" r="64.8" fill="#ffffff22" stroke="#ffffff88" stroke-width="1.5"/>
+  <polygon points="617.32,327.6 617.32,392.4 675.64,360" fill="#ffffffdd"/>
+  <text x="640" y="698" font-family="sans-serif" font-size="13" letter-spacing="2" fill="#ffffffaa" text-anchor="middle">ARANYA — FILM 2</text>
+</svg>
