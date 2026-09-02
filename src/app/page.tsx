@@ -161,15 +161,20 @@ export default function ArrivalPage() {
           </div>
 
           <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
-            {pressEntries.slice(0, 3).map((entry, i) => (
+            {pressEntries
+              .filter((entry) => !entry.placeholder)
+              .slice(0, 3)
+              .map((entry, i) => (
               <Link
                 key={entry.title + i}
-                href="/press"
+                href={entry.url ?? "/press"}
+                target={entry.url ? "_blank" : undefined}
+                rel={entry.url ? "noopener noreferrer" : undefined}
                 className="group grid grid-cols-[100px_1fr] items-center gap-6 py-6 sm:grid-cols-[140px_1fr]"
               >
                 <div className="aspect-square overflow-hidden bg-[var(--paper-2)]">
                   <Image
-                    src={`/images/press/press-${(i % 3) + 1}.svg`}
+                    src={entry.image ?? `/images/press/press-${(i % 3) + 1}.svg`}
                     alt={entry.title}
                     width={300}
                     height={300}
@@ -179,7 +184,7 @@ export default function ArrivalPage() {
                 </div>
                 <div>
                   <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
-                    {entry.status}
+                    {entry.venue}
                   </p>
                   <p className="text-lg leading-snug transition group-hover:text-[var(--accent)]">
                     {entry.title}
