@@ -8,6 +8,7 @@ import { ArrowIcon } from "@/components/ArrowIcon";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { collections, coverImage, getPanchBhuta } from "@/data/collections";
 import { getProductBySlug } from "@/data/products";
+import { pressEntries } from "@/data/press";
 
 // Panch Bhuta's own cover is a placeholder gradient — use one of its real
 // elemental photos (Bhumi) as a nicer representative thumbnail on the
@@ -140,6 +141,53 @@ export default function ArrivalPage() {
               </p>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-[320px_1fr] sm:gap-16">
+          <div>
+            <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+              Exhibitions &amp; Press
+            </p>
+            <h2 className="mb-8 text-3xl sm:text-4xl">In the world.</h2>
+            <Link
+              href="/press"
+              className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)]"
+            >
+              View all news
+              <ArrowIcon className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+
+          <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+            {pressEntries.slice(0, 3).map((entry, i) => (
+              <Link
+                key={entry.title + i}
+                href="/press"
+                className="group grid grid-cols-[100px_1fr] items-center gap-6 py-6 sm:grid-cols-[140px_1fr]"
+              >
+                <div className="aspect-square overflow-hidden bg-[var(--paper-2)]">
+                  <Image
+                    src={`/images/press/press-${(i % 3) + 1}.svg`}
+                    alt={entry.title}
+                    width={300}
+                    height={300}
+                    unoptimized
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div>
+                  <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+                    {entry.status}
+                  </p>
+                  <p className="text-lg leading-snug transition group-hover:text-[var(--accent)]">
+                    {entry.title}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

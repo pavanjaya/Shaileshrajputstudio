@@ -18,6 +18,33 @@ button:not(:disabled),
   display: none;
 }
 
+/* A continuously scrolling strip (the homepage Featured Products marquee).
+   The track renders its content twice back-to-back and animates exactly
+   half its own width — since the two halves are identical, the loop point
+   is invisible. Pauses on hover so a visitor can linger on a piece. */
+@keyframes srs-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: srs-marquee 38s linear infinite;
+}
+
+.marquee-wrapper:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
 :root {
   /* SRS foundational palette — see brand graphic guidelines */
   --ink: #1e1e1e; /* Carbon Black */
