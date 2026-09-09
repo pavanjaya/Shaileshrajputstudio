@@ -4,6 +4,8 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { PressTabs } from "@/components/PressTabs";
+import { Reveal } from "@/components/motion/Reveal";
+import { RevealText } from "@/components/motion/RevealText";
 import { pressEntries } from "@/data/press";
 
 export const metadata: Metadata = {
@@ -31,24 +33,28 @@ export default function PressPage() {
       <Nav />
 
       <section className="mx-auto max-w-3xl px-6 pt-12 pb-10 text-center sm:pt-16">
-        <p className="font-sans-ui mb-3 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-          Exhibitions &amp; Press
-        </p>
-        <h1 className="mb-3 text-4xl leading-tight sm:text-5xl">
+        <Reveal>
+          <p className="font-sans-ui mb-3 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+            Exhibitions &amp; Press
+          </p>
+        </Reveal>
+        <RevealText as="h1" className="mb-3 text-4xl leading-tight sm:text-5xl">
           Featured in the world.
-        </h1>
-        <p className="text-[var(--ink)]/70 leading-relaxed">
-          Where the studio has shown its work in person, and how design
-          publications have covered it — profiles, projects, and features
-          from around the world.
-        </p>
+        </RevealText>
+        <Reveal delay={0.05}>
+          <p className="text-[var(--ink)]/70 leading-relaxed">
+            Where the studio has shown its work in person, and how design
+            publications have covered it — profiles, projects, and features
+            from around the world.
+          </p>
+        </Reveal>
       </section>
 
       <div className="mx-auto max-w-5xl px-6 pb-24">
         <PressTabs
           exhibitions={
             <div>
-              <div className="mb-14 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <Reveal as="div" staggerChildren className="mb-14 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {exhibitionPhotos.map((src) => (
                   <div key={src} className="aspect-[4/5] overflow-hidden">
                     <Image
@@ -61,9 +67,9 @@ export default function PressPage() {
                     />
                   </div>
                 ))}
-              </div>
+              </Reveal>
 
-              <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+              <Reveal as="div" staggerChildren className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
                 {exhibitionEntries.map((entry, i) => (
                   <div key={entry.title + i} className="py-8">
                     <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
@@ -73,11 +79,11 @@ export default function PressPage() {
                     <p className="mt-1 text-sm text-[var(--ink)]/60">{entry.description}</p>
                   </div>
                 ))}
-              </div>
+              </Reveal>
             </div>
           }
           press={
-            <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+            <Reveal as="div" staggerChildren className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
               {pressOnlyEntries.map((entry, i) => {
                 const Wrapper = entry.url ? "a" : "div";
                 return (
@@ -127,7 +133,7 @@ export default function PressPage() {
                   </Wrapper>
                 );
               })}
-            </div>
+            </Reveal>
           }
         />
       </div>

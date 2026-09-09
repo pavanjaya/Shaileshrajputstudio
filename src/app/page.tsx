@@ -2,12 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { SoundToggle } from "@/components/SoundToggle";
 import { IntroLoader } from "@/components/IntroLoader";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { Coil } from "@/components/Coil";
+import { Hero } from "@/components/Hero";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { StoriesFan } from "@/components/StoriesFan";
+import { Reveal } from "@/components/motion/Reveal";
+import { RevealText } from "@/components/motion/RevealText";
+import { Magnetic } from "@/components/motion/Magnetic";
 import { collections, coverImage, getPanchBhuta } from "@/data/collections";
 import { getProductBySlug } from "@/data/products";
 import { pressEntries } from "@/data/press";
@@ -50,70 +53,63 @@ export default function ArrivalPage() {
       <IntroLoader />
       <Nav />
 
-      <section className="relative flex h-screen min-h-[560px] items-end overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/arrival-hero.svg"
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/videos/arrival-hero.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/30" />
-        <SoundToggle src="/audio/arrival-theme.mp3" />
-        <div className="pointer-events-none relative z-10 mx-auto w-full max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-16 text-white">
-          <p className="font-sans-ui mb-4 flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white/80">
-            An Evolving Practice of Life and Design
-          </p>
-          <h1 className="max-w-2xl text-4xl leading-tight sm:text-5xl md:text-6xl">
-            Objects that carry soul and story into spaces.
-          </h1>
-        </div>
-      </section>
+      <Hero />
 
       <section className="mx-auto max-w-3xl px-6 pt-24 pb-24 text-center sm:pt-32 sm:pb-32">
-        <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-          The Studio
-        </p>
-        <h2 className="mb-8 text-3xl leading-snug sm:text-4xl">
+        <Reveal>
+          <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+            The Studio
+          </p>
+        </Reveal>
+        <RevealText as="h2" className="mb-8 text-3xl leading-snug sm:text-4xl">
           A practice of observation, held by two hands.
-        </h2>
-        <p className="mb-5 leading-relaxed text-[var(--ink)]/70">
-          The purest expression of an idea, feeling, or experience distilled
-          to what truly matters — depth through simplicity, meaning through
-          restraint.
-        </p>
-        <p className="mb-5 leading-relaxed text-[var(--ink)]/70">
-          Shailesh and Manasi approach design as a process of discovery
-          rather than control. Questions arrive before answers. Intuition
-          arrives before logic — through sketching, experimentation, and
-          making, their observations take shape as objects that invite
-          others into the same sense of wonder.
-        </p>
-        <p className="mb-8 leading-relaxed text-[var(--ink)]/70">
-          Rooted in looking closely at nature, materials, and the quiet
-          details of everyday life, this way of seeing became the
-          foundation of Shailesh Rajput Studio — where observation becomes
-          form, and design becomes a way of participating in life.
-        </p>
-        <Link
-          href="/world"
-          className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)]"
-        >
-          Learn more about the studio
-          <ArrowIcon className="h-3.5 w-3.5" />
-        </Link>
+        </RevealText>
+        <Reveal delay={0.05}>
+          <p className="mb-5 leading-relaxed text-[var(--ink)]/70">
+            The purest expression of an idea, feeling, or experience
+            distilled to what truly matters — depth through simplicity,
+            meaning through restraint.
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="mb-5 leading-relaxed text-[var(--ink)]/70">
+            Shailesh and Manasi approach design as a process of discovery
+            rather than control. Questions arrive before answers. Intuition
+            arrives before logic — through sketching, experimentation, and
+            making, their observations take shape as objects that invite
+            others into the same sense of wonder.
+          </p>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <p className="mb-8 leading-relaxed text-[var(--ink)]/70">
+            Rooted in looking closely at nature, materials, and the quiet
+            details of everyday life, this way of seeing became the
+            foundation of Shailesh Rajput Studio — where observation becomes
+            form, and design becomes a way of participating in life.
+          </p>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <Link
+            href="/world"
+            className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)]"
+          >
+            Learn more about the studio
+            <ArrowIcon className="h-3.5 w-3.5" />
+          </Link>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24 pt-24">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
-            <p className="font-sans-ui mb-2 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-              Featured Products
-            </p>
-            <h2 className="text-3xl sm:text-4xl">A first look at the work.</h2>
+            <Reveal>
+              <p className="font-sans-ui mb-2 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+                Featured Products
+              </p>
+            </Reveal>
+            <RevealText as="h2" className="text-3xl sm:text-4xl">
+              A first look at the work.
+            </RevealText>
           </div>
           <Link
             href="/products"
@@ -124,7 +120,9 @@ export default function ArrivalPage() {
           </Link>
         </div>
 
-        <FeaturedCarousel products={featuredProducts} />
+        <Reveal variant="image">
+          <FeaturedCarousel products={featuredProducts} />
+        </Reveal>
 
         <Link
           href="/products"
@@ -136,21 +134,27 @@ export default function ArrivalPage() {
       </section>
 
       <section className="bg-[var(--paper-2)] px-6 py-20 sm:py-28">
-        <Coil className="mx-auto mb-6 h-6 w-6 text-[var(--accent)]" />
-        <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed sm:text-3xl">
-          Every object leaves the studio carrying more than its
-          form — a <span className="text-[var(--accent)]">story</span>{" "}
-          it was shaped to tell.
-        </p>
+        <Reveal className="flex flex-col items-center">
+          <Coil className="mb-6 h-6 w-6 text-[var(--accent)]" />
+          <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed sm:text-3xl">
+            Every object leaves the studio carrying more than its
+            form — a <span className="text-[var(--accent)]">story</span>{" "}
+            it was shaped to tell.
+          </p>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pt-24 pb-24">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
-            <p className="font-sans-ui mb-2 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-              The Stories
-            </p>
-            <h2 className="text-3xl sm:text-4xl">Six stories, one practice.</h2>
+            <Reveal>
+              <p className="font-sans-ui mb-2 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+                The Stories
+              </p>
+            </Reveal>
+            <RevealText as="h2" className="text-3xl sm:text-4xl">
+              Six stories, one practice.
+            </RevealText>
           </div>
           <Link
             href="/collections"
@@ -161,16 +165,22 @@ export default function ArrivalPage() {
           </Link>
         </div>
 
-        <StoriesFan stories={storyTiles} />
+        <Reveal variant="image">
+          <StoriesFan stories={storyTiles} />
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-[320px_1fr] sm:gap-16">
           <div>
-            <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-              Exhibitions &amp; Press
-            </p>
-            <h2 className="mb-8 text-3xl sm:text-4xl">In the world.</h2>
+            <Reveal>
+              <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+                Exhibitions &amp; Press
+              </p>
+            </Reveal>
+            <RevealText as="h2" className="mb-8 text-3xl sm:text-4xl">
+              In the world.
+            </RevealText>
             <Link
               href="/press"
               className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)]"
@@ -180,7 +190,7 @@ export default function ArrivalPage() {
             </Link>
           </div>
 
-          <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+          <Reveal as="div" staggerChildren className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
             {pressEntries
               .filter((entry) => !entry.placeholder)
               .slice(0, 3)
@@ -225,24 +235,33 @@ export default function ArrivalPage() {
                 </div>
               </Link>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="border-t border-[var(--line)] bg-[var(--ink)] px-6 py-24 text-center text-white">
-        <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] uppercase text-white/60">
-          The World We Are Building
-        </p>
-        <h2 className="mx-auto mb-8 max-w-2xl text-3xl leading-snug sm:text-4xl">
-          A place where creators, artisans, thinkers, and curious minds gather
-          to exchange ideas and create meaningful work.
-        </h2>
-        <Link
-          href="/acquire"
-          className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent)]"
+        <Reveal>
+          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] uppercase text-white/60">
+            The World We Are Building
+          </p>
+        </Reveal>
+        <RevealText
+          as="h2"
+          className="mx-auto mb-8 max-w-2xl text-3xl leading-snug sm:text-4xl"
         >
-          Begin a Conversation
-        </Link>
+          A place where creators, artisans, thinkers, and curious minds
+          gather to exchange ideas and create meaningful work.
+        </RevealText>
+        <Reveal delay={0.1} className="inline-block">
+          <Magnetic>
+            <Link
+              href="/acquire"
+              className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent)]"
+            >
+              Begin a Conversation
+            </Link>
+          </Magnetic>
+        </Reveal>
       </section>
 
       <Footer />

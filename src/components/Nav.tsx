@@ -3,8 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import { studio } from "@/lib/studio";
+import { Magnetic } from "@/components/motion/Magnetic";
 
 const links = [
   { href: "/products", label: "Products" },
@@ -20,6 +22,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === "/";
+  const mobileMenuRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!isHome) return;
@@ -34,6 +37,20 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
+
+  useEffect(() => {
+    const el = mobileMenuRef.current;
+    if (!open || !el) return;
+    // A quick stagger-in each time the mobile menu opens — skipped
+    // entirely under reduced motion, where the menu just appears.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const items = el.children;
+    gsap.fromTo(
+      items,
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.05 },
+    );
+  }, [open]);
 
   // On the homepage the nav starts transparent, overlaid on the full-bleed
   // video hero — but it still needs to stay docked while scrolling, same as
@@ -67,27 +84,38 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className={
+              className={`group relative inline-block py-1 ${
                 transparentHome
                   ? "text-white/80 hover:text-white"
                   : pathname.startsWith(link.href)
                     ? "text-[var(--ink)]"
                     : "text-[var(--ink)]/60 hover:text-[var(--ink)]"
-              }
+              }`}
             >
               {link.label}
+              {/* A thin underline that grows in from the center on hover —
+                  pure CSS (transform, not width) so it's cheap and never
+                  triggers layout. */}
+              <span
+                aria-hidden="true"
+                className={`absolute inset-x-0 -bottom-0.5 h-px origin-center scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 ${
+                  transparentHome ? "bg-white" : "bg-[var(--ink)]"
+                }`}
+              />
             </Link>
           ))}
-          <Link
-            href="/acquire"
-            className={
-              transparentHome
-                ? "rounded-full bg-white px-5 py-2.5 text-[var(--ink)] transition hover:bg-[var(--accent)]"
-                : "rounded-full bg-[var(--ink)] px-5 py-2.5 text-white transition hover:bg-[var(--accent)] hover:text-[var(--ink)]"
-            }
-          >
-            Converse
-          </Link>
+          <Magnetic strength={0.4}>
+            <Link
+              href="/acquire"
+              className={
+                transparentHome
+                  ? "rounded-full bg-white px-5 py-2.5 text-[var(--ink)] transition hover:bg-[var(--accent)]"
+                  : "rounded-full bg-[var(--ink)] px-5 py-2.5 text-white transition hover:bg-[var(--accent)] hover:text-[var(--ink)]"
+              }
+            >
+              Converse
+            </Link>
+          </Magnetic>
         </nav>
 
         <button
@@ -95,13 +123,24 @@ export function Nav() {
           className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
           aria-label="Toggle menu"
         >
-          <span className={`h-px w-6 ${transparentHome ? "bg-white" : "bg-[var(--ink)]"}`} />
-          <span className={`h-px w-6 ${transparentHome ? "bg-white" : "bg-[var(--ink)]"}`} />
+          <span
+            className={`h-px w-6 transition-transform duration-300 ${
+              transparentHome ? "bg-white" : "bg-[var(--ink)]"
+            } ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+          />
+          <span
+            className={`h-px w-6 transition-transform duration-300 ${
+              transparentHome ? "bg-white" : "bg-[var(--ink)]"
+            } ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+          />
         </button>
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 bg-[var(--paper)] px-6 pb-6 text-base md:hidden">
+        <nav
+          ref={mobileMenuRef}
+          className="flex flex-col gap-1 bg-[var(--paper)] px-6 pb-6 text-base md:hidden"
+        >
           {links.map((link) => (
             <Link
               key={link.href}

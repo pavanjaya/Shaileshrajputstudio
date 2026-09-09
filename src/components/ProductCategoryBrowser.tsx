@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import type { Product, ProductCategory } from "@/data/products";
+import { Reveal } from "@/components/motion/Reveal";
 
 export function ProductCategoryBrowser({
   categories,
@@ -41,7 +42,14 @@ export function ProductCategoryBrowser({
             More pieces from this category are on their way.
           </p>
         ) : (
-          <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal
+            as="div"
+            staggerChildren
+            stagger={0.06}
+            duration={0.6}
+            key={active}
+            className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4"
+          >
             {filtered.map((product) => (
               <Link key={product.slug} href={`/products/${product.slug}`} className="group block">
                 <div className="relative aspect-[4/5] overflow-hidden bg-[var(--paper-2)]">
@@ -67,7 +75,7 @@ export function ProductCategoryBrowser({
                 )}
               </Link>
             ))}
-          </div>
+          </Reveal>
         )}
       </div>
     </div>

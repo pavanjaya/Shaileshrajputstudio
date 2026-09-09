@@ -7,6 +7,8 @@ import { ArrowIcon } from "@/components/ArrowIcon";
 import { getPanchBhuta, getElements, coverImage, stillImages, filmPoster } from "@/data/collections";
 import { getProductsBySeries } from "@/data/products";
 import { ElementBrowser } from "@/components/ElementBrowser";
+import { Reveal } from "@/components/motion/Reveal";
+import { RevealText } from "@/components/motion/RevealText";
 
 export const metadata: Metadata = {
   title: "Panch Bhuta",
@@ -24,7 +26,11 @@ export default function PanchBhutaPage() {
     <>
       <Nav />
 
-      <section className="relative flex h-[70vh] min-h-[420px] items-end overflow-hidden">
+      <Reveal
+        as="section"
+        variant="image"
+        className="relative flex h-[70vh] min-h-[420px] items-end overflow-hidden"
+      >
         <Image
           src={coverImage(panchBhuta)}
           alt={panchBhuta.title}
@@ -41,17 +47,21 @@ export default function PanchBhutaPage() {
           <h1 className="text-4xl sm:text-6xl">{panchBhuta.title}</h1>
           <p className="font-sans-ui mt-2 text-lg text-white/70">{panchBhuta.sanskritName}</p>
         </div>
-      </section>
+      </Reveal>
 
       <section className="mx-auto max-w-2xl px-6 py-20 text-center">
-        <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-          The Myth
-        </p>
-        <p className="text-2xl leading-relaxed sm:text-3xl">{panchBhuta.myth}</p>
+        <Reveal>
+          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+            The Myth
+          </p>
+        </Reveal>
+        <RevealText as="p" className="text-2xl leading-relaxed sm:text-3xl">
+          {panchBhuta.myth}
+        </RevealText>
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-20">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {stillImages(panchBhuta).map((src, i) => (
             <div key={src} className="aspect-[4/5] overflow-hidden">
               <Image
@@ -64,24 +74,32 @@ export default function PanchBhutaPage() {
               />
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-t border-[var(--line)] px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-            The Material Story
-          </p>
-          <p className="text-xl leading-relaxed sm:text-2xl">{panchBhuta.materialStory}</p>
+          <Reveal>
+            <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+              The Material Story
+            </p>
+          </Reveal>
+          <RevealText as="p" className="text-xl leading-relaxed sm:text-2xl">
+            {panchBhuta.materialStory}
+          </RevealText>
         </div>
       </section>
 
       <section className="border-t border-[var(--line)] pt-20">
         <div className="mx-auto mb-8 max-w-[1800px] px-6 sm:px-10 lg:px-16">
-          <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-            The Six Elements
-          </p>
-          <h2 className="text-3xl sm:text-4xl">Find your element.</h2>
+          <Reveal>
+            <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+              The Six Elements
+            </p>
+          </Reveal>
+          <RevealText as="h2" className="text-3xl sm:text-4xl">
+            Find your element.
+          </RevealText>
         </div>
         <ElementBrowser elements={elements} productsByElement={productsByElement} />
       </section>
@@ -89,7 +107,7 @@ export default function PanchBhutaPage() {
       {panchBhuta.films.length > 0 && (
         <section className="border-t border-[var(--line)] px-6 sm:px-10 lg:px-16 py-20">
           <div className="mx-auto max-w-[1800px]">
-            <div className="flex flex-wrap justify-center gap-4">
+            <Reveal as="div" staggerChildren className="flex flex-wrap justify-center gap-4">
               {panchBhuta.films.map((film) => (
                 <div
                   key={film.slug}
@@ -109,23 +127,25 @@ export default function PanchBhutaPage() {
                   </video>
                 </div>
               ))}
-            </div>
+            </Reveal>
           </div>
         </section>
       )}
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-14">
-        <Link href="/collections" className="group flex items-center justify-between">
-          <div>
-            <p className="font-sans-ui mb-1 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-              Back to
-            </p>
-            <p className="text-2xl group-hover:text-[var(--accent)]">All Collections</p>
-          </div>
-          <span className="text-[var(--ink)]/40 transition group-hover:translate-x-1 group-hover:text-[var(--ink)]">
-            <ArrowIcon className="h-6 w-6" />
-          </span>
-        </Link>
+        <Reveal>
+          <Link href="/collections" className="group flex items-center justify-between">
+            <div>
+              <p className="font-sans-ui mb-1 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+                Back to
+              </p>
+              <p className="text-2xl group-hover:text-[var(--accent)]">All Collections</p>
+            </div>
+            <span className="text-[var(--ink)]/40 transition group-hover:translate-x-1 group-hover:text-[var(--ink)]">
+              <ArrowIcon className="h-6 w-6" />
+            </span>
+          </Link>
+        </Reveal>
       </section>
 
       <Footer />

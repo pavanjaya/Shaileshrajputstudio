@@ -3,6 +3,9 @@ import localFont from "next/font/local";
 import { Duru_Sans } from "next/font/google";
 import { FloatingContact } from "@/components/FloatingContact";
 import { SingleVideoPlayback } from "@/components/SingleVideoPlayback";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { CustomCursor } from "@/components/motion/CustomCursor";
+import { RouteTransition } from "@/components/motion/RouteTransition";
 import "./globals.css";
 
 const annapurna = localFont({
@@ -42,7 +45,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${annapurna.variable} ${duruSans.variable}`}>
       <body className="antialiased">
-        {children}
+        <SmoothScroll />
+        <CustomCursor />
+        <RouteTransition>{children}</RouteTransition>
         <FloatingContact />
         <SingleVideoPlayback />
       </body>

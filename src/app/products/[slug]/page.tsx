@@ -5,6 +5,9 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ProductCarousel } from "@/components/ProductCarousel";
 import { StickyEnquire } from "@/components/StickyEnquire";
+import { Reveal } from "@/components/motion/Reveal";
+import { RevealText } from "@/components/motion/RevealText";
+import { Magnetic } from "@/components/motion/Magnetic";
 import { products, getProductBySlug } from "@/data/products";
 
 export async function generateStaticParams() {
@@ -57,26 +60,33 @@ export default async function ProductPage({
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-12 sm:py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="lg:sticky lg:top-24 lg:self-start">
+          <Reveal as="div" variant="image" className="lg:sticky lg:top-24 lg:self-start">
             <ProductCarousel images={product.images} alt={product.romanized} />
-          </div>
+          </Reveal>
 
           <div>
-            <p className="font-sans-ui mb-3 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-              {!product.placeholder && product.series !== "—"
-                ? `${product.series} Series · ${product.category}`
-                : product.category}
-            </p>
-            <h1 className={`text-4xl leading-tight sm:text-5xl ${product.romanized !== product.displayName ? "mb-2" : "mb-10"}`}>
-              {product.displayName}
-            </h1>
-            {product.romanized !== product.displayName && (
-              <p className="font-sans-ui mb-10 text-lg text-[var(--ink)]/50">
-                ({product.romanized})
+            <Reveal>
+              <p className="font-sans-ui mb-3 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+                {!product.placeholder && product.series !== "—"
+                  ? `${product.series} Series · ${product.category}`
+                  : product.category}
               </p>
+            </Reveal>
+            <RevealText
+              as="h1"
+              className={`text-4xl leading-tight sm:text-5xl ${product.romanized !== product.displayName ? "mb-2" : "mb-10"}`}
+            >
+              {product.displayName}
+            </RevealText>
+            {product.romanized !== product.displayName && (
+              <Reveal delay={0.05}>
+                <p className="font-sans-ui mb-10 text-lg text-[var(--ink)]/50">
+                  ({product.romanized})
+                </p>
+              </Reveal>
             )}
 
-            <div className="mb-12">
+            <Reveal delay={0.1} className="mb-12">
               <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
                 About Product
               </p>
@@ -97,9 +107,9 @@ export default async function ProductPage({
                   ))}
                 </div>
               )}
-            </div>
+            </Reveal>
 
-            <div className="mb-12">
+            <Reveal delay={0.15} className="mb-12">
               <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
                 Product Details
               </p>
@@ -113,15 +123,19 @@ export default async function ProductPage({
                   </div>
                 ))}
               </dl>
-            </div>
+            </Reveal>
 
-            <Link
-              id="product-enquire-cta"
-              href={`/acquire?product=${product.slug}`}
-              className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-[var(--ink)] px-7 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--accent)] hover:text-[var(--ink)]"
-            >
-              Enquire
-            </Link>
+            <Reveal delay={0.2} className="inline-block">
+              <Magnetic>
+                <Link
+                  id="product-enquire-cta"
+                  href={`/acquire?product=${product.slug}`}
+                  className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-[var(--ink)] px-7 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--accent)] hover:text-[var(--ink)]"
+                >
+                  Enquire
+                </Link>
+              </Magnetic>
+            </Reveal>
           </div>
         </div>
       </section>

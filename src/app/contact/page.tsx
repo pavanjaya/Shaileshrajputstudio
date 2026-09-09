@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { Reveal } from "@/components/motion/Reveal";
+import { RevealText } from "@/components/motion/RevealText";
 import { studio } from "@/lib/studio";
 
 export const metadata: Metadata = {
@@ -62,20 +64,24 @@ export default function ContactPage() {
       <Nav />
 
       <section className="mx-auto max-w-2xl px-6 pt-20 pb-16 text-center sm:pt-28">
-        <p className="font-sans-ui mb-4 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-          Contact
-        </p>
-        <h1 className="mb-6 text-4xl leading-tight sm:text-5xl">
+        <Reveal>
+          <p className="font-sans-ui mb-4 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+            Contact
+          </p>
+        </Reveal>
+        <RevealText as="h1" className="mb-6 text-4xl leading-tight sm:text-5xl">
           Visit the studio, or write to us.
-        </h1>
-        <p className="text-[var(--ink)]/70 leading-relaxed">
-          The work is best experienced in person. Reach out to arrange a
-          visit, or send a note directly.
-        </p>
+        </RevealText>
+        <Reveal delay={0.05}>
+          <p className="text-[var(--ink)]/70 leading-relaxed">
+            The work is best experienced in person. Reach out to arrange a
+            visit, or send a note directly.
+          </p>
+        </Reveal>
       </section>
 
       <section className="bg-[var(--paper-2)]">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 sm:gap-16">
+        <Reveal as="div" staggerChildren className="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 sm:gap-16">
           <div>
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
               <PinIcon />
@@ -106,9 +112,9 @@ export default function ContactPage() {
               {studio.email}
             </a>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="relative h-[420px] w-full sm:h-[480px]">
+        <Reveal as="div" variant="image" className="relative h-[420px] w-full sm:h-[480px]">
           <iframe
             src={mapsEmbedUrl}
             title="Shailesh Rajput Studio — Location"
@@ -126,7 +132,7 @@ export default function ContactPage() {
             Open in Maps
             <ArrowUpRightIcon />
           </a>
-        </div>
+        </Reveal>
       </section>
 
       <Footer />

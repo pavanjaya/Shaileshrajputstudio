@@ -5,6 +5,9 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { Reveal } from "@/components/motion/Reveal";
+import { RevealText } from "@/components/motion/RevealText";
+import { Magnetic } from "@/components/motion/Magnetic";
 import {
   coverImage,
   filmPoster,
@@ -55,7 +58,11 @@ export default async function CollectionChapterPage({
     <>
       <Nav />
 
-      <section className="relative flex h-[80vh] min-h-[480px] items-end overflow-hidden">
+      <Reveal
+        as="section"
+        variant="image"
+        className="relative flex h-[80vh] min-h-[480px] items-end overflow-hidden"
+      >
         <Image
           src={coverImage(collection)}
           alt={collection.title}
@@ -72,17 +79,21 @@ export default async function CollectionChapterPage({
           <h1 className="text-4xl sm:text-6xl">{collection.title}</h1>
           <p className="font-sans-ui mt-2 text-lg text-white/70">{collection.sanskritName}</p>
         </div>
-      </section>
+      </Reveal>
 
       <section className="mx-auto max-w-2xl px-6 py-20 text-center">
-        <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-          The Myth
-        </p>
-        <p className="text-2xl leading-relaxed sm:text-3xl">{collection.myth}</p>
+        <Reveal>
+          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+            The Myth
+          </p>
+        </Reveal>
+        <RevealText as="p" className="text-2xl leading-relaxed sm:text-3xl">
+          {collection.myth}
+        </RevealText>
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-20">
-        <div className="flex flex-wrap justify-center gap-4">
+        <Reveal as="div" staggerChildren className="flex flex-wrap justify-center gap-4">
           {collection.films.map((film) =>
             film.videoSrc ? (
               <div
@@ -126,24 +137,30 @@ export default async function CollectionChapterPage({
               </Link>
             ),
           )}
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-t border-[var(--line)] px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-            The Material Story
-          </p>
-          <p className="text-xl leading-relaxed sm:text-2xl">{collection.materialStory}</p>
+          <Reveal>
+            <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+              The Material Story
+            </p>
+          </Reveal>
+          <RevealText as="p" className="text-xl leading-relaxed sm:text-2xl">
+            {collection.materialStory}
+          </RevealText>
         </div>
       </section>
 
       {seriesProducts.length > 0 && (
         <section className="mx-auto max-w-[1800px] border-t border-[var(--line)] px-6 sm:px-10 lg:px-16 py-20">
-          <p className="font-sans-ui mb-8 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-            Pieces in This Collection
-          </p>
-          <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal>
+            <p className="font-sans-ui mb-8 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+              Pieces in This Collection
+            </p>
+          </Reveal>
+          <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {seriesProducts.map((product) => (
               <Link key={product.slug} href={`/products/${product.slug}`} className="group block">
                 <div className="relative aspect-[4/5] overflow-hidden bg-[var(--paper-2)]">
@@ -163,38 +180,46 @@ export default async function CollectionChapterPage({
                 </p>
               </Link>
             ))}
-          </div>
+          </Reveal>
         </section>
       )}
 
       <section className="border-t border-[var(--line)] bg-[var(--ink)] px-6 py-20 text-center text-white">
-        <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] uppercase text-white/60">
-          {collection.title} is available on request
-        </p>
-        <h2 className="mx-auto mb-8 max-w-xl text-3xl leading-snug sm:text-4xl">
-          Every piece is presented the way collectible art is presented — begin
-          a conversation with the studio.
-        </h2>
-        <Link
-          href={`/acquire?collection=${collection.slug}`}
-          className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent)]"
-        >
-          Enquire About {collection.title}
-        </Link>
+        <Reveal>
+          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] uppercase text-white/60">
+            {collection.title} is available on request
+          </p>
+        </Reveal>
+        <RevealText as="h2" className="mx-auto mb-8 max-w-xl text-3xl leading-snug sm:text-4xl">
+          Every piece is presented the way collectible art is presented —
+          begin a conversation with the studio.
+        </RevealText>
+        <Reveal delay={0.1} className="inline-block">
+          <Magnetic>
+            <Link
+              href={`/acquire?collection=${collection.slug}`}
+              className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent)]"
+            >
+              Enquire About {collection.title}
+            </Link>
+          </Magnetic>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-14">
-        <Link href={`/collections/${next.slug}`} className="group flex items-center justify-between">
-          <div>
-            <p className="font-sans-ui mb-1 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-              Next Collection
-            </p>
-            <p className="text-2xl group-hover:text-[var(--accent)]">{next.title}</p>
-          </div>
-          <span className="text-[var(--ink)]/40 transition group-hover:translate-x-1 group-hover:text-[var(--ink)]">
-            <ArrowIcon className="h-6 w-6" />
-          </span>
-        </Link>
+        <Reveal>
+          <Link href={`/collections/${next.slug}`} className="group flex items-center justify-between">
+            <div>
+              <p className="font-sans-ui mb-1 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+                Next Collection
+              </p>
+              <p className="text-2xl group-hover:text-[var(--accent)]">{next.title}</p>
+            </div>
+            <span className="text-[var(--ink)]/40 transition group-hover:translate-x-1 group-hover:text-[var(--ink)]">
+              <ArrowIcon className="h-6 w-6" />
+            </span>
+          </Link>
+        </Reveal>
       </section>
 
       <Footer />

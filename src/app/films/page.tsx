@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { Reveal } from "@/components/motion/Reveal";
+import { RevealText } from "@/components/motion/RevealText";
 import { getPanchBhuta, getElements, getStoryCollections, filmPoster } from "@/data/collections";
 
 const panchBhuta = getPanchBhuta();
@@ -25,16 +27,20 @@ export default function FilmsPage() {
       <Nav />
 
       <section className="mx-auto max-w-3xl px-6 pt-20 pb-16 text-center sm:pt-28">
-        <p className="font-sans-ui mb-4 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-          Films
-        </p>
-        <h1 className="mb-6 text-4xl leading-tight sm:text-5xl">
+        <Reveal>
+          <p className="font-sans-ui mb-4 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+            Films
+          </p>
+        </Reveal>
+        <RevealText as="h1" className="mb-6 text-4xl leading-tight sm:text-5xl">
           The storytelling archive.
-        </h1>
-        <p className="text-[var(--ink)]/70 leading-relaxed">
-          Every film made for the brand, in one place — origin films, process
-          films, and pieces seen in situ.
-        </p>
+        </RevealText>
+        <Reveal delay={0.05}>
+          <p className="text-[var(--ink)]/70 leading-relaxed">
+            Every film made for the brand, in one place — origin films,
+            process films, and pieces seen in situ.
+          </p>
+        </Reveal>
       </section>
 
       <div className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
@@ -50,7 +56,7 @@ export default function FilmsPage() {
                 <ArrowIcon className="h-3.5 w-3.5" />
               </Link>
             </div>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-6">
+            <Reveal as="div" staggerChildren className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-6">
               {g.films.map((film) =>
                 film.videoSrc ? (
                   <div
@@ -93,7 +99,7 @@ export default function FilmsPage() {
                   </div>
                 ),
               )}
-            </div>
+            </Reveal>
           </section>
         ))}
       </div>
