@@ -74,20 +74,17 @@ export default function ArrivalPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-6 pt-24 pb-24 text-center sm:pt-32 sm:pb-32">
-        <p className="text-2xl leading-relaxed sm:text-3xl">
-          The purest expression of an idea, feeling, or experience distilled
-          to what truly matters.
-        </p>
-        <p className="mt-6 leading-relaxed text-[var(--ink)]/70">
-          Depth through simplicity. Meaning through restraint.
-        </p>
-
-        <p className="font-sans-ui mt-16 mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+        <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
           The Studio
         </p>
         <h2 className="mb-8 text-3xl leading-snug sm:text-4xl">
           A practice of observation, held by two hands.
         </h2>
+        <p className="mb-8 text-2xl leading-relaxed sm:text-3xl">
+          The purest expression of an idea, feeling, or experience distilled
+          to what truly matters — depth through simplicity, meaning through
+          restraint.
+        </p>
         <p className="mb-5 leading-relaxed text-[var(--ink)]/70">
           Shailesh and Manasi approach design as a process of discovery
           rather than control. Questions arrive before answers. Intuition
