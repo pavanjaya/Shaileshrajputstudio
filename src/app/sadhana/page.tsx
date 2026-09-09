@@ -2,6 +2,16 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import {
+  EvolutionIcon,
+  TactilityIcon,
+  SimplicityIcon,
+  InstinctIcon,
+  HumanPaceIcon,
+  TouchedIcon,
+  QuietAliveIcon,
+  StoryWithinIcon,
+} from "@/components/SadhanaIcons";
 
 export const metadata: Metadata = {
   title: "Sadhana",
@@ -10,17 +20,17 @@ export const metadata: Metadata = {
 };
 
 const principles = [
-  { name: "Evolution", description: "Designs evolve naturally through process, intuition, and time." },
-  { name: "Tactility", description: "Texture, materiality, and sensory experience are central to every object." },
-  { name: "Simplicity", description: "Clarity without emptiness. Simplicity that feels intentional." },
-  { name: "Innovation through Instinct", description: "Original creation guided by intuition." },
-  { name: "Human Pace", description: "Design that respects slowness, presence, process, and the natural rhythms of life." },
+  { name: "Evolution", icon: EvolutionIcon, description: "Designs evolve naturally through process, intuition, and time." },
+  { name: "Tactility", icon: TactilityIcon, description: "Texture, materiality, and sensory experience are central to every object." },
+  { name: "Simplicity", icon: SimplicityIcon, description: "Clarity without emptiness. Simplicity that feels intentional." },
+  { name: "Innovation through Instinct", icon: InstinctIcon, description: "Original creation guided by intuition." },
+  { name: "Human Pace", icon: HumanPaceIcon, description: "Design that respects slowness, presence, process, and the natural rhythms of life." },
 ];
 
 const pillars = [
-  { name: "Made to be touched", description: "Designs evolve naturally through process, intuition, and time." },
-  { name: "Quiet, yet alive", description: "A subtle presence carrying depth, beneath the surface." },
-  { name: "A story within", description: "Every object carries a narrative." },
+  { name: "Made to be touched", icon: TouchedIcon, description: "Designs evolve naturally through process, intuition, and time." },
+  { name: "Quiet, yet alive", icon: QuietAliveIcon, description: "A subtle presence carrying depth, beneath the surface." },
+  { name: "A story within", icon: StoryWithinIcon, description: "Every object carries a narrative." },
 ];
 
 export default function SadhanaPage() {
@@ -29,13 +39,13 @@ export default function SadhanaPage() {
       <Nav />
 
       <section className="mx-auto max-w-3xl px-6 pt-20 pb-16 text-center sm:pt-28">
-        <p className="font-sans-ui mb-4 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+        <p className="font-sans-ui mb-4 flex items-center justify-center gap-2.5 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
           Sadhana
+          <span className="text-sm text-[var(--ink)]/40 normal-case">· साधना</span>
         </p>
-        <h1 className="mb-3 text-4xl leading-tight sm:text-5xl">
+        <h1 className="text-4xl leading-tight sm:text-5xl">
           The practice the studio has always run on.
         </h1>
-        <p className="font-sans-ui text-lg text-[var(--ink)]/50">साधना</p>
       </section>
 
       <section className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-16 sm:grid-cols-2 sm:gap-16">
@@ -118,6 +128,7 @@ export default function SadhanaPage() {
         <div className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {principles.map((p) => (
             <div key={p.name} className="border-t border-[var(--line)] pt-5">
+              <p.icon className="mb-4 h-6 w-6 text-[var(--accent)]" />
               <h3 className="mb-2 text-lg">{p.name}</h3>
               <p className="text-sm text-[var(--ink)]/70 leading-relaxed">{p.description}</p>
             </div>
@@ -131,7 +142,8 @@ export default function SadhanaPage() {
         </p>
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-x-10 gap-y-10 text-center sm:grid-cols-3">
           {pillars.map((p) => (
-            <div key={p.name}>
+            <div key={p.name} className="flex flex-col items-center">
+              <p.icon className="mb-4 h-7 w-7 text-[var(--accent)]" />
               <h3 className="mb-2 text-xl">{p.name}</h3>
               <p className="text-sm leading-relaxed text-white/60">{p.description}</p>
             </div>

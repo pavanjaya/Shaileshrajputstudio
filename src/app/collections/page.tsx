@@ -30,14 +30,14 @@ export default function CollectionsPage() {
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2">
-          {collections.map((c, i) => (
+        <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {collections.map((c) => (
             <Link
               key={c.slug}
               href={`/collections/${c.slug}`}
               className="group block"
             >
-              <div className="mb-5 aspect-[4/5] overflow-hidden">
+              <div className="mb-4 aspect-[4/5] overflow-hidden">
                 <Image
                   src={coverImage(c)}
                   alt={c.title}
@@ -48,13 +48,11 @@ export default function CollectionsPage() {
                 />
               </div>
               <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-                {String(i + 1).padStart(2, "0")} · {c.sanskritName}
+                {c.sanskritName}
                 {c.elements ? ` · ${c.elements.length} Elements` : " · Story Series"}
               </p>
-              <h2 className="mb-2 text-2xl">{c.title}</h2>
-              <p className="max-w-md text-sm leading-relaxed text-[var(--ink)]/70">
-                {c.myth}
-              </p>
+              <h2 className="mb-2 text-xl">{c.title}</h2>
+              <p className="text-sm leading-relaxed text-[var(--ink)]/70">{c.myth}</p>
             </Link>
           ))}
         </div>

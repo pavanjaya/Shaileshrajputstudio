@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Coil } from "@/components/Coil";
-import CircularGallery from "@/components/CircularGallery";
 import {
   PurposeIcon,
   VisionIcon,
@@ -138,17 +137,20 @@ export default function WorldPage() {
         </p>
       </section>
 
-      <section className="w-full pb-16">
-        <div style={{ height: "560px", width: "100%", position: "relative" }}>
-          <CircularGallery
-            items={studioGallery}
-            bend={2}
-            textColor="#1e1e1e"
-            borderRadius={0}
-            font="600 22px Duru Sans"
-            fontUrl="https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap"
-            scrollEase={0.04}
-          />
+      <section className="marquee-wrapper w-full overflow-hidden pb-16">
+        <div className="animate-marquee flex w-max gap-4">
+          {[...studioGallery, ...studioGallery].map((item, i) => (
+            <div key={i} className="h-[420px] w-[320px] shrink-0 overflow-hidden">
+              <Image
+                src={item.image}
+                alt=""
+                width={640}
+                height={840}
+                unoptimized
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -159,20 +161,38 @@ export default function WorldPage() {
               (The Founder Story)
             </p>
             <div>
-              <p className="mb-8 text-2xl leading-[1.24] sm:text-3xl">
-                The observer, seeker and maker — Shailesh approaches design as
-                a process of discovery rather than control. Questions arrive
-                before answers. Intuition arrives before logic.
+              <p className="mb-6 text-lg leading-relaxed sm:text-xl">
+                The observer, seeker and maker — Shailesh and Manasi approach
+                design as a process of discovery rather than control.
+                Questions arrive before answers. Intuition arrives before
+                logic.
               </p>
-              <p className="mb-8 text-2xl leading-[1.24] text-white/80 sm:text-3xl">
+              <p className="mb-6 text-lg leading-relaxed text-white/80 sm:text-xl">
                 Through sketching, experimentation, reflection, and making,
-                these observations gradually take shape as objects that
+                their observations gradually take shape as objects that
                 invite others into the same sense of wonder, curiosity, and
                 presence.
               </p>
-              <p className="mb-14 text-2xl leading-[1.24] text-white/80 sm:text-3xl">
-                For Shailesh, design is not simply about creating products. It
-                is a way of understanding and participating in life.
+              <p className="mb-6 text-lg leading-relaxed text-white/80 sm:text-xl">
+                Their practice is rooted in looking closely — at nature,
+                materials, forms, light, shadow, and the quiet details of
+                everyday life. Rather than beginning with a fixed answer,
+                they allow each idea to unfold through the process of
+                making, letting curiosity and intuition guide what comes
+                next.
+              </p>
+              <p className="mb-6 text-lg leading-relaxed text-white/80 sm:text-xl">
+                For Shailesh and Manasi, design is not simply about creating
+                products. It is a way of observing, questioning, and
+                understanding the world. A way of translating moments of
+                curiosity into something tangible — something that can be
+                experienced, lived with, and discovered over time.
+              </p>
+              <p className="mb-14 text-lg leading-relaxed text-white/80 sm:text-xl">
+                This way of seeing became the foundation of Shailesh Rajput
+                Studio — a practice where observation becomes form,
+                intuition meets craft, and design becomes a way of
+                understanding and participating in life.
               </p>
 
               <div className="max-w-md overflow-hidden">

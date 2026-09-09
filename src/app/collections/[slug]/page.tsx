@@ -7,7 +7,6 @@ import { Footer } from "@/components/Footer";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import {
   coverImage,
-  stillImages,
   filmPoster,
   getCollectionBySlug,
   getStoryCollections,
@@ -83,61 +82,6 @@ export default async function CollectionChapterPage({
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-20">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {stillImages(collection).map((src, i) => (
-            <div key={src} className="aspect-[4/5] overflow-hidden">
-              <Image
-                src={src}
-                alt={`${collection.title} still ${i + 1}`}
-                width={800}
-                height={1000}
-                unoptimized
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-t border-[var(--line)] px-6 py-20">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-            The Material Story
-          </p>
-          <p className="text-xl leading-relaxed sm:text-2xl">{collection.materialStory}</p>
-        </div>
-      </section>
-
-      {seriesProducts.length > 0 && (
-        <section className="mx-auto max-w-[1800px] border-t border-[var(--line)] px-6 sm:px-10 lg:px-16 py-20">
-          <p className="font-sans-ui mb-8 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-            Pieces in This Collection
-          </p>
-          <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-            {seriesProducts.map((product) => (
-              <Link key={product.slug} href={`/products/${product.slug}`} className="group block">
-                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--paper-2)]">
-                  <Image
-                    src={product.images[0]}
-                    alt={product.romanized}
-                    fill
-                    unoptimized
-                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <p className="font-sans-ui mt-4 text-center text-sm tracking-[0.05em] text-[var(--ink)]">
-                  ‖ {product.displayName} ‖
-                </p>
-                <p className="font-sans-ui mt-1 text-center text-xs text-[var(--ink)]/50">
-                  ({product.romanized})
-                </p>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-20">
         <p className="font-sans-ui mb-8 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
           The Films
         </p>
@@ -187,6 +131,44 @@ export default async function CollectionChapterPage({
           )}
         </div>
       </section>
+
+      <section className="border-t border-[var(--line)] px-6 py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+            The Material Story
+          </p>
+          <p className="text-xl leading-relaxed sm:text-2xl">{collection.materialStory}</p>
+        </div>
+      </section>
+
+      {seriesProducts.length > 0 && (
+        <section className="mx-auto max-w-[1800px] border-t border-[var(--line)] px-6 sm:px-10 lg:px-16 py-20">
+          <p className="font-sans-ui mb-8 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+            Pieces in This Collection
+          </p>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+            {seriesProducts.map((product) => (
+              <Link key={product.slug} href={`/products/${product.slug}`} className="group block">
+                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--paper-2)]">
+                  <Image
+                    src={product.images[0]}
+                    alt={product.romanized}
+                    fill
+                    unoptimized
+                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <p className="font-sans-ui mt-4 text-center text-sm tracking-[0.05em] text-[var(--ink)]">
+                  ‖ {product.displayName} ‖
+                </p>
+                <p className="font-sans-ui mt-1 text-center text-xs text-[var(--ink)]/50">
+                  ({product.romanized})
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="border-t border-[var(--line)] bg-[var(--ink)] px-6 py-20 text-center text-white">
         <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] uppercase text-white/60">

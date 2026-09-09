@@ -8,6 +8,11 @@ export type PressEntry = {
   venue: string;
   year: string;
   status: "Upcoming" | "Past";
+  // Exhibition = a physical show/fair the studio participated in as an
+  // exhibitor. Press = a publication writing about the studio. These are
+  // genuinely different kinds of entries (not just past/upcoming), so the
+  // page's two tabs split on this field.
+  category: "Exhibition" | "Press";
   placeholder: boolean;
   description: string;
   url?: string;
@@ -22,6 +27,7 @@ export const pressEntries: PressEntry[] = [
     venue: "TBD",
     year: "2026",
     status: "Upcoming",
+    category: "Exhibition",
     placeholder: true,
     description:
       "The studio's next milestone show — details to be confirmed as the exhibition approaches.",
@@ -31,6 +37,7 @@ export const pressEntries: PressEntry[] = [
     venue: "Interior Design",
     year: "2026",
     status: "Past",
+    category: "Press",
     placeholder: false,
     description:
       "A 12,000-square-foot home by Design ni Dukaan, built with over 20 Indian artisans and designers — the studio's mirror and sconces, in epoxy and aluminium, hang in the foyer.",
@@ -42,6 +49,7 @@ export const pressEntries: PressEntry[] = [
     venue: "Platform Magazine",
     year: "2026",
     status: "Past",
+    category: "Press",
     placeholder: false,
     description:
       "A profile on how the studio merges functionality with emotional narrative — drawing from nature, Indian cultural tradition, and storytelling.",
@@ -52,6 +60,7 @@ export const pressEntries: PressEntry[] = [
     venue: "Design Pataki — DP Cult",
     year: "2026",
     status: "Past",
+    category: "Press",
     placeholder: false,
     description:
       "A brand profile on the studio's handcrafted lighting, furniture, and sculpture — hand-blown glass, copper, and brass, shaped by Maharashtrian jewellery and yogic form.",
