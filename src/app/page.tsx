@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SoundToggle } from "@/components/SoundToggle";
 import { IntroLoader } from "@/components/IntroLoader";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { Coil } from "@/components/Coil";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { StoriesFan } from "@/components/StoriesFan";
 import { collections, coverImage, getPanchBhuta } from "@/data/collections";
@@ -137,7 +138,8 @@ export default function ArrivalPage() {
         </Link>
       </section>
 
-      <section className="border-y border-[var(--line)] px-6 py-16 sm:py-20">
+      <section className="bg-[var(--paper-2)] px-6 py-20 sm:py-28">
+        <Coil className="mx-auto mb-6 h-6 w-6 text-[var(--accent)]" />
         <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed sm:text-3xl">
           Every object leaves the studio carrying more than its
           form — a <span className="text-[var(--accent)]">story</span>{" "}
