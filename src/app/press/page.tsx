@@ -30,11 +30,11 @@ export default function PressPage() {
     <>
       <Nav />
 
-      <section className="mx-auto max-w-3xl px-6 pt-20 pb-16 text-center sm:pt-28">
-        <p className="font-sans-ui mb-4 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+      <section className="mx-auto max-w-3xl px-6 pt-12 pb-10 text-center sm:pt-16">
+        <p className="font-sans-ui mb-3 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
           Exhibitions &amp; Press
         </p>
-        <h1 className="mb-4 text-4xl leading-tight sm:text-5xl">
+        <h1 className="mb-3 text-4xl leading-tight sm:text-5xl">
           Featured in the world.
         </h1>
         <p className="text-[var(--ink)]/70 leading-relaxed">
@@ -78,41 +78,55 @@ export default function PressPage() {
           }
           press={
             <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
-              {pressOnlyEntries.map((entry, i) => (
-                <div
-                  key={entry.title + i}
-                  className="grid grid-cols-1 items-center gap-6 py-8 sm:grid-cols-[140px_1fr]"
-                >
-                  <div className="aspect-[4/3] overflow-hidden bg-[var(--paper-2)] sm:aspect-square">
-                    <Image
-                      src={entry.image ?? `/images/press/press-${(i % 3) + 1}.svg`}
-                      alt={entry.title}
-                      width={400}
-                      height={400}
-                      unoptimized
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
-                      {entry.venue} · {entry.year}
-                    </p>
-                    <h2 className="text-xl">{entry.title}</h2>
-                    <p className="mt-1 text-sm text-[var(--ink)]/60">{entry.description}</p>
-                    {entry.url && (
-                      <a
-                        href={entry.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-sans-ui mt-2 inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/70 hover:text-[var(--ink)]"
-                      >
-                        Read the feature
-                        <ArrowIcon className="h-3.5 w-3.5" />
-                      </a>
+              {pressOnlyEntries.map((entry, i) => {
+                const Wrapper = entry.url ? "a" : "div";
+                return (
+                  <Wrapper
+                    key={entry.title + i}
+                    {...(entry.url
+                      ? { href: entry.url, target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className="group grid grid-cols-1 items-center gap-6 py-8 sm:grid-cols-[140px_1fr]"
+                  >
+                    {entry.logo ? (
+                      <div className="flex aspect-[4/3] items-center justify-center border border-[var(--line)] bg-white p-6 sm:aspect-square">
+                        <Image
+                          src={entry.logo}
+                          alt={`${entry.venue} logo`}
+                          width={400}
+                          height={400}
+                          unoptimized
+                          className="h-full w-full object-contain transition duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    ) : (
+                      <div className="aspect-[4/3] overflow-hidden bg-[var(--paper-2)] sm:aspect-square">
+                        <Image
+                          src={entry.image ?? `/images/press/press-${(i % 3) + 1}.svg`}
+                          alt={entry.title}
+                          width={400}
+                          height={400}
+                          unoptimized
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                      </div>
                     )}
-                  </div>
-                </div>
-              ))}
+                    <div>
+                      <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+                        {entry.venue} · {entry.year}
+                      </p>
+                      <h2 className="text-xl transition group-hover:text-[var(--accent)]">{entry.title}</h2>
+                      <p className="mt-1 text-sm text-[var(--ink)]/60">{entry.description}</p>
+                      {entry.url && (
+                        <span className="font-sans-ui mt-2 inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/70 transition group-hover:text-[var(--ink)]">
+                          Read the feature
+                          <ArrowIcon className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
+                        </span>
+                      )}
+                    </div>
+                  </Wrapper>
+                );
+              })}
             </div>
           }
         />
