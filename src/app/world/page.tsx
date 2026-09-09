@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { Coil } from "@/components/Coil";
 import CircularGallery from "@/components/CircularGallery";
 
 export const metadata: Metadata = {
@@ -173,14 +174,30 @@ export default function WorldPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-20">
-        <p className="font-sans-ui mb-10 text-center text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-20 sm:py-28">
+        <p className="font-sans-ui mb-14 flex items-center justify-center gap-2.5 text-center text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+          <Coil className="h-4 w-4 text-[var(--accent)]" />
           Our Belief System
         </p>
-        <div className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-3">
-          {belief.map((b) => (
-            <div key={b.name}>
-              <h2 className="mb-4 flex items-center gap-2 text-sm tracking-[0.15em] text-[var(--ash)] uppercase">
+        <div className="grid grid-cols-1 sm:grid-cols-3">
+          {belief.map((b, i) => (
+            <div
+              key={b.name}
+              className={`relative px-0 pt-8 first:pt-0 sm:px-10 sm:pt-0 sm:first:pl-0 ${
+                i > 0 ? "border-t border-[var(--line)] sm:border-t-0 sm:border-l" : ""
+              }`}
+            >
+              <span
+                className="font-sans-ui pointer-events-none absolute -top-3 right-0 text-[64px] leading-none font-light text-[var(--ink)]/[0.05] select-none sm:text-[80px]"
+                aria-hidden="true"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <Coil
+                className="mb-5 h-7 w-7 text-[var(--accent)]"
+                style={{ transform: `rotate(${i * 130}deg)` }}
+              />
+              <h2 className="mb-4 text-sm tracking-[0.15em] text-[var(--ash)] uppercase">
                 {b.name}
               </h2>
               <p className="mb-4 text-xl leading-snug">{b.statement}</p>
@@ -190,15 +207,25 @@ export default function WorldPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-16">
-        <p className="font-sans-ui mb-10 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-16 sm:py-24">
+        <p className="font-sans-ui mb-14 flex items-center gap-2.5 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+          <Coil className="h-4 w-4 text-[var(--accent)]" />
           Core Values
         </p>
-        <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2">
-          {values.map((v) => (
-            <div key={v.name} className="border-t border-[var(--line)] pt-5">
-              <h3 className="mb-2 text-xl">{v.name}</h3>
-              <p className="text-[var(--ink)]/70 leading-relaxed">{v.description}</p>
+        <div className="grid grid-cols-1 gap-x-10 gap-y-0 sm:grid-cols-2">
+          {values.map((v, i) => (
+            <div
+              key={v.name}
+              className="group flex gap-5 border-t border-[var(--line)] py-8 first:border-t sm:py-10"
+            >
+              <Coil
+                className="mt-1 h-6 w-6 shrink-0 text-[var(--ink)]/30 transition-colors duration-300 group-hover:text-[var(--accent)]"
+                style={{ transform: `rotate(${i * 95}deg)` }}
+              />
+              <div>
+                <h3 className="mb-2 text-xl">{v.name}</h3>
+                <p className="text-[var(--ink)]/70 leading-relaxed">{v.description}</p>
+              </div>
             </div>
           ))}
         </div>
