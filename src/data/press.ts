@@ -1,8 +1,8 @@
 // "Design Democracy" is a real, named upcoming show (from the studio's own
 // brief) whose venue/date aren't confirmed yet, so those two fields stay
-// placeholder text even though the entry itself is real. The three "Past"
-// entries below are real press coverage, fetched directly from each
-// publication (title/date/author confirmed from the live article).
+// placeholder text even though the entry itself is real. The "Past" press
+// entries below are real coverage, fetched directly from each publication
+// (title/date/author confirmed from the live article).
 export type PressEntry = {
   title: string;
   venue: string;
@@ -65,5 +65,17 @@ export const pressEntries: PressEntry[] = [
     description:
       "A brand profile on the studio's handcrafted lighting, furniture, and sculpture — hand-blown glass, copper, and brass, shaped by Maharashtrian jewellery and yogic form.",
     url: "https://www.designpataki.com/dp-cult/shailesh-rajput/",
+  },
+  {
+    title: "From Rudraksha Beads to Vishnu's Tortoise: Inside Sama:Yantar, a Narrative-Led Lighting Collection",
+    venue: "The New Indian Express",
+    year: "2026",
+    status: "Past",
+    category: "Press",
+    placeholder: false,
+    description:
+      "A feature on the Sama:Yantar collection — Rudrak:Sha Mala, Math:Than, and Ku:Rma — sculptural lamps drawing from Indian mythology, hand-shaped without fixed moulds.",
+    url: "https://www.newindianexpress.com/magazine/2026/Sep/06/from-rudraksha-beads-to-vishnus-tortoise-inside-samayantar-a-narrative-led-lighting-collection",
+    image: "/images/collections/sama-yantar-cover.jpg",
   },
 ];
