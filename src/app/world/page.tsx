@@ -137,20 +137,22 @@ export default function WorldPage() {
         </p>
       </section>
 
-      <section className="marquee-wrapper mx-auto max-w-[1800px] overflow-hidden px-6 pb-16 sm:px-10 lg:px-16">
-        <div className="animate-marquee flex w-max gap-8">
-          {[...studioGallery, ...studioGallery].map((item, i) => (
-            <div key={i} className="aspect-[4/5] w-[220px] shrink-0 overflow-hidden sm:w-[280px]">
-              <Image
-                src={item.image}
-                alt=""
-                width={560}
-                height={700}
-                unoptimized
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))}
+      <section className="mx-auto max-w-[1800px] px-6 pb-16 sm:px-10 lg:px-16">
+        <div className="marquee-wrapper relative overflow-hidden">
+          <div className="animate-marquee flex w-max gap-8">
+            {[...studioGallery, ...studioGallery].map((item, i) => (
+              <div key={i} className="aspect-[4/5] w-[220px] shrink-0 overflow-hidden sm:w-[280px]">
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={560}
+                  height={700}
+                  unoptimized
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

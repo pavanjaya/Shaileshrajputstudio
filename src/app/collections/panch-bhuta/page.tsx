@@ -89,14 +89,11 @@ export default function PanchBhutaPage() {
       {panchBhuta.films.length > 0 && (
         <section className="border-t border-[var(--line)] px-6 sm:px-10 lg:px-16 py-20">
           <div className="mx-auto max-w-[1800px]">
-            <p className="font-sans-ui mb-8 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-              The Films
-            </p>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-6">
+            <div className="flex flex-wrap justify-center gap-4">
               {panchBhuta.films.map((film) => (
                 <div
                   key={film.slug}
-                  className="group relative mx-auto w-full max-w-[180px] overflow-hidden rounded-2xl bg-[var(--ink)]"
+                  className="group relative w-full max-w-[180px] overflow-hidden rounded-2xl bg-[var(--ink)]"
                 >
                   <div className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-black/70 to-transparent px-3 pt-3 pb-8 text-white">
                     <p className="text-sm">{film.title}</p>

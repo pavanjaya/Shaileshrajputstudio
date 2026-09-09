@@ -87,7 +87,7 @@ export default async function CollectionChapterPage({
             film.videoSrc ? (
               <div
                 key={film.slug}
-                className="group relative mx-auto w-full max-w-[180px] overflow-hidden rounded-2xl bg-[var(--ink)]"
+                className="group relative w-full max-w-[180px] overflow-hidden rounded-2xl bg-[var(--ink)]"
               >
                 <div className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-black/70 to-transparent px-3 pt-3 pb-8 text-white">
                   <p className="text-sm">{film.title}</p>
@@ -106,7 +106,7 @@ export default async function CollectionChapterPage({
               <Link
                 key={film.slug}
                 href="/films"
-                className="group relative mx-auto block w-full max-w-[180px] overflow-hidden rounded-2xl"
+                className="group relative block w-full max-w-[180px] overflow-hidden rounded-2xl"
               >
                 <div className="relative aspect-[9/16] overflow-hidden bg-[var(--ink)]">
                   <Image
