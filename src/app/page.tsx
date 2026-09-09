@@ -72,7 +72,7 @@ export default function ArrivalPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 pt-24 pb-16 text-center sm:pt-32">
+      <section className="mx-auto max-w-3xl px-6 pt-24 pb-24 text-center sm:pt-32 sm:pb-32">
         <p className="text-2xl leading-relaxed sm:text-3xl">
           The purest expression of an idea, feeling, or experience distilled
           to what truly matters.
@@ -80,50 +80,33 @@ export default function ArrivalPage() {
         <p className="mt-6 leading-relaxed text-[var(--ink)]/70">
           Depth through simplicity. Meaning through restraint.
         </p>
-      </section>
 
-      <section className="border-t border-[var(--line)] bg-[var(--ink)] text-white">
-        <div className="mx-auto grid max-w-[1800px] grid-cols-1 gap-12 px-6 py-20 sm:grid-cols-[380px_1fr] sm:gap-16 sm:px-10 sm:py-28 lg:px-16">
-          <div className="overflow-hidden">
-            <Image
-              src="/images/founder-portrait.png"
-              alt="Shailesh and Manasi — Founders, Shailesh Rajput Studio"
-              width={1195}
-              height={1254}
-              unoptimized
-              className="w-full object-cover"
-            />
-          </div>
-          <div>
-            <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-white/50 uppercase">
-              The Studio
-            </p>
-            <h2 className="mb-8 max-w-lg text-3xl leading-snug sm:text-4xl">
-              A practice of observation, held by two hands.
-            </h2>
-            <p className="mb-5 leading-relaxed text-white/80">
-              Shailesh and Manasi approach design as a process of discovery
-              rather than control. Questions arrive before answers. Intuition
-              arrives before logic — through sketching, experimentation, and
-              making, their observations take shape as objects that invite
-              others into the same sense of wonder.
-            </p>
-            <p className="mb-8 leading-relaxed text-white/80">
-              Rooted in looking closely at nature, materials, and the quiet
-              details of everyday life, this way of seeing became the
-              foundation of Shailesh Rajput Studio — where observation
-              becomes form, and design becomes a way of participating in
-              life.
-            </p>
-            <Link
-              href="/world"
-              className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white"
-            >
-              Learn more about the studio
-              <ArrowIcon className="h-3.5 w-3.5" />
-            </Link>
-          </div>
-        </div>
+        <p className="font-sans-ui mt-16 mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+          The Studio
+        </p>
+        <h2 className="mb-8 text-3xl leading-snug sm:text-4xl">
+          A practice of observation, held by two hands.
+        </h2>
+        <p className="mb-5 leading-relaxed text-[var(--ink)]/70">
+          Shailesh and Manasi approach design as a process of discovery
+          rather than control. Questions arrive before answers. Intuition
+          arrives before logic — through sketching, experimentation, and
+          making, their observations take shape as objects that invite
+          others into the same sense of wonder.
+        </p>
+        <p className="mb-8 leading-relaxed text-[var(--ink)]/70">
+          Rooted in looking closely at nature, materials, and the quiet
+          details of everyday life, this way of seeing became the
+          foundation of Shailesh Rajput Studio — where observation becomes
+          form, and design becomes a way of participating in life.
+        </p>
+        <Link
+          href="/world"
+          className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)]"
+        >
+          Learn more about the studio
+          <ArrowIcon className="h-3.5 w-3.5" />
+        </Link>
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24 pt-24">
