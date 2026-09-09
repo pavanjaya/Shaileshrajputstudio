@@ -137,7 +137,15 @@ export default function ArrivalPage() {
         </Link>
       </section>
 
-      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
+      <section className="border-y border-[var(--line)] px-6 py-16 sm:py-20">
+        <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed sm:text-3xl">
+          Every object leaves the studio carrying more than its
+          form — a <span className="text-[var(--accent)]">story</span>{" "}
+          it was shaped to tell.
+        </p>
+      </section>
+
+      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pt-24 pb-24">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
             <p className="font-sans-ui mb-2 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
