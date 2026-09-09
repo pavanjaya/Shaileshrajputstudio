@@ -5,6 +5,15 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Coil } from "@/components/Coil";
 import CircularGallery from "@/components/CircularGallery";
+import {
+  PurposeIcon,
+  VisionIcon,
+  MissionIcon,
+  QuietRebellionIcon,
+  InnocentCuriosityIcon,
+  ElementalWisdomIcon,
+  LayeredSimplicityIcon,
+} from "@/components/WorldIcons";
 
 export const metadata: Metadata = {
   title: "The World",
@@ -23,18 +32,21 @@ const studioGallery = [
 const belief = [
   {
     name: "Purpose",
+    icon: PurposeIcon,
     statement: "SRS exists to create moments of pause, reflection, and inner connection.",
     supporting:
       "Each object placed into the world carries a story. Childlike curiosity, observing deeply, feeling deeply, translating emotion into form — SRS creates slowly and intuitively, allowing story, material, process, and emotion to shape each piece.",
   },
   {
     name: "Vision",
+    icon: VisionIcon,
     statement: "An evolving practice of life and design.",
     supporting:
       "Bringing together creators, artisans, materials, stories, and philosophies that inspire people to live with presence. Reimagining humanity's relationship with creation.",
   },
   {
     name: "Mission",
+    icon: MissionIcon,
     statement: "To create soulful Indian objects and experiences through intuition.",
     supporting:
       "Shaping materials with patience and hand, through the creator's inspired originality and material innovation.",
@@ -44,21 +56,25 @@ const belief = [
 const values = [
   {
     name: "Quiet Rebellion",
+    icon: QuietRebellionIcon,
     description:
       "We reject performative luxury and trend-driven creation in favour of emotional depth and enduring originality.",
   },
   {
     name: "Innocent Curiosity",
+    icon: InnocentCuriosityIcon,
     description:
       "We approach life and making with openness, wonder, and a willingness to observe before assuming.",
   },
   {
     name: "Elemental Wisdom",
+    icon: ElementalWisdomIcon,
     description:
       "We trust intuition and nature as forms of intelligence — listening deeply before shaping form.",
   },
   {
     name: "Layered Simplicity",
+    icon: LayeredSimplicityIcon,
     description:
       "We seek depth through essence — creating work that is simple, yet reveals deeper truths in its layers.",
   },
@@ -187,16 +203,7 @@ export default function WorldPage() {
                 i > 0 ? "border-t border-[var(--line)] sm:border-t-0 sm:border-l" : ""
               }`}
             >
-              <span
-                className="font-sans-ui pointer-events-none absolute -top-3 right-0 text-[64px] leading-none font-light text-[var(--ink)]/[0.05] select-none sm:text-[80px]"
-                aria-hidden="true"
-              >
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <Coil
-                className="mb-5 h-7 w-7 text-[var(--accent)]"
-                style={{ transform: `rotate(${i * 130}deg)` }}
-              />
+              <b.icon className="mb-5 h-7 w-7 text-[var(--accent)]" />
               <h2 className="mb-4 text-sm tracking-[0.15em] text-[var(--ash)] uppercase">
                 {b.name}
               </h2>
@@ -213,15 +220,12 @@ export default function WorldPage() {
           Core Values
         </p>
         <div className="grid grid-cols-1 gap-x-10 gap-y-0 sm:grid-cols-2">
-          {values.map((v, i) => (
+          {values.map((v) => (
             <div
               key={v.name}
               className="group flex gap-5 border-t border-[var(--line)] py-8 first:border-t sm:py-10"
             >
-              <Coil
-                className="mt-1 h-6 w-6 shrink-0 text-[var(--ink)]/30 transition-colors duration-300 group-hover:text-[var(--accent)]"
-                style={{ transform: `rotate(${i * 95}deg)` }}
-              />
+              <v.icon className="mt-1 h-6 w-6 shrink-0 text-[var(--ink)]/30 transition-colors duration-300 group-hover:text-[var(--accent)]" />
               <div>
                 <h3 className="mb-2 text-xl">{v.name}</h3>
                 <p className="text-[var(--ink)]/70 leading-relaxed">{v.description}</p>
