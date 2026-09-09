@@ -82,10 +82,7 @@ export default async function CollectionChapterPage({
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-20">
-        <p className="font-sans-ui mb-8 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-          The Films
-        </p>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-6">
+        <div className="flex flex-wrap justify-center gap-4">
           {collection.films.map((film) =>
             film.videoSrc ? (
               <div

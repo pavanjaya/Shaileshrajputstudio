@@ -37,12 +37,12 @@ export default function CollectionsPage() {
               href={`/collections/${c.slug}`}
               className="group block"
             >
-              <div className="mb-4 aspect-[4/5] overflow-hidden">
+              <div className="mb-4 aspect-[4/3] overflow-hidden">
                 <Image
                   src={coverImage(c)}
                   alt={c.title}
                   width={1000}
-                  height={1250}
+                  height={750}
                   unoptimized
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />

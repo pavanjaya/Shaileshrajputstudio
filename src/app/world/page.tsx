@@ -137,15 +137,15 @@ export default function WorldPage() {
         </p>
       </section>
 
-      <section className="marquee-wrapper w-full overflow-hidden pb-16">
-        <div className="animate-marquee flex w-max gap-4">
+      <section className="marquee-wrapper mx-auto max-w-[1800px] overflow-hidden px-6 pb-16 sm:px-10 lg:px-16">
+        <div className="animate-marquee flex w-max gap-8">
           {[...studioGallery, ...studioGallery].map((item, i) => (
-            <div key={i} className="h-[420px] w-[320px] shrink-0 overflow-hidden">
+            <div key={i} className="aspect-[4/5] w-[220px] shrink-0 overflow-hidden sm:w-[280px]">
               <Image
                 src={item.image}
                 alt=""
-                width={640}
-                height={840}
+                width={560}
+                height={700}
                 unoptimized
                 className="h-full w-full object-cover"
               />
