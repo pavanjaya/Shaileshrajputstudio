@@ -6,6 +6,7 @@ import { SoundToggle } from "@/components/SoundToggle";
 import { IntroLoader } from "@/components/IntroLoader";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
+import { StoriesFan } from "@/components/StoriesFan";
 import { collections, coverImage, getPanchBhuta } from "@/data/collections";
 import { getProductBySlug } from "@/data/products";
 import { pressEntries } from "@/data/press";
@@ -30,6 +31,17 @@ const featuredSlugs = [
   "dhaarana",
 ];
 const featuredProducts = featuredSlugs.map((slug) => getProductBySlug(slug)!).filter(Boolean);
+
+// StoriesFan is a Client Component, so its props must be plain, serializable
+// data — resolve each collection's cover image here on the server first.
+const storyTiles = collections.map((c) => ({
+  slug: c.slug,
+  title: c.title,
+  sanskritName: c.sanskritName,
+  myth: c.myth,
+  elementsCount: c.elements?.length,
+  image: c.elements ? coverImage(panchBhutaThumb) : coverImage(c),
+}));
 
 export default function ArrivalPage() {
   return (
@@ -60,23 +72,61 @@ export default function ArrivalPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-24 text-center sm:py-32">
-        <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-          Shailesh Rajput Studio
-        </p>
+      <section className="mx-auto max-w-3xl px-6 pt-24 pb-16 text-center sm:pt-32">
         <p className="text-2xl leading-relaxed sm:text-3xl">
           The purest expression of an idea, feeling, or experience distilled
           to what truly matters.
         </p>
         <p className="mt-6 leading-relaxed text-[var(--ink)]/70">
-          Like Kabir, whose words held immense depth with remarkable
-          brevity, SRS seeks to distill emotion into forms that feel
-          effortless yet profound. Depth through simplicity. Meaning
-          through restraint.
+          Depth through simplicity. Meaning through restraint.
         </p>
       </section>
 
-      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
+      <section className="border-t border-[var(--line)] bg-[var(--ink)] text-white">
+        <div className="mx-auto grid max-w-[1800px] grid-cols-1 gap-12 px-6 py-20 sm:grid-cols-[380px_1fr] sm:gap-16 sm:px-10 sm:py-28 lg:px-16">
+          <div className="overflow-hidden">
+            <Image
+              src="/images/founder-portrait.png"
+              alt="Shailesh and Manasi — Founders, Shailesh Rajput Studio"
+              width={1195}
+              height={1254}
+              unoptimized
+              className="w-full object-cover"
+            />
+          </div>
+          <div>
+            <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-white/50 uppercase">
+              The Studio
+            </p>
+            <h2 className="mb-8 max-w-lg text-3xl leading-snug sm:text-4xl">
+              A practice of observation, held by two hands.
+            </h2>
+            <p className="mb-5 leading-relaxed text-white/80">
+              Shailesh and Manasi approach design as a process of discovery
+              rather than control. Questions arrive before answers. Intuition
+              arrives before logic — through sketching, experimentation, and
+              making, their observations take shape as objects that invite
+              others into the same sense of wonder.
+            </p>
+            <p className="mb-8 leading-relaxed text-white/80">
+              Rooted in looking closely at nature, materials, and the quiet
+              details of everyday life, this way of seeing became the
+              foundation of Shailesh Rajput Studio — where observation
+              becomes form, and design becomes a way of participating in
+              life.
+            </p>
+            <Link
+              href="/world"
+              className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white"
+            >
+              Learn more about the studio
+              <ArrowIcon className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24 pt-24">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
             <p className="font-sans-ui mb-2 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
@@ -121,27 +171,7 @@ export default function ArrivalPage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-          {collections.map((c) => (
-            <Link key={c.slug} href={`/collections/${c.slug}`} className="group block">
-              <div className="mb-3 aspect-[4/5] overflow-hidden">
-                <Image
-                  src={c.elements ? coverImage(panchBhutaThumb) : coverImage(c)}
-                  alt={c.title}
-                  width={800}
-                  height={1000}
-                  unoptimized
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-              </div>
-              <p className="text-lg">{c.title}</p>
-              <p className="font-sans-ui text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
-                {c.sanskritName}
-                {c.elements ? ` · ${c.elements.length} Elements` : " · Story Series"}
-              </p>
-            </Link>
-          ))}
-        </div>
+        <StoriesFan stories={storyTiles} />
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">

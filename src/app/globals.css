@@ -114,3 +114,10 @@ body {
 .animate-fade-up {
   animation: srs-fade-up 0.6s ease forwards;
 }
+
+/* A collapsed vertical "spine" label — like a book on a shelf — used by
+   the homepage's Stories fan panels while collapsed. */
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
