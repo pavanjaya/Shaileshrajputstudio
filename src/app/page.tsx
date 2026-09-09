@@ -172,16 +172,29 @@ export default function ArrivalPage() {
                 rel={entry.url ? "noopener noreferrer" : undefined}
                 className="group grid grid-cols-[100px_1fr] items-center gap-6 py-6 sm:grid-cols-[140px_1fr]"
               >
-                <div className="aspect-square overflow-hidden bg-[var(--paper-2)]">
-                  <Image
-                    src={entry.image ?? `/images/press/press-${(i % 3) + 1}.svg`}
-                    alt={entry.title}
-                    width={300}
-                    height={300}
-                    unoptimized
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
+                {entry.logo ? (
+                  <div className="flex aspect-square items-center justify-center border border-[var(--line)] bg-white p-4">
+                    <Image
+                      src={entry.logo}
+                      alt={`${entry.venue} logo`}
+                      width={300}
+                      height={300}
+                      unoptimized
+                      className="h-full w-full object-contain transition duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                ) : (
+                  <div className="aspect-square overflow-hidden bg-[var(--paper-2)]">
+                    <Image
+                      src={entry.image ?? `/images/press/press-${(i % 3) + 1}.svg`}
+                      alt={entry.title}
+                      width={300}
+                      height={300}
+                      unoptimized
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                )}
                 <div>
                   <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
                     {entry.venue}
