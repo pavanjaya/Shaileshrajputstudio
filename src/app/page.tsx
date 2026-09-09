@@ -80,7 +80,7 @@ export default function ArrivalPage() {
         <h2 className="mb-8 text-3xl leading-snug sm:text-4xl">
           A practice of observation, held by two hands.
         </h2>
-        <p className="mb-8 text-2xl leading-relaxed sm:text-3xl">
+        <p className="mb-5 leading-relaxed text-[var(--ink)]/70">
           The purest expression of an idea, feeling, or experience distilled
           to what truly matters — depth through simplicity, meaning through
           restraint.
