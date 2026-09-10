@@ -122,16 +122,6 @@ body {
   transform: rotate(180deg);
 }
 
-/* Once <CustomCursor> mounts (desktop, motion allowed) it hides the native
-   pointer everywhere so its own dot+ring reads as the only cursor —
-   toggled by JS, never set unconditionally, so touch devices and
-   prefers-reduced-motion visitors keep their normal cursor (or none at
-   all, on touch). */
-.custom-cursor-active,
-.custom-cursor-active * {
-  cursor: none !important;
-}
-
 /* SplitText's `mask: "lines"` (RevealText) already sets overflow on the
    line wrappers it generates inline — this just documents/reinforces it
    so a reveal never briefly shows overset text before its clip applies. */
