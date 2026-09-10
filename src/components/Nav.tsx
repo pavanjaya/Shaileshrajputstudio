@@ -80,30 +80,37 @@ export function Nav() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm md:flex">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`group relative inline-block py-1 ${
-                transparentHome
-                  ? "text-white/80 hover:text-white"
-                  : pathname.startsWith(link.href)
-                    ? "text-[var(--ink)]"
-                    : "text-[var(--ink)]/60 hover:text-[var(--ink)]"
-              }`}
-            >
-              {link.label}
-              {/* A thin underline that grows in from the center on hover —
-                  pure CSS (transform, not width) so it's cheap and never
-                  triggers layout. */}
-              <span
-                aria-hidden="true"
-                className={`absolute inset-x-0 -bottom-0.5 h-px origin-center scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 ${
-                  transparentHome ? "bg-white" : "bg-[var(--ink)]"
+          {links.map((link) => {
+            const active = pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`group relative inline-block py-1 ${
+                  transparentHome
+                    ? active
+                      ? "text-white"
+                      : "text-white/80 hover:text-white"
+                    : active
+                      ? "text-[var(--ink)]"
+                      : "text-[var(--ink)]/60 hover:text-[var(--ink)]"
                 }`}
-              />
-            </Link>
-          ))}
+              >
+                {link.label}
+                {/* A thin underline that grows in from the center on hover
+                    — and stays fully drawn for whichever page is current,
+                    so the active tab reads as clearly selected rather
+                    than just a shade darker. Pure CSS (transform, not
+                    width), so it's cheap and never triggers layout. */}
+                <span
+                  aria-hidden="true"
+                  className={`absolute inset-x-0 -bottom-0.5 h-px origin-center transition-transform duration-300 ease-out group-hover:scale-x-100 ${
+                    active ? "scale-x-100" : "scale-x-0"
+                  } ${transparentHome ? "bg-white" : "bg-[var(--ink)]"}`}
+                />
+              </Link>
+            );
+          })}
           <Magnetic strength={0.4}>
             <Link
               href="/acquire"
@@ -141,16 +148,22 @@ export function Nav() {
           ref={mobileMenuRef}
           className="flex flex-col gap-1 bg-[var(--paper)] px-6 pb-6 text-base md:hidden"
         >
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="border-b border-[var(--line)] py-3 text-[var(--ink)]"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const active = pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={`border-b border-[var(--line)] py-3 ${
+                  active ? "text-[var(--ink)]" : "text-[var(--ink)]/60"
+                }`}
+              >
+                {link.label}
+                {active && <span className="ml-2 text-[var(--accent)]">·</span>}
+              </Link>
+            );
+          })}
           <Link
             href="/acquire"
             onClick={() => setOpen(false)}
