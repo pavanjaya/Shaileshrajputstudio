@@ -35,30 +35,22 @@ export function SmoothScroll() {
       ScrollTrigger.update();
     });
 
-    // ScrollTrigger normally reads/sets the native scrollTop of the
-    // scroller it's told to watch. Point it at Lenis's own methods instead,
-    // so `pin`/`scrub` triggers move in lockstep with the eased scroll
-    // rather than the raw one.
-    ScrollTrigger.scrollerProxy(document.body, {
-      scrollTop(value) {
-        if (typeof value === "number") {
-          lenis.scrollTo(value, { immediate: true });
-          return;
-        }
-        return lenis.scroll;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-    });
+    // Lenis is running in its default mode here — no custom wrapper/content,
+    // so it drives the *real* window scroll position itself every frame
+    // (via window.scrollTo under the hood) rather than transforming a
+    // wrapped container. ScrollTrigger's default (window-scoped) triggers
+    // already read that same native scroll position, so all that's needed
+    // to keep them in sync is telling ScrollTrigger to re-check on every
+    // Lenis tick (above) — no scrollerProxy indirection required for this
+    // mode; that trick is only for a custom Lenis wrapper.
 
     function raf(time: number) {
-      lenis.raf(time);
+      // GSAP's ticker reports `time` in seconds; Lenis expects the same
+      // millisecond timestamp requestAnimationFrame/performance.now() use,
+      // so it can compute a real delta between frames. Passing seconds
+      // straight through made every delta ~1000x too small, and Lenis's
+      // eased scroll essentially never advanced — the page looked frozen.
+      lenis.raf(time * 1000);
     }
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
