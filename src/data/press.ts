@@ -37,6 +37,17 @@ export const pressEntries: PressEntry[] = [
       "The studio's next milestone show — details to be confirmed as the exhibition approaches.",
   },
   {
+    title: "ID Exhibit — Collectible",
+    venue: "Asian Paints India Design (AND) 2026",
+    year: "2026",
+    status: "Upcoming",
+    category: "Exhibition",
+    placeholder: false,
+    description:
+      "The studio's wall-mounted collectible sculpture, shown as part of ID Exhibit — an Ogaan Media initiative at Asian Paints India Design 2026.",
+    image: "/images/press/asian-paints-id-exhibit-2026.jpg",
+  },
+  {
     title: "From Rudraksha Beads to Vishnu's Tortoise: Inside Sama:Yantar, a Narrative-Led Lighting Collection",
     venue: "The New Indian Express",
     year: "2026",

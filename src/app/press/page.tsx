@@ -69,9 +69,19 @@ export default function PressPage() {
                 ))}
               </Reveal>
 
-              <Reveal as="div" staggerChildren className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+              <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2">
                 {exhibitionEntries.map((entry, i) => (
-                  <div key={entry.title + i} className="py-8">
+                  <div key={entry.title + i} className="group">
+                    <div className="mb-5 aspect-[4/5] overflow-hidden bg-[var(--paper-2)]">
+                      <Image
+                        src={entry.image ?? `/images/press/press-${(i % 3) + 1}.svg`}
+                        alt={entry.title}
+                        width={500}
+                        height={625}
+                        unoptimized
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
+                    </div>
                     <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
                       {entry.venue} · {entry.year} · {entry.status}
                     </p>

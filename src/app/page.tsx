@@ -4,7 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { IntroLoader } from "@/components/IntroLoader";
 import { ArrowIcon } from "@/components/ArrowIcon";
-import { Coil } from "@/components/Coil";
+import { SrsIcon } from "@/components/SrsIcon";
 import { Hero } from "@/components/Hero";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { StoriesFan } from "@/components/StoriesFan";
@@ -128,9 +128,9 @@ export default function ArrivalPage() {
         </Link>
       </section>
 
-      <section className="bg-[var(--footer-bg)] px-6 py-20 sm:px-10 sm:py-28 lg:px-16">
+      <section className="bg-[var(--footer-bg)] px-6 py-28 sm:px-10 sm:py-36 lg:px-16">
         <Reveal className="flex flex-col items-center">
-          <Coil className="mb-6 h-6 w-6 text-[var(--accent)]" />
+          <SrsIcon className="mb-8 h-12 w-12 text-[var(--accent)]" />
           <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed sm:text-3xl">
             Every object leaves the studio carrying more than its
             form — a <span className="text-[var(--accent)]">story</span>{" "}
