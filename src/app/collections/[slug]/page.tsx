@@ -81,7 +81,7 @@ export default async function CollectionChapterPage({
         </div>
       </Reveal>
 
-      <section className="mx-auto max-w-2xl px-6 py-20 text-center">
+      <section className="mx-auto max-w-[833px] px-6 py-20 text-center">
         <Reveal>
           <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
             The Myth
