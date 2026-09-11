@@ -3,7 +3,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/motion/Reveal";
 import { RevealText } from "@/components/motion/RevealText";
-import { PhoneIcon, WhatsAppIcon } from "@/components/ConnectIcons";
+import { PhoneIcon } from "@/components/ConnectIcons";
 import { studio } from "@/lib/studio";
 
 export const metadata: Metadata = {
@@ -32,6 +32,21 @@ function MailIcon() {
       <rect x="3" y="5.5" width="18" height="13" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
       <path
         d="M4 6.5l8 6.5 8-6.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M12 7.5V12l3 2"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -129,25 +144,6 @@ export default function ContactPage() {
             <Reveal delay={0.1}>
               <div>
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
-                  <WhatsAppIcon className="h-5 w-5" />
-                </div>
-                <p className="font-sans-ui mb-3 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
-                  WhatsApp
-                </p>
-                <a
-                  href={`https://wa.me/${studio.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="leading-relaxed text-[var(--ink)] hover:text-[var(--accent)]"
-                >
-                  Message the studio
-                </a>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.15}>
-              <div>
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
                   <MailIcon />
                 </div>
                 <p className="font-sans-ui mb-3 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
@@ -159,6 +155,21 @@ export default function ContactPage() {
                 >
                   {studio.email}
                 </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div>
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
+                  <ClockIcon />
+                </div>
+                <p className="font-sans-ui mb-3 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+                  Studio Timings
+                </p>
+                <p className="leading-relaxed text-[var(--ink)]">
+                  <span className="block">Mon – Sat: 10:00 AM – 6:00 PM</span>
+                  <span className="block">Sunday: Holiday</span>
+                </p>
               </div>
             </Reveal>
           </div>
