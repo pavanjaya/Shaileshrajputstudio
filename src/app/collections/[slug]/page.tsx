@@ -140,7 +140,7 @@ export default async function CollectionChapterPage({
         </Reveal>
       </section>
 
-      <section className="border-t border-[var(--line)] px-6 py-20">
+      <section className="px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">

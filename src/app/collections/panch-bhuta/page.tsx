@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ArrowIcon } from "@/components/ArrowIcon";
-import { getPanchBhuta, getElements, coverImage, stillImages, filmPoster } from "@/data/collections";
+import { getPanchBhuta, getElements, coverImage, filmPoster } from "@/data/collections";
 import { getProductsBySeries } from "@/data/products";
 import { ElementBrowser } from "@/components/ElementBrowser";
 import { Reveal } from "@/components/motion/Reveal";
@@ -60,24 +60,33 @@ export default function PanchBhutaPage() {
         </RevealText>
       </section>
 
-      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-20">
-        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {stillImages(panchBhuta).map((src, i) => (
-            <div key={src} className="aspect-[4/5] overflow-hidden">
-              <Image
-                src={src}
-                alt={`${panchBhuta.title} still ${i + 1}`}
-                width={800}
-                height={1000}
-                unoptimized
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))}
-        </Reveal>
-      </section>
+      {panchBhuta.films.length > 0 && (
+        <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-20">
+          <Reveal as="div" staggerChildren className="flex flex-wrap justify-center gap-4">
+            {panchBhuta.films.map((film) => (
+              <div
+                key={film.slug}
+                className="group relative w-full max-w-[180px] overflow-hidden rounded-2xl bg-[var(--ink)]"
+              >
+                <div className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-black/70 to-transparent px-3 pt-3 pb-8 text-white">
+                  <p className="text-sm">{film.title}</p>
+                  <p className="font-sans-ui text-xs text-white/70">{film.type}</p>
+                </div>
+                <video
+                  controls
+                  preload="none"
+                  poster={filmPoster(film)}
+                  className="aspect-[9/16] w-full object-cover"
+                >
+                  <source src={film.videoSrc} type="video/mp4" />
+                </video>
+              </div>
+            ))}
+          </Reveal>
+        </section>
+      )}
 
-      <section className="border-t border-[var(--line)] px-6 py-20">
+      <section className="px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
@@ -103,34 +112,6 @@ export default function PanchBhutaPage() {
         </div>
         <ElementBrowser elements={elements} productsByElement={productsByElement} />
       </section>
-
-      {panchBhuta.films.length > 0 && (
-        <section className="border-t border-[var(--line)] px-6 sm:px-10 lg:px-16 py-20">
-          <div className="mx-auto max-w-[1800px]">
-            <Reveal as="div" staggerChildren className="flex flex-wrap justify-center gap-4">
-              {panchBhuta.films.map((film) => (
-                <div
-                  key={film.slug}
-                  className="group relative w-full max-w-[180px] overflow-hidden rounded-2xl bg-[var(--ink)]"
-                >
-                  <div className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-black/70 to-transparent px-3 pt-3 pb-8 text-white">
-                    <p className="text-sm">{film.title}</p>
-                    <p className="font-sans-ui text-xs text-white/70">{film.type}</p>
-                  </div>
-                  <video
-                    controls
-                    preload="none"
-                    poster={filmPoster(film)}
-                    className="aspect-[9/16] w-full object-cover"
-                  >
-                    <source src={film.videoSrc} type="video/mp4" />
-                  </video>
-                </div>
-              ))}
-            </Reveal>
-          </div>
-        </section>
-      )}
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-14">
         <Reveal>
