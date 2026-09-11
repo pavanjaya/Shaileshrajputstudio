@@ -37,6 +37,19 @@ export const pressEntries: PressEntry[] = [
       "The studio's next milestone show — details to be confirmed as the exhibition approaches.",
   },
   {
+    title: "From Rudraksha Beads to Vishnu's Tortoise: Inside Sama:Yantar, a Narrative-Led Lighting Collection",
+    venue: "The New Indian Express",
+    year: "2026",
+    status: "Past",
+    category: "Press",
+    placeholder: false,
+    description:
+      "A feature on the Sama:Yantar collection — Rudrak:Sha Mala, Math:Than, and Ku:Rma — sculptural lamps drawing from Indian mythology, hand-shaped without fixed moulds.",
+    url: "https://www.newindianexpress.com/magazine/2026/Sep/06/from-rudraksha-beads-to-vishnus-tortoise-inside-samayantar-a-narrative-led-lighting-collection",
+    image: "/images/collections/sama-yantar-cover.jpg",
+    logo: "/images/press/logos/tnie.svg",
+  },
+  {
     title: "Inside a Multigenerational Navsari Home Rooted in Local Materials and Craftsmanship",
     venue: "Interior Design",
     year: "2026",
@@ -72,18 +85,5 @@ export const pressEntries: PressEntry[] = [
       "A brand profile on the studio's handcrafted lighting, furniture, and sculpture — hand-blown glass, copper, and brass, shaped by Maharashtrian jewellery and yogic form.",
     url: "https://www.designpataki.com/dp-cult/shailesh-rajput/",
     logo: "/images/press/logos/design-pataki.svg",
-  },
-  {
-    title: "From Rudraksha Beads to Vishnu's Tortoise: Inside Sama:Yantar, a Narrative-Led Lighting Collection",
-    venue: "The New Indian Express",
-    year: "2026",
-    status: "Past",
-    category: "Press",
-    placeholder: false,
-    description:
-      "A feature on the Sama:Yantar collection — Rudrak:Sha Mala, Math:Than, and Ku:Rma — sculptural lamps drawing from Indian mythology, hand-shaped without fixed moulds.",
-    url: "https://www.newindianexpress.com/magazine/2026/Sep/06/from-rudraksha-beads-to-vishnus-tortoise-inside-samayantar-a-narrative-led-lighting-collection",
-    image: "/images/collections/sama-yantar-cover.jpg",
-    logo: "/images/press/logos/tnie.png",
   },
 ];
