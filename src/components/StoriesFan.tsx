@@ -40,7 +40,7 @@ export function StoriesFan({ stories }: { stories: StoryTile[] }) {
               href={`/collections/${c.slug}`}
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
-              className="group relative overflow-hidden transition-[flex-grow] duration-500 ease-out"
+              className="group relative overflow-hidden transition-[flex-grow] duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
               style={{ flexGrow: isActive ? 6 : 1, flexBasis: 0, minWidth: 0 }}
             >
               <Image
@@ -54,7 +54,7 @@ export function StoriesFan({ stories }: { stories: StoryTile[] }) {
 
               {/* Collapsed: a vertical spine label */}
               <div
-                className={`absolute inset-0 flex items-end justify-center pb-6 transition-opacity duration-300 ${
+                className={`absolute inset-0 flex items-end justify-center pb-6 transition-opacity duration-700 ${
                   isActive ? "opacity-0" : "opacity-100"
                 }`}
               >
@@ -65,7 +65,7 @@ export function StoriesFan({ stories }: { stories: StoryTile[] }) {
 
               {/* Expanded: full caption */}
               <div
-                className={`absolute inset-0 flex flex-col justify-end p-6 text-white transition-opacity duration-300 ${
+                className={`absolute inset-0 flex flex-col justify-end p-6 text-white transition-opacity duration-700 ${
                   isActive ? "opacity-100" : "pointer-events-none opacity-0"
                 }`}
               >
