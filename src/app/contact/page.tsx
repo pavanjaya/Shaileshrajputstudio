@@ -80,9 +80,13 @@ export default function ContactPage() {
         </Reveal>
       </section>
 
-      <section className="bg-[var(--paper-2)]">
-        <Reveal as="div" staggerChildren className="mx-auto grid max-w-[1800px] grid-cols-1 sm:grid-cols-2">
-          <div className="flex flex-col justify-center gap-10 px-6 py-16 sm:px-10 sm:py-24 lg:px-16">
+      <section className="mx-auto max-w-[1800px] px-6 pb-24 sm:px-10 lg:px-16">
+        <Reveal
+          as="div"
+          staggerChildren
+          className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16"
+        >
+          <div className="flex flex-col justify-center gap-10">
             <Reveal>
               <div>
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
@@ -119,7 +123,7 @@ export default function ContactPage() {
             </Reveal>
           </div>
 
-          <div className="relative h-[420px] sm:h-auto sm:min-h-[480px]">
+          <div className="relative h-[420px] sm:h-auto sm:min-h-[420px]">
             <iframe
               src={mapsEmbedUrl}
               title="Shailesh Rajput Studio — Location"
