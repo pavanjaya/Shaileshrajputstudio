@@ -188,7 +188,7 @@ export default function ArrivalPage() {
 
         <Reveal as="div" staggerChildren className="grid grid-cols-2 gap-x-10 gap-y-16 sm:grid-cols-4">
           {pressEntries
-            .filter((entry) => !entry.placeholder)
+            .filter((entry) => entry.category === "Press" && !entry.placeholder)
             .slice(0, 4)
             .map((entry, i) => (
               <Link
