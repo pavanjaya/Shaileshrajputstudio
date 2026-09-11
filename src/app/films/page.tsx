@@ -10,11 +10,15 @@ import { getPanchBhuta, getElements, getStoryCollections, filmPoster } from "@/d
 
 const panchBhuta = getPanchBhuta();
 
+// Only list a category here if it has at least one real, playable film —
+// several of the six elements currently have nothing but placeholder
+// entries (no videoSrc), and showing an empty-feeling group of "coming
+// soon" posters isn't what an archive page should lead with.
 const filmGroups = [
   { slug: panchBhuta.slug, title: panchBhuta.title, href: "/collections/panch-bhuta", films: panchBhuta.films },
   ...getElements().map((el) => ({ slug: el.slug, title: el.title, href: "/collections/panch-bhuta", films: el.films })),
   ...getStoryCollections().map((c) => ({ slug: c.slug, title: c.title, href: `/collections/${c.slug}`, films: c.films })),
-];
+].filter((g) => g.films.some((film) => film.videoSrc));
 
 export const metadata: Metadata = {
   title: "Films",
