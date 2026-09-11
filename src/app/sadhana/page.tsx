@@ -145,7 +145,7 @@ export default function SadhanaPage() {
         <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {principles.map((p) => (
             <div key={p.name} className="border-t border-[var(--line)] pt-5">
-              <p.icon className="mb-4 h-6 w-6 text-[var(--accent)]" />
+              <p.icon className="mb-4 h-9 w-9 text-[var(--accent)]" />
               <h3 className="mb-2 text-lg">{p.name}</h3>
               <p className="text-sm text-[var(--ink)]/70 leading-relaxed">{p.description}</p>
             </div>
