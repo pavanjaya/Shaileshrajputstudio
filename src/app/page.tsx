@@ -128,7 +128,7 @@ export default function ArrivalPage() {
         </Link>
       </section>
 
-      <section className="bg-[var(--paper-2)] px-6 py-20 sm:py-28">
+      <section className="bg-[var(--footer-bg)] px-6 py-20 sm:px-10 sm:py-28 lg:px-16">
         <Reveal className="flex flex-col items-center">
           <Coil className="mb-6 h-6 w-6 text-[var(--accent)]" />
           <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed sm:text-3xl">
@@ -186,7 +186,7 @@ export default function ArrivalPage() {
           </Link>
         </div>
 
-        <Reveal as="div" staggerChildren className="grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-4">
+        <Reveal as="div" staggerChildren className="grid grid-cols-2 gap-x-10 gap-y-16 sm:grid-cols-4">
           {pressEntries
             .filter((entry) => !entry.placeholder)
             .slice(0, 4)
