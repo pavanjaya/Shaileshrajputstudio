@@ -186,20 +186,20 @@ export default function ArrivalPage() {
           </Link>
         </div>
 
-        <Reveal as="div" staggerChildren className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+        <Reveal as="div" staggerChildren className="grid grid-cols-2 gap-x-6 gap-y-12">
           {pressEntries
             .filter((entry) => !entry.placeholder)
-            .slice(0, 3)
+            .slice(0, 4)
             .map((entry, i) => (
               <Link
                 key={entry.title + i}
                 href={entry.url ?? "/press"}
                 target={entry.url ? "_blank" : undefined}
                 rel={entry.url ? "noopener noreferrer" : undefined}
-                className="group grid grid-cols-[100px_1fr] items-center gap-6 py-6 sm:grid-cols-[140px_1fr]"
+                className="group block"
               >
                 {entry.logo ? (
-                  <div className="flex aspect-square items-center justify-center bg-[var(--footer-bg)] p-4">
+                  <div className="mb-4 flex aspect-[4/3] items-center justify-center bg-[var(--footer-bg)] p-6 sm:aspect-square">
                     <Image
                       src={entry.logo}
                       alt={`${entry.venue} logo`}
@@ -210,7 +210,7 @@ export default function ArrivalPage() {
                     />
                   </div>
                 ) : (
-                  <div className="aspect-square overflow-hidden bg-[var(--paper-2)]">
+                  <div className="mb-4 aspect-[4/3] overflow-hidden bg-[var(--paper-2)] sm:aspect-square">
                     <Image
                       src={entry.image ?? `/images/press/press-${(i % 3) + 1}.svg`}
                       alt={entry.title}
@@ -221,14 +221,12 @@ export default function ArrivalPage() {
                     />
                   </div>
                 )}
-                <div>
-                  <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
-                    {entry.venue}
-                  </p>
-                  <p className="text-lg leading-snug transition group-hover:text-[var(--accent)]">
-                    {entry.title}
-                  </p>
-                </div>
+                <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+                  {entry.venue}
+                </p>
+                <p className="text-lg leading-snug transition group-hover:text-[var(--accent)]">
+                  {entry.title}
+                </p>
               </Link>
             ))}
         </Reveal>
