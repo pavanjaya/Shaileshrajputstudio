@@ -166,30 +166,31 @@ export default function ArrivalPage() {
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-[320px_1fr] sm:gap-16">
+        <div className="mb-10 flex items-end justify-between gap-6">
           <div>
             <Reveal>
-              <p className="font-sans-ui mb-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+              <p className="font-sans-ui mb-2 flex items-center gap-2 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
                 Exhibitions &amp; Press
               </p>
             </Reveal>
-            <RevealText as="h2" className="mb-8 text-3xl sm:text-4xl">
+            <RevealText as="h2" className="text-3xl sm:text-4xl">
               In the world.
             </RevealText>
-            <Link
-              href="/press"
-              className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)]"
-            >
-              View all news
-              <ArrowIcon className="h-3.5 w-3.5" />
-            </Link>
           </div>
+          <Link
+            href="/press"
+            className="font-sans-ui hidden shrink-0 items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:inline-flex"
+          >
+            View all news
+            <ArrowIcon className="h-3.5 w-3.5" />
+          </Link>
+        </div>
 
-          <Reveal as="div" staggerChildren className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
-            {pressEntries
-              .filter((entry) => !entry.placeholder)
-              .slice(0, 3)
-              .map((entry, i) => (
+        <Reveal as="div" staggerChildren className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+          {pressEntries
+            .filter((entry) => !entry.placeholder)
+            .slice(0, 3)
+            .map((entry, i) => (
               <Link
                 key={entry.title + i}
                 href={entry.url ?? "/press"}
@@ -230,8 +231,15 @@ export default function ArrivalPage() {
                 </div>
               </Link>
             ))}
-          </Reveal>
-        </div>
+        </Reveal>
+
+        <Link
+          href="/press"
+          className="font-sans-ui mt-10 flex items-center justify-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:hidden"
+        >
+          View all news
+          <ArrowIcon className="h-3.5 w-3.5" />
+        </Link>
       </section>
 
       <section className="border-t border-[var(--line)] bg-[var(--ink)] px-6 py-24 text-center text-white">
