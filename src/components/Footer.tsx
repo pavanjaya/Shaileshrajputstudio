@@ -12,7 +12,7 @@ import {
 export function Footer() {
   return (
     <footer className="bg-[var(--footer-bg)]">
-      <div className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-14">
+      <div className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-[104px]">
         <div className="mb-10 grid grid-cols-1 gap-10 sm:grid-cols-4">
           <div className="sm:col-span-2">
             <Image
@@ -97,9 +97,19 @@ export function Footer() {
 
         <div className="font-sans-ui flex flex-col gap-2 text-xs text-[var(--ink)]/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {studio.name}.</p>
-          <Link href="/privacy" className="hover:text-[var(--ink)]">
-            Privacy Policy
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="hover:text-[var(--ink)]">
+              Privacy Policy
+            </Link>
+            <a
+              href="https://www.hueness.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--ink)]"
+            >
+              Made by Hueness
+            </a>
+          </div>
         </div>
       </div>
     </footer>
