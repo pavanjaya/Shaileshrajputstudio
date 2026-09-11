@@ -206,7 +206,7 @@ export default function ArrivalPage() {
                       width={300}
                       height={300}
                       unoptimized
-                      className="h-full w-full object-contain transition duration-500 group-hover:scale-105"
+                      className="h-full w-full scale-[0.84] object-contain transition duration-500 group-hover:scale-[0.882]"
                     />
                   </div>
                 ) : (
