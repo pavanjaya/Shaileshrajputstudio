@@ -11,7 +11,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--line)] bg-[var(--footer-bg)]">
+    <footer className="bg-[var(--footer-bg)]">
       <div className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-14">
         <div className="mb-10 grid grid-cols-1 gap-10 sm:grid-cols-4">
           <div className="sm:col-span-2">
