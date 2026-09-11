@@ -3,6 +3,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/motion/Reveal";
 import { RevealText } from "@/components/motion/RevealText";
+import { PhoneIcon, WhatsAppIcon } from "@/components/ConnectIcons";
 import { studio } from "@/lib/studio";
 
 export const metadata: Metadata = {
@@ -106,6 +107,45 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal delay={0.05}>
+              <div>
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
+                  <PhoneIcon className="h-5 w-5" />
+                </div>
+                <p className="font-sans-ui mb-3 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+                  Phone
+                </p>
+                <a
+                  href={`tel:${studio.phone}`}
+                  className="leading-relaxed text-[var(--ink)] hover:text-[var(--accent)]"
+                >
+                  {/* studio.phone is the raw dialable string (+919967788543) —
+                      display it grouped for readability without touching the
+                      tel: href. */}
+                  +91 {studio.phone.slice(3, 8)} {studio.phone.slice(8)}
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div>
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
+                  <WhatsAppIcon className="h-5 w-5" />
+                </div>
+                <p className="font-sans-ui mb-3 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+                  WhatsApp
+                </p>
+                <a
+                  href={`https://wa.me/${studio.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="leading-relaxed text-[var(--ink)] hover:text-[var(--accent)]"
+                >
+                  Message the studio
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
               <div>
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
                   <MailIcon />
