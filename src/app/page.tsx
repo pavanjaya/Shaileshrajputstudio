@@ -198,7 +198,7 @@ export default function ArrivalPage() {
                 className="group grid grid-cols-[100px_1fr] items-center gap-6 py-6 sm:grid-cols-[140px_1fr]"
               >
                 {entry.logo ? (
-                  <div className="flex aspect-square items-center justify-center border border-[var(--line)] bg-white p-4">
+                  <div className="flex aspect-square items-center justify-center bg-[var(--footer-bg)] p-4">
                     <Image
                       src={entry.logo}
                       alt={`${entry.venue} logo`}

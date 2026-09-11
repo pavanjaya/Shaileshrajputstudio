@@ -95,7 +95,7 @@ export default function PressPage() {
                     className="group grid grid-cols-1 items-center gap-6 py-8 sm:grid-cols-[140px_1fr]"
                   >
                     {entry.logo ? (
-                      <div className="flex aspect-[4/3] items-center justify-center border border-[var(--line)] bg-white p-6 sm:aspect-square">
+                      <div className="flex aspect-[4/3] items-center justify-center bg-[var(--footer-bg)] p-6 sm:aspect-square">
                         <Image
                           src={entry.logo}
                           alt={`${entry.venue} logo`}
