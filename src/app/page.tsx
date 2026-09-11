@@ -11,14 +11,9 @@ import { StoriesFan } from "@/components/StoriesFan";
 import { Reveal } from "@/components/motion/Reveal";
 import { RevealText } from "@/components/motion/RevealText";
 import { Magnetic } from "@/components/motion/Magnetic";
-import { collections, coverImage, getPanchBhuta } from "@/data/collections";
+import { collections, coverImage } from "@/data/collections";
 import { getProductBySlug } from "@/data/products";
 import { pressEntries } from "@/data/press";
-
-// Panch Bhuta's own cover is a placeholder gradient — use one of its real
-// elemental photos (Bhumi) as a nicer representative thumbnail on the
-// homepage's story grid instead.
-const panchBhutaThumb = getPanchBhuta().elements![0];
 
 // A curated set of real, photographed pieces spanning the catalogue's
 // breadth — the homepage's entry point into the full product range.
@@ -44,7 +39,7 @@ const storyTiles = collections.map((c) => ({
   sanskritName: c.sanskritName,
   myth: c.myth,
   elementsCount: c.elements?.length,
-  image: c.elements ? coverImage(panchBhutaThumb) : coverImage(c),
+  image: coverImage(c),
 }));
 
 export default function ArrivalPage() {
