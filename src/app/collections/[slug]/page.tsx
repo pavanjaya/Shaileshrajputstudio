@@ -61,7 +61,7 @@ export default async function CollectionChapterPage({
       <Reveal
         as="section"
         variant="image"
-        className="relative flex h-[80vh] min-h-[480px] items-end overflow-hidden"
+        className="relative flex h-[57.6vh] min-h-[346px] items-end overflow-hidden"
       >
         <Image
           src={coverImage(collection)}
