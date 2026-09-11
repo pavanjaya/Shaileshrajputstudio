@@ -1,11 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { studio } from "@/lib/studio";
-import { PhoneIcon, WhatsAppIcon, EmailIcon, InstagramIcon, FacebookIcon } from "@/components/ConnectIcons";
+import {
+  PhoneIcon,
+  WhatsAppIcon,
+  EmailIcon,
+  InstagramIconFilled,
+  FacebookIconFilled,
+} from "@/components/ConnectIcons";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--line)] bg-[var(--paper)]">
+    <footer className="border-t border-[var(--line)] bg-[var(--footer-bg)]">
       <div className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-14">
         <div className="mb-10 grid grid-cols-1 gap-10 sm:grid-cols-4">
           <div className="sm:col-span-2">
@@ -72,18 +78,18 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow on Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[var(--ink)]/70 transition hover:border-[var(--ink)] hover:text-[var(--ink)]"
+                className="text-[var(--ink)] transition hover:opacity-70"
               >
-                <InstagramIcon className="h-4 w-4" />
+                <InstagramIconFilled className="h-9 w-9" />
               </a>
               <a
                 href={studio.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow on Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[var(--ink)]/70 transition hover:border-[var(--ink)] hover:text-[var(--ink)]"
+                className="text-[var(--ink)] transition hover:opacity-70"
               >
-                <FacebookIcon className="h-4 w-4" />
+                <FacebookIconFilled className="h-9 w-9" />
               </a>
             </div>
           </div>

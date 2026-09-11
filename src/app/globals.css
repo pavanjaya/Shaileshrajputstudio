@@ -53,6 +53,8 @@ button:not(:disabled),
   --accent: #ffad21; /* Amber — used sparingly, interactive/decorative only */
   --ash: #646468; /* Ash Grey */
   --line: #cdc8c3;
+  --footer-bg: #ececea; /* A cooler, neutral off-white for the footer band —
+    distinct from --paper's warmer cream, per the reference swatch. */
 }
 
 html,

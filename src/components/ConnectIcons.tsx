@@ -77,3 +77,64 @@ export function FacebookIcon({ className = "h-4 w-4" }: IconProps) {
     </svg>
   );
 }
+
+// Solid, filled-badge versions — the studio's brand-toned block matching
+// each platform's own mark, rather than an outline redraw. Used for the
+// footer's "Follow" row.
+
+export function FacebookIconFilled({ className = "h-9 w-9" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="12" fill="currentColor" />
+      <path
+        d="M13.6 20v-6.5h2.2l.3-2.5h-2.5V9.4c0-.7.2-1.2 1.3-1.2h1.3V5.9c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.1-3.2 3.3V11H8.7v2.5h2.4V20h2.5Z"
+        fill="var(--paper)"
+      />
+    </svg>
+  );
+}
+
+export function XIcon({ className = "h-9 w-9" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        d="M13.3 10.4 19.8 3h-1.5l-5.6 6.4L8.2 3H3l6.8 9.7L3 20.5h1.5l5.9-6.8 4.7 6.8H20l-6.7-10.1Zm-2.1 2.4-.7-1L5.1 4.1h2.3l4.4 6.3.7 1 5.7 8.2h-2.3l-4.7-6.6Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+export function InstagramIconFilled({ className = "h-9 w-9" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect width="24" height="24" rx="7" fill="currentColor" />
+      <rect x="6.5" y="6.5" width="11" height="11" rx="3.5" stroke="var(--paper)" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="3" stroke="var(--paper)" strokeWidth="1.5" />
+      <circle cx="16.3" cy="7.7" r="0.9" fill="var(--paper)" />
+    </svg>
+  );
+}
+
+export function YouTubeIconFilled({ className = "h-9 w-9" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect y="4" width="24" height="16" rx="6" fill="currentColor" />
+      <path d="M10.3 8.8v6.4l5.6-3.2-5.6-3.2Z" fill="var(--paper)" />
+    </svg>
+  );
+}
+
+export function LinkedInIconFilled({ className = "h-9 w-9" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect width="24" height="24" rx="7" fill="currentColor" />
+      <circle cx="7.3" cy="7.6" r="1.5" fill="var(--paper)" />
+      <rect x="6.1" y="10.4" width="2.4" height="7.3" fill="var(--paper)" />
+      <path
+        d="M11 10.4h2.3v1c.5-.7 1.3-1.2 2.4-1.2 2 0 3 1.3 3 3.6v4h-2.4v-3.6c0-1.1-.4-1.8-1.4-1.8-.8 0-1.3.5-1.5 1-.1.2-.1.5-.1.8v3.6H11v-7.4Z"
+        fill="var(--paper)"
+      />
+    </svg>
+  );
+}
