@@ -186,7 +186,7 @@ export default function ArrivalPage() {
           </Link>
         </div>
 
-        <Reveal as="div" staggerChildren className="grid grid-cols-2 gap-x-6 gap-y-12">
+        <Reveal as="div" staggerChildren className="grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-4">
           {pressEntries
             .filter((entry) => !entry.placeholder)
             .slice(0, 4)
