@@ -29,7 +29,7 @@ export default function PanchBhutaPage() {
       <Reveal
         as="section"
         variant="image"
-        className="relative flex h-[70vh] min-h-[420px] items-end overflow-hidden"
+        className="relative flex h-[50.4vh] min-h-[302px] items-end overflow-hidden"
       >
         <Image
           src={coverImage(panchBhuta)}

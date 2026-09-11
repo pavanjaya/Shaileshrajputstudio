@@ -36,7 +36,7 @@ export function ProductCategoryBrowser({
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 py-12">
+      <div className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pt-12 pb-28">
         {filtered.length === 0 ? (
           <p className="py-16 text-center text-[var(--ink)]/50">
             More pieces from this category are on their way.
