@@ -242,7 +242,7 @@ export default function WorldPage() {
                 i > 0 ? "border-t border-[var(--line)] sm:border-t-0 sm:border-l" : ""
               }`}
             >
-              <b.icon className="mb-5 h-7 w-7 text-[var(--accent)]" />
+              <b.icon className="mb-6 h-11 w-11 text-[var(--accent)] sm:h-12 sm:w-12" />
               <h2 className="mb-4 text-sm tracking-[0.15em] text-[var(--ash)] uppercase">
                 {b.name}
               </h2>
@@ -264,7 +264,7 @@ export default function WorldPage() {
               key={v.name}
               className="group flex gap-5 border-t border-[var(--line)] py-8 first:border-t sm:py-10"
             >
-              <v.icon className="mt-1 h-6 w-6 shrink-0 text-[var(--ink)]/30 transition-colors duration-300 group-hover:text-[var(--accent)]" />
+              <v.icon className="mt-1 h-8 w-8 shrink-0 text-[var(--ink)]/30 transition-colors duration-300 group-hover:text-[var(--accent)]" />
               <div>
                 <h3 className="mb-2 text-xl">{v.name}</h3>
                 <p className="text-[var(--ink)]/70 leading-relaxed">{v.description}</p>
