@@ -16,17 +16,6 @@ export const metadata: Metadata = {
 const exhibitionEntries = pressEntries.filter((entry) => entry.category === "Exhibition");
 const pressOnlyEntries = pressEntries.filter((entry) => entry.category === "Press");
 
-// Real photos from the studio's own exhibitions/design weeks — not tied to
-// a specific named show in our data, so shown as a general gallery rather
-// than captioned with an exhibition name we don't actually have.
-const exhibitionPhotos = [
-  "/images/world-gallery/design-week.png",
-  "/images/world-gallery/exhibition-floor.png",
-  "/images/world-gallery/the-team.png",
-  "/images/world-gallery/in-the-making.png",
-  "/images/world-gallery/tribe.png",
-];
-
 export default function PressPage() {
   return (
     <>
@@ -53,44 +42,27 @@ export default function PressPage() {
       <div className="mx-auto max-w-5xl px-6 pb-24">
         <PressTabs
           exhibitions={
-            <div>
-              <Reveal as="div" staggerChildren className="mb-14 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {exhibitionPhotos.map((src) => (
-                  <div key={src} className="aspect-[4/5] overflow-hidden">
+            <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2">
+              {exhibitionEntries.map((entry, i) => (
+                <div key={entry.title + i} className="group">
+                  <div className="mb-5 aspect-[4/5] overflow-hidden bg-[var(--paper-2)]">
                     <Image
-                      src={src}
-                      alt="The studio at a design exhibition"
+                      src={entry.image ?? `/images/press/press-${(i % 3) + 1}.svg`}
+                      alt={entry.title}
                       width={500}
                       height={625}
                       unoptimized
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>
-                ))}
-              </Reveal>
-
-              <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2">
-                {exhibitionEntries.map((entry, i) => (
-                  <div key={entry.title + i} className="group">
-                    <div className="mb-5 aspect-[4/5] overflow-hidden bg-[var(--paper-2)]">
-                      <Image
-                        src={entry.image ?? `/images/press/press-${(i % 3) + 1}.svg`}
-                        alt={entry.title}
-                        width={500}
-                        height={625}
-                        unoptimized
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
-                      {entry.venue} · {entry.year} · {entry.status}
-                    </p>
-                    <h2 className="text-xl">{entry.title}</h2>
-                    <p className="mt-1 text-sm text-[var(--ink)]/60">{entry.description}</p>
-                  </div>
-                ))}
-              </Reveal>
-            </div>
+                  <p className="font-sans-ui mb-1 text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
+                    {entry.venue} · {entry.year} · {entry.status}
+                  </p>
+                  <h2 className="text-xl">{entry.title}</h2>
+                  <p className="mt-1 text-sm text-[var(--ink)]/60">{entry.description}</p>
+                </div>
+              ))}
+            </Reveal>
           }
           press={
             <Reveal as="div" staggerChildren className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
