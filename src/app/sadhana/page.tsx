@@ -137,13 +137,13 @@ export default function SadhanaPage() {
 
       <section className="mx-auto max-w-5xl px-6 py-20">
         <Reveal>
-          <p className="font-sans-ui mb-10 text-center text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+          <p className="font-sans-ui mb-14 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
             Design Principles
           </p>
         </Reveal>
-        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {principles.map((p) => (
-            <div key={p.name} className="border-t border-[var(--line)] pt-5">
+            <div key={p.name}>
               <p.icon className="mb-4 h-9 w-9 text-[var(--accent)]" />
               <h3 className="mb-2 text-lg">{p.name}</h3>
               <p className="text-sm text-[var(--ink)]/70 leading-relaxed">{p.description}</p>
