@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { FilmThumb } from "@/components/FilmThumb";
 import { Reveal } from "@/components/motion/Reveal";
 import { RevealText } from "@/components/motion/RevealText";
 import { getPanchBhuta, getElements, getStoryCollections, filmPoster } from "@/data/collections";
@@ -48,8 +49,11 @@ export default function FilmsPage() {
       </section>
 
       <div className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
-        {filmGroups.map((g) => (
-          <section key={g.slug} className="mb-16">
+        {filmGroups.map((g, i) => (
+          <section
+            key={g.slug}
+            className={`mb-16 ${i > 0 ? "border-t border-[#EFE8D5] pt-16" : ""}`}
+          >
             <div className="mb-6 flex items-baseline justify-between">
               <h2 className="text-xl">{g.title}</h2>
               <Link
@@ -63,23 +67,11 @@ export default function FilmsPage() {
             <Reveal as="div" staggerChildren className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-6">
               {g.films.map((film) =>
                 film.videoSrc ? (
-                  <div
+                  <FilmThumb
                     key={film.slug}
-                    className="group relative mx-auto w-full max-w-[180px] overflow-hidden rounded-2xl bg-[var(--ink)]"
-                  >
-                    <div className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-black/70 to-transparent px-3 pt-3 pb-8 text-white">
-                      <p className="text-sm">{film.title}</p>
-                      <p className="font-sans-ui text-xs text-white/70">{film.type}</p>
-                    </div>
-                    <video
-                      controls
-                      preload="none"
-                      poster={filmPoster(film)}
-                      className="aspect-[9/16] w-full object-cover"
-                    >
-                      <source src={film.videoSrc} type="video/mp4" />
-                    </video>
-                  </div>
+                    film={film as typeof film & { videoSrc: string }}
+                    poster={filmPoster(film)}
+                  />
                 ) : (
                   <div
                     key={film.slug}

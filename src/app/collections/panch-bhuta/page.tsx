@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { FilmThumb } from "@/components/FilmThumb";
 import { getPanchBhuta, getElements, coverImage, filmPoster } from "@/data/collections";
 import { getProductsBySeries } from "@/data/products";
 import { ElementBrowser } from "@/components/ElementBrowser";
@@ -64,23 +65,11 @@ export default function PanchBhutaPage() {
         <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-20">
           <Reveal as="div" staggerChildren className="flex flex-wrap justify-center gap-4">
             {panchBhuta.films.map((film) => (
-              <div
+              <FilmThumb
                 key={film.slug}
-                className="group relative w-full max-w-[180px] overflow-hidden rounded-2xl bg-[var(--ink)]"
-              >
-                <div className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-black/70 to-transparent px-3 pt-3 pb-8 text-white">
-                  <p className="text-sm">{film.title}</p>
-                  <p className="font-sans-ui text-xs text-white/70">{film.type}</p>
-                </div>
-                <video
-                  controls
-                  preload="none"
-                  poster={filmPoster(film)}
-                  className="aspect-[9/16] w-full object-cover"
-                >
-                  <source src={film.videoSrc} type="video/mp4" />
-                </video>
-              </div>
+                film={film as typeof film & { videoSrc: string }}
+                poster={filmPoster(film)}
+              />
             ))}
           </Reveal>
         </section>

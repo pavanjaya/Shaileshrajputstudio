@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { FilmThumb } from "@/components/FilmThumb";
 import { Reveal } from "@/components/motion/Reveal";
 import { RevealText } from "@/components/motion/RevealText";
 import { Magnetic } from "@/components/motion/Magnetic";
@@ -96,23 +97,11 @@ export default async function CollectionChapterPage({
         <Reveal as="div" staggerChildren className="flex flex-wrap justify-center gap-4">
           {collection.films.map((film) =>
             film.videoSrc ? (
-              <div
+              <FilmThumb
                 key={film.slug}
-                className="group relative w-full max-w-[180px] overflow-hidden rounded-2xl bg-[var(--ink)]"
-              >
-                <div className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-black/70 to-transparent px-3 pt-3 pb-8 text-white">
-                  <p className="text-sm">{film.title}</p>
-                  <p className="font-sans-ui text-xs text-white/70">{film.type}</p>
-                </div>
-                <video
-                  controls
-                  preload="none"
-                  poster={filmPoster(film)}
-                  className="aspect-[9/16] w-full object-cover"
-                >
-                  <source src={film.videoSrc} type="video/mp4" />
-                </video>
-              </div>
+                film={film as typeof film & { videoSrc: string }}
+                poster={filmPoster(film)}
+              />
             ) : (
               <Link
                 key={film.slug}
