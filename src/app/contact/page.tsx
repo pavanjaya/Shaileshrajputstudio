@@ -87,7 +87,7 @@ export default function ContactPage() {
           </p>
         </Reveal>
         <RevealText as="h1" className="mb-6 text-4xl leading-tight sm:text-5xl">
-          Visit the studio, or write to us.
+          Find the studio, or reach us directly.
         </RevealText>
         <Reveal delay={0.05}>
           <p className="text-[var(--ink)]/70 leading-relaxed">
@@ -95,27 +95,16 @@ export default function ContactPage() {
             visit, or send a note directly.
           </p>
         </Reveal>
-        <Reveal delay={0.1}>
-          <p className="font-sans-ui mt-5 text-sm text-[var(--ink)]/60">
-            Already know what you&apos;re drawn to?{" "}
-            <Link
-              href="/acquire"
-              className="text-[var(--ink)] underline decoration-[var(--line)] underline-offset-4 hover:decoration-[var(--ink)]"
-            >
-              Converse
-            </Link>{" "}
-            is the quicker way to start.
-          </p>
-        </Reveal>
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 pb-24 sm:px-10 lg:px-16">
-        <Reveal
-          as="div"
-          staggerChildren
-          className="grid grid-cols-1 items-start gap-10 sm:grid-cols-2 sm:gap-16"
-        >
-          <div className="flex flex-col gap-6">
+        <div className="rounded-2xl border border-[var(--line)] p-6 sm:p-10">
+          <Reveal
+            as="div"
+            staggerChildren
+            className="grid grid-cols-1 items-start gap-10 sm:grid-cols-2 sm:gap-16"
+          >
+            <div className="flex flex-col gap-6">
             <Reveal>
               <div>
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
@@ -187,7 +176,7 @@ export default function ContactPage() {
             </Reveal>
           </div>
 
-          <div className="relative h-[420px] sm:h-[480px]">
+          <div className="relative h-[420px] overflow-hidden rounded-xl sm:h-[480px]">
             <iframe
               src={mapsEmbedUrl}
               title="Shailesh Rajput Studio — Location"
@@ -206,6 +195,20 @@ export default function ContactPage() {
               <ArrowUpRightIcon />
             </a>
           </div>
+          </Reveal>
+        </div>
+
+        <Reveal delay={0.1}>
+          <p className="font-sans-ui mx-auto mt-8 max-w-xl text-center text-sm text-[var(--ink)]/60">
+            Already know what you&apos;re drawn to?{" "}
+            <Link
+              href="/acquire"
+              className="text-[var(--ink)] underline decoration-[var(--line)] underline-offset-4 hover:decoration-[var(--ink)]"
+            >
+              Converse
+            </Link>{" "}
+            is the quicker way to start.
+          </p>
         </Reveal>
       </section>
 

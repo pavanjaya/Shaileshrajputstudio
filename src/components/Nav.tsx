@@ -11,7 +11,7 @@ import { Magnetic } from "@/components/motion/Magnetic";
 const links = [
   { href: "/products", label: "Products" },
   { href: "/collections", label: "Stories" },
-  { href: "/world", label: "The World" },
+  { href: "/world", label: "The Studio" },
   { href: "/sadhana", label: "Sadhana" },
   { href: "/films", label: "Films" },
   { href: "/press", label: "Exhibitions & Press" },

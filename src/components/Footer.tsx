@@ -47,7 +47,7 @@ export function Footer() {
             <ul className="space-y-2 text-[var(--ink)]/70">
               <li><Link href="/products" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Products</Link></li>
               <li><Link href="/collections" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Stories</Link></li>
-              <li><Link href="/world" className={`hover:text-[var(--ink)] ${linkUnderline}`}>The World</Link></li>
+              <li><Link href="/world" className={`hover:text-[var(--ink)] ${linkUnderline}`}>The Studio</Link></li>
               <li><Link href="/sadhana" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Sadhana</Link></li>
               <li><Link href="/films" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Films</Link></li>
               <li><Link href="/press" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Exhibitions &amp; Press</Link></li>
