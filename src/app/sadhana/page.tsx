@@ -139,7 +139,7 @@ export default function SadhanaPage() {
       <section className="mx-auto max-w-5xl px-6 py-20">
         <Reveal>
           <p className="font-sans-ui mb-10 text-center text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-            Our Belief System
+            Design Principles
           </p>
         </Reveal>
         <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
