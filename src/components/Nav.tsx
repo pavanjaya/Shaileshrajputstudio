@@ -43,13 +43,20 @@ export function Nav() {
     if (!open || !el) return;
     // A quick stagger-in each time the mobile menu opens — skipped
     // entirely under reduced motion, where the menu just appears.
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const items = el.children;
-    gsap.fromTo(
-      items,
-      { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.05 },
-    );
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const items = el.children;
+      gsap.fromTo(
+        items,
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.05, delay: 0.1 },
+      );
+    }
+    // Full-page takeover — lock the page behind it from scrolling while open.
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
   }, [open]);
 
   // On the homepage the nav starts transparent, overlaid on the full-bleed
@@ -59,12 +66,16 @@ export function Nav() {
   // the hero it switches to the same solid paper background every other
   // page uses, since white-on-transparent would be illegible over content.
   const transparentHome = isHome && !scrolled;
+  // While the full-page mobile menu is open, the header row above it should
+  // read as one continuous dark takeover rather than keeping whatever
+  // paper/transparent state the page scroll position happened to be in.
+  const darkChrome = transparentHome || open;
 
   return (
     <header
-      className={`font-sans-ui top-0 z-50 transition-colors ${
+      className={`font-sans-ui top-0 z-50 transition-colors duration-300 ${
         isHome ? "fixed inset-x-0" : "sticky"
-      } ${transparentHome ? "" : "bg-[var(--paper)]/95 backdrop-blur"}`}
+      } ${open ? "bg-[var(--ink)]" : transparentHome ? "" : "bg-[var(--paper)]/95 backdrop-blur"}`}
     >
       <div className="mx-auto flex max-w-[1800px] items-center justify-between px-6 sm:px-10 lg:px-16 py-5">
         <Link href="/" className="block" onClick={() => setOpen(false)}>
@@ -75,7 +86,7 @@ export function Nav() {
             height={366}
             priority
             unoptimized
-            className={`h-[37px] w-auto transition sm:h-[42px] ${transparentHome ? "brightness-0 invert" : ""}`}
+            className={`h-[37px] w-auto transition sm:h-[42px] ${darkChrome ? "brightness-0 invert" : ""}`}
           />
         </Link>
 
@@ -127,52 +138,52 @@ export function Nav() {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="relative z-10 flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <span
             className={`h-px w-6 transition-transform duration-300 ${
-              transparentHome ? "bg-white" : "bg-[var(--ink)]"
+              darkChrome ? "bg-white" : "bg-[var(--ink)]"
             } ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
           />
           <span
             className={`h-px w-6 transition-transform duration-300 ${
-              transparentHome ? "bg-white" : "bg-[var(--ink)]"
+              darkChrome ? "bg-white" : "bg-[var(--ink)]"
             } ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
           />
         </button>
       </div>
 
-      {open && (
-        <nav
-          ref={mobileMenuRef}
-          className="flex flex-col gap-1 bg-[var(--paper)] px-6 pb-6 text-base md:hidden"
+      <nav
+        ref={mobileMenuRef}
+        aria-hidden={!open}
+        className={`fixed inset-x-0 top-[77px] bottom-0 z-40 flex flex-col justify-center gap-2 bg-[var(--ink)] px-6 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
+          open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
+        }`}
+      >
+        {links.map((link) => {
+          const active = pathname.startsWith(link.href);
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className={`py-2.5 text-3xl ${active ? "text-white" : "text-white/60"}`}
+            >
+              {link.label}
+              {active && <span className="ml-2 text-[var(--accent)]">·</span>}
+            </Link>
+          );
+        })}
+        <Link
+          href="/acquire"
+          onClick={() => setOpen(false)}
+          className="mt-8 rounded-full bg-white px-5 py-3.5 text-center text-lg text-[var(--ink)]"
         >
-          {links.map((link) => {
-            const active = pathname.startsWith(link.href);
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={`border-b border-[var(--line)] py-3 ${
-                  active ? "text-[var(--ink)]" : "text-[var(--ink)]/60"
-                }`}
-              >
-                {link.label}
-                {active && <span className="ml-2 text-[var(--accent)]">·</span>}
-              </Link>
-            );
-          })}
-          <Link
-            href="/acquire"
-            onClick={() => setOpen(false)}
-            className="mt-4 rounded-full bg-[var(--ink)] px-5 py-3 text-center text-white"
-          >
-            Converse
-          </Link>
-        </nav>
-      )}
+          Converse
+        </Link>
+      </nav>
     </header>
   );
 }
