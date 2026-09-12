@@ -82,7 +82,7 @@ export default function SadhanaPage() {
         </div>
       </section>
 
-      <section className="border-t border-[var(--line)] bg-[var(--paper-2)] px-6 py-20">
+      <section className="border-t border-[var(--line)] bg-[var(--footer-bg)] px-6 py-20">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 sm:grid-cols-2 sm:gap-16">
           <div className="order-2 sm:order-1">
             <Reveal>
@@ -119,7 +119,7 @@ export default function SadhanaPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           {["/images/stills/aranya-still-1.jpg", "/images/stills/aranya-still-2.jpg", "/images/stills/aranya-still-3.jpg"].map(
             (src) => (
               <div key={src} className="relative aspect-[4/5] overflow-hidden">
@@ -139,7 +139,7 @@ export default function SadhanaPage() {
       <section className="mx-auto max-w-5xl px-6 py-20">
         <Reveal>
           <p className="font-sans-ui mb-10 text-center text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
-            Design Principles
+            Our Belief System
           </p>
         </Reveal>
         <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
