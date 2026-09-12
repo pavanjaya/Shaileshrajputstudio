@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import type { Product, ProductCategory } from "@/data/products";
 import { Reveal } from "@/components/motion/Reveal";
 
@@ -13,7 +14,15 @@ export function ProductCategoryBrowser({
   categories: readonly ProductCategory[];
   products: Product[];
 }) {
-  const [active, setActive] = useState<ProductCategory>(categories[0]);
+  // Lets a link like /products?category=Table%20Lights (e.g. from the
+  // catalogue-sharing tool) land directly on that tab instead of always
+  // opening on the first category. Read once at mount — clicking a tab
+  // afterward is still plain client state, same as before.
+  const searchParams = useSearchParams();
+  const requestedCategory = searchParams.get("category");
+  const [active, setActive] = useState<ProductCategory>(
+    () => categories.find((c) => c === requestedCategory) ?? categories[0],
+  );
   const filtered = products.filter((p) => p.category === active);
 
   return (

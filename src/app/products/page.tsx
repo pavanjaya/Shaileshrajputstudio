@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ProductCategoryBrowser } from "@/components/ProductCategoryBrowser";
@@ -27,7 +28,9 @@ export default function ProductsPage() {
         </Reveal>
       </section>
 
-      <ProductCategoryBrowser categories={productCategories} products={products} />
+      <Suspense fallback={null}>
+        <ProductCategoryBrowser categories={productCategories} products={products} />
+      </Suspense>
 
       <Footer />
     </>
