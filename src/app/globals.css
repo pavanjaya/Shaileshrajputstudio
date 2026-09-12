@@ -63,6 +63,19 @@ body {
   color: var(--ink);
 }
 
+/* App-level mobile polish: no gray tap-flash on links/buttons (the
+   clearest "this is a webpage" tell on Android Chrome), and no automatic
+   text-size inflation when the phone is rotated to landscape — both are
+   desktop-web defaults that read as un-native the moment you touch them. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   font-family: var(--font-annapurna), Georgia, "Times New Roman", serif;
 }

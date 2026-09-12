@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Duru_Sans } from "next/font/google";
 import { FloatingContact } from "@/components/FloatingContact";
@@ -34,6 +34,18 @@ export const metadata: Metadata = {
   },
   description:
     "Shailesh Rajput Studio is a design practice creating sculptural lighting, objects, and experiences inspired by the intelligence of nature.",
+};
+
+// viewportFit: "cover" lets the page draw edge-to-edge under an iPhone's
+// notch/home-indicator, which is what makes env(safe-area-inset-*) below
+// actually resolve to something other than 0 — without it, fixed elements
+// (the floating contact button, the full-page mobile nav) just sit at a
+// hardcoded offset that either wastes space or crowds the home indicator
+// depending on the device, rather than adapting to it.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

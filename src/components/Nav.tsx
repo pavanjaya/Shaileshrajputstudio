@@ -138,7 +138,7 @@ export function Nav() {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="relative z-10 flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="relative z-10 -mr-2.5 flex h-11 w-11 flex-col items-center justify-center gap-1.5 md:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
@@ -161,6 +161,7 @@ export function Nav() {
         className={`fixed inset-x-0 top-[77px] bottom-0 z-40 flex flex-col justify-center gap-2 bg-[var(--ink)] px-6 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
           open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
         }`}
+        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         {links.map((link) => {
           const active = pathname.startsWith(link.href);

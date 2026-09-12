@@ -64,7 +64,7 @@ export function AcquireForm({
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+            className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-base text-[var(--ink)] outline-none sm:text-sm focus:border-[var(--ink)]"
           />
         </div>
         <div>
@@ -74,7 +74,7 @@ export function AcquireForm({
           <input
             value={contact}
             onChange={(e) => setContact(e.target.value)}
-            className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+            className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-base text-[var(--ink)] outline-none sm:text-sm focus:border-[var(--ink)]"
           />
         </div>
       </div>
@@ -87,7 +87,7 @@ export function AcquireForm({
           <select
             value={piece}
             onChange={(e) => setPiece(e.target.value)}
-            className="w-full appearance-none rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 pr-11 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+            className="w-full appearance-none rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 pr-11 text-base text-[var(--ink)] outline-none sm:text-sm focus:border-[var(--ink)]"
           >
             <option value="">Not sure yet</option>
             {pieces.map((p) => (
@@ -136,7 +136,7 @@ export function AcquireForm({
         <input
           value={geography}
           onChange={(e) => setGeography(e.target.value)}
-          className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+          className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-base text-[var(--ink)] outline-none sm:text-sm focus:border-[var(--ink)]"
         />
       </div>
 
@@ -148,7 +148,7 @@ export function AcquireForm({
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           rows={4}
-          className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+          className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-base text-[var(--ink)] outline-none sm:text-sm focus:border-[var(--ink)]"
         />
       </div>
 

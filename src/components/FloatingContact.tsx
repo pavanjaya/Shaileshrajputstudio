@@ -54,8 +54,14 @@ export function FloatingContact() {
 
   return (
     // bottom-24 (not bottom-6) so this clears StickyEnquire's ~76px-tall
-    // bottom bar on product pages instead of overlapping it.
-    <div className="font-sans-ui fixed right-6 bottom-24 z-40 flex flex-col items-end gap-3">
+    // bottom bar on product pages instead of overlapping it — plus the
+    // device's own safe-area inset, so it never crowds an iPhone's home
+    // indicator (that inset is 0 on devices without one, so this is a
+    // no-op there).
+    <div
+      className="font-sans-ui fixed right-6 z-40 flex flex-col items-end gap-3"
+      style={{ bottom: "calc(6rem + env(safe-area-inset-bottom))" }}
+    >
       {open && (
         <div className="animate-fade-up flex flex-col items-end gap-2">
           {options.map(({ label, href, icon: Icon, external }) => (

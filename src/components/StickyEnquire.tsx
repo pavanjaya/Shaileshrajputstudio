@@ -38,9 +38,10 @@ export function StickyEnquire({ slug, label }: { slug: string; label: string }) 
   return (
     <div
       aria-hidden={!visible}
-      className={`font-sans-ui fixed inset-x-0 bottom-0 z-40 border-t border-[var(--line)] bg-[var(--paper)]/95 px-6 sm:px-10 lg:px-16 py-4 backdrop-blur transition-transform duration-300 ${
+      className={`font-sans-ui fixed inset-x-0 bottom-0 z-40 border-t border-[var(--line)] bg-[var(--paper)]/95 px-6 sm:px-10 lg:px-16 pt-4 backdrop-blur transition-transform duration-300 ${
         visible ? "translate-y-0 pointer-events-auto" : "translate-y-full pointer-events-none"
       }`}
+      style={{ paddingBottom: "calc(1rem + env(safe-area-inset-bottom))" }}
     >
       <div className="mx-auto flex max-w-[1800px] items-center justify-between gap-4">
         <p className="hidden truncate text-sm text-[var(--ink)]/70 sm:block">{label}</p>
