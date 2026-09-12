@@ -113,9 +113,9 @@ export default function ContactPage() {
         <Reveal
           as="div"
           staggerChildren
-          className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16"
+          className="grid grid-cols-1 items-start gap-10 sm:grid-cols-2 sm:gap-16"
         >
-          <div className="flex flex-col justify-center gap-10">
+          <div className="flex flex-col gap-6">
             <Reveal>
               <div>
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-white">
@@ -187,7 +187,7 @@ export default function ContactPage() {
             </Reveal>
           </div>
 
-          <div className="relative h-[420px] sm:h-auto sm:min-h-[420px]">
+          <div className="relative h-[420px] sm:h-[480px]">
             <iframe
               src={mapsEmbedUrl}
               title="Shailesh Rajput Studio — Location"
