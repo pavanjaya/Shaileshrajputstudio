@@ -106,7 +106,7 @@ export default function PressPage() {
                       <h2 className="text-xl transition group-hover:text-[var(--accent)]">{entry.title}</h2>
                       <p className="mt-1 text-sm text-[var(--ink)]/60">{entry.description}</p>
                       {entry.url && (
-                        <span className="font-sans-ui mt-2 inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/70 transition group-hover:text-[var(--ink)]">
+                        <span className="font-sans-ui mt-2 inline-flex items-center gap-1.5 text-base text-[var(--ink)]/70 transition group-hover:text-[var(--ink)]">
                           Read the feature
                           <ArrowIcon className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
                         </span>

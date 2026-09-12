@@ -258,7 +258,7 @@ export default function WorldPage() {
           <Coil className="h-4 w-4 text-[var(--accent)]" />
           Core Values
         </p>
-        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-10 gap-y-0 sm:grid-cols-2">
+        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-10 gap-y-0 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
             <div
               key={v.name}

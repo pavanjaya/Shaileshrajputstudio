@@ -9,8 +9,7 @@ export const studio = {
   facebook: "https://www.facebook.com/ShaileshRajputStudio",
   address: {
     lines: [
-      "Studio No. 19, Ground Floor,",
-      "11 Cama Industrial Estate, Opposite Post Office,",
+      "Studio No. 19, Ground Floor, 11 Cama Industrial Estate, Opposite Post Office,",
       "Sitaram Jadhav Marg, Sun Mill Compound, Lower Parel, Mumbai - 400013",
     ],
     full: "Studio No. 19, Ground Floor, 11 Cama Industrial Estate, Opposite Post Office, Sitaram Jadhav Marg, Sun Mill Compound, Lower Parel, Mumbai - 400013",

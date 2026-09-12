@@ -54,7 +54,7 @@ export default function FilmsPage() {
               <h2 className="text-xl">{g.title}</h2>
               <Link
                 href={g.href}
-                className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)]"
+                className="font-sans-ui inline-flex items-center gap-1.5 text-base text-[var(--ink)]/60 hover:text-[var(--ink)]"
               >
                 View collection
                 <ArrowIcon className="h-3.5 w-3.5" />

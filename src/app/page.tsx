@@ -86,7 +86,7 @@ export default function ArrivalPage() {
         <Reveal delay={0.2}>
           <Link
             href="/world"
-            className="font-sans-ui inline-flex items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)]"
+            className="font-sans-ui inline-flex items-center gap-1.5 text-base text-[var(--ink)]/60 hover:text-[var(--ink)]"
           >
             Learn more about the studio
             <ArrowIcon className="h-3.5 w-3.5" />
@@ -108,7 +108,7 @@ export default function ArrivalPage() {
           </div>
           <Link
             href="/products"
-            className="font-sans-ui hidden shrink-0 items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:inline-flex"
+            className="font-sans-ui hidden shrink-0 items-center gap-1.5 text-base text-[var(--ink)]/60 hover:text-[var(--ink)] sm:inline-flex"
           >
             View all products
             <ArrowIcon className="h-3.5 w-3.5" />
@@ -121,7 +121,7 @@ export default function ArrivalPage() {
 
         <Link
           href="/products"
-          className="font-sans-ui mt-10 flex items-center justify-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:hidden"
+          className="font-sans-ui mt-10 flex items-center justify-center gap-1.5 text-base text-[var(--ink)]/60 hover:text-[var(--ink)] sm:hidden"
         >
           View all products
           <ArrowIcon className="h-3.5 w-3.5" />
@@ -160,7 +160,7 @@ export default function ArrivalPage() {
           </div>
           <Link
             href="/collections"
-            className="font-sans-ui hidden shrink-0 items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:inline-flex"
+            className="font-sans-ui hidden shrink-0 items-center gap-1.5 text-base text-[var(--ink)]/60 hover:text-[var(--ink)] sm:inline-flex"
           >
             View all stories
             <ArrowIcon className="h-3.5 w-3.5" />
@@ -186,7 +186,7 @@ export default function ArrivalPage() {
           </div>
           <Link
             href="/press"
-            className="font-sans-ui hidden shrink-0 items-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:inline-flex"
+            className="font-sans-ui hidden shrink-0 items-center gap-1.5 text-base text-[var(--ink)]/60 hover:text-[var(--ink)] sm:inline-flex"
           >
             View all news
             <ArrowIcon className="h-3.5 w-3.5" />
@@ -240,7 +240,7 @@ export default function ArrivalPage() {
 
         <Link
           href="/press"
-          className="font-sans-ui mt-10 flex items-center justify-center gap-1.5 text-sm text-[var(--ink)]/60 hover:text-[var(--ink)] sm:hidden"
+          className="font-sans-ui mt-10 flex items-center justify-center gap-1.5 text-base text-[var(--ink)]/60 hover:text-[var(--ink)] sm:hidden"
         >
           View all news
           <ArrowIcon className="h-3.5 w-3.5" />
