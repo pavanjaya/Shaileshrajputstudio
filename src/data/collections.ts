@@ -70,8 +70,8 @@ const panchBhutaElements: Element[] = [
     coverExt: "png",
     stillsExt: "svg",
     placeholder: true,
-    myth: "Grounded, unhurried, load-bearing — this collection begins where the studio begins: with clay, stone, and the patience of things that do not rush to be shaped.",
-    materialStory: "Cast and hand-finished forms rooted in mineral weight — clay bodies, patinated bronze, stone dust bound into surface.",
+    myth: "Grounded, unhurried, load-bearing, this collection begins where the studio begins: with clay, stone, and the patience of things that do not rush to be shaped.",
+    materialStory: "Cast and hand-finished forms rooted in mineral weight, clay bodies, patinated bronze, stone dust bound into surface.",
     films: [
       { slug: "bhumi-i", title: "Bhumi — Origin", duration: "2:14", type: "Collection Film" },
       { slug: "bhumi-ii", title: "Bhumi — Process", duration: "3:02", type: "Process Film" },
@@ -86,7 +86,7 @@ const panchBhutaElements: Element[] = [
     coverExt: "png",
     stillsExt: "svg",
     placeholder: true,
-    myth: "Movement without violence. Jal traces the coil language back to its source — the way water finds form only by yielding to it.",
+    myth: "Movement without violence. Jal traces the coil language back to its source, the way water finds form only by yielding to it.",
     materialStory: "Fluid silhouettes in blown glass and polished bronze, surfaces treated to hold and release light like water holds a reflection.",
     films: [
       { slug: "jal-i", title: "Jal — Origin", duration: "2:31", type: "Collection Film" },
@@ -102,7 +102,7 @@ const panchBhutaElements: Element[] = [
     coverExt: "png",
     stillsExt: "svg",
     placeholder: true,
-    myth: "Transformation, witnessed. Every piece in Agni passed through heat that changed it permanently — the studio's most literal act of reincarnation.",
+    myth: "Transformation, witnessed. Every piece in Agni passed through heat that changed it permanently, the studio's most literal act of reincarnation.",
     materialStory: "Fire-cast bronze and blown glass, finished with heat-treated patinas that can never be exactly repeated.",
     films: [
       { slug: "agni-i", title: "Agni — Origin", duration: "2:47", type: "Collection Film" },
@@ -118,7 +118,7 @@ const panchBhutaElements: Element[] = [
     coverExt: "png",
     stillsExt: "svg",
     placeholder: true,
-    myth: "The lightest collection, in weight and in intention — forms that seem to hover, lit from within, carrying almost nothing but presence.",
+    myth: "The lightest collection, in weight and in intention, forms that seem to hover, lit from within, carrying almost nothing but presence.",
     materialStory: "Suspended lighting in hand-worked metal mesh and blown glass, engineered to feel weightless despite their scale.",
     films: [
       { slug: "vayu-i", title: "Vayu — Origin", duration: "2:22", type: "Collection Film" },
@@ -134,7 +134,7 @@ const panchBhutaElements: Element[] = [
     coverExt: "png",
     stillsExt: "svg",
     placeholder: true,
-    myth: "The element with no form of its own — Vyom is the collection built around negative space, where what is left out matters as much as what is made.",
+    myth: "The element with no form of its own, Vyom is the collection built around negative space, where what is left out matters as much as what is made.",
     materialStory: "Sculptural voids in cast bronze and blackened steel, designed to be read as much by their shadow as their surface.",
     films: [
       { slug: "vyom-i", title: "Vyom — Origin", duration: "2:09", type: "Collection Film" },
@@ -150,7 +150,7 @@ const panchBhutaElements: Element[] = [
     coverExt: "png",
     stillsExt: "svg",
     placeholder: true,
-    myth: "Beyond the five elements — Dhatu is the studio's material signature made explicit: bronze, brass and iron, worked by hand until the metal remembers the maker's pressure.",
+    myth: "Beyond the five elements, Dhatu is the studio's material signature made explicit: bronze, brass and iron, worked by hand until the metal remembers the maker's pressure.",
     materialStory: "Hand-hammered and cast metalwork, left to patina naturally rather than sealed against time.",
     films: [
       { slug: "dhatu-i", title: "Dhatu — Origin", duration: "2:58", type: "Collection Film" },
@@ -170,7 +170,7 @@ export const collections: Collection[] = [
     placeholder: false,
     // Real copy, from the studio's own Panch Bhuta story materials.
     myth: "This collection is an exploration of the five elements that build our universe. Each piece is an invitation to witness the delicate balance between creation and destruction, stillness and motion, presence and absence. The elements are alive and ever-changing.",
-    materialStory: "Each element carries its own material language — clay and stone for Bhumi, blown glass for Jal, fire-cast bronze for Agni, suspended metal mesh for Vayu, cast voids for Vyom, and hand-worked metal for Dhatu.",
+    materialStory: "Each element carries its own material language, clay and stone for Bhumi, blown glass for Jal, fire-cast bronze for Agni, suspended metal mesh for Vayu, cast voids for Vyom, and hand-worked metal for Dhatu.",
     films: [
       { slug: "panch-bhuta-cinematic", title: "Panch Bhuta — Cinematic", duration: "—", type: "Brand Film", videoSrc: "/videos/panch-bhuta/cinematic.mp4" },
       { slug: "panch-bhuta-product", title: "Panch Bhuta — Product", duration: "—", type: "Collection Film", videoSrc: "/videos/panch-bhuta/product.mp4" },
@@ -187,8 +187,8 @@ export const collections: Collection[] = [
     coverExt: "jpg",
     stillsExt: "jpg",
     placeholder: false,
-    myth: "This series is a tribute to the mystic poet Saint Kabir, whose verses speak beyond time, language, and religion. Each light draws from his wisdom — simple in form, profound in meaning — reminding us that truth is not found outside, but within.",
-    materialStory: "Each piece is carried the way Kabir himself was said to carry his own lamp — a wandering jhola strung with light, a humble bowl, a quiet glow — handcrafted in stainless steel, wire mesh, and blown glass.",
+    myth: "This series is a tribute to the mystic poet Saint Kabir, whose verses speak beyond time, language, and religion. Each light draws from his wisdom, simple in form, profound in meaning, reminding us that truth is not found outside, but within.",
+    materialStory: "Each piece is carried the way Kabir himself was said to carry his own lamp, a wandering jhola strung with light, a humble bowl, a quiet glow, handcrafted in stainless steel, wire mesh, and blown glass.",
     films: [
       { slug: "jhola", title: "Jhola", duration: "—", type: "Collection Film", videoSrc: "/videos/kabir-ke-dohe/jhola.mp4" },
       { slug: "vikaya", title: "Vikaya", duration: "—", type: "Collection Film", videoSrc: "/videos/kabir-ke-dohe/vikaya.mp4" },
@@ -202,8 +202,8 @@ export const collections: Collection[] = [
     coverExt: "jpg",
     stillsExt: "jpg",
     placeholder: false,
-    myth: "We entered the forest seeking what could be seen — the animals, and the wild in between. But the forest spoke softer, through textures and trace, through patterns and the stillness of space.",
-    materialStory: "Each piece takes its silhouette from a different creature of the forest — the rhino's layered hide, the turtle's sculpted shell, the elephant's sensitive ear, the crocodile's patience, the moth's woven cocoon — worked by hand in aluminium, brass, and compound epoxy texture.",
+    myth: "We entered the forest seeking what could be seen, the animals, and the wild in between. But the forest spoke softer, through textures and trace, through patterns and the stillness of space.",
+    materialStory: "Each piece takes its silhouette from a different creature of the forest, the rhino's layered hide, the turtle's sculpted shell, the elephant's sensitive ear, the crocodile's patience, the moth's woven cocoon, worked by hand in aluminium, brass, and compound epoxy texture.",
     films: [
       { slug: "aranya-product", title: "Aranya — Product", duration: "—", type: "Collection Film", videoSrc: "/videos/aranya/product.mp4" },
       { slug: "aranya-making", title: "Aranya — Making", duration: "—", type: "Process Film", videoSrc: "/videos/aranya/making.mp4" },
@@ -217,8 +217,8 @@ export const collections: Collection[] = [
     coverExt: "jpg",
     stillsExt: "jpg",
     placeholder: false,
-    myth: "The Dance of Eternity — a meditation on the turtle that bears the weight of time, the cycle that carries us through it, and the beads that mark our way back to stillness.",
-    materialStory: "Each piece is cast in aluminium and hand-finished bronze — Kurma's ancient shell, Samsara's endless turn, Rudraksha's counted beads — objects that hold time rather than measure it.",
+    myth: "The Dance of Eternity, a meditation on the turtle that bears the weight of time, the cycle that carries us through it, and the beads that mark our way back to stillness.",
+    materialStory: "Each piece is cast in aluminium and hand-finished bronze, Kurma's ancient shell, Samsara's endless turn, Rudraksha's counted beads, objects that hold time rather than measure it.",
     films: [
       { slug: "samsara", title: "Samsara", duration: "—", type: "Collection Film", videoSrc: "/videos/sama-yantar/samsara.mp4" },
       { slug: "rudraksh", title: "Rudraksh", duration: "—", type: "Collection Film", videoSrc: "/videos/sama-yantar/rudraksh.mp4" },
@@ -234,7 +234,7 @@ export const collections: Collection[] = [
     stillsExt: "jpg",
     placeholder: false,
     myth: "Guidance does not come as simple instruction. It unfolds through conversation. This series translates that exchange into form.",
-    materialStory: "Handcrafted in brass, stainless steel, and marble, each piece is woven or cast around a single unwavering line of light — a form for the quiet exchange between seeker and guide.",
+    materialStory: "Handcrafted in brass, stainless steel, and marble, each piece is woven or cast around a single unwavering line of light, a form for the quiet exchange between seeker and guide.",
     films: [
       { slug: "parth-sarathi-product", title: "Parth:Sarathi — Product", duration: "—", type: "Collection Film", videoSrc: "/videos/parth-sarathi/product.mp4" },
       { slug: "parth-sarathi-making", title: "Parth:Sarathi — Making", duration: "—", type: "Process Film", videoSrc: "/videos/parth-sarathi/making.mp4" },
@@ -248,8 +248,8 @@ export const collections: Collection[] = [
     coverExt: "jpg",
     stillsExt: "jpg",
     placeholder: false,
-    myth: "Strength and gentleness. Stillness and movement. Self and other — nothing overpowers, and nothing is diminished.",
-    materialStory: "Cast in bronze and lit from within, each piece holds two opposing forms in a single unbroken line — balance made material.",
+    myth: "Strength and gentleness. Stillness and movement. Self and other, nothing overpowers, and nothing is diminished.",
+    materialStory: "Cast in bronze and lit from within, each piece holds two opposing forms in a single unbroken line, balance made material.",
     films: [
       { slug: "prem-samatva-product", title: "Prem:Samatva — Product", duration: "—", type: "Collection Film", videoSrc: "/videos/prem-samatva/product.mp4" },
       { slug: "prem-samatva-making", title: "Prem:Samatva — Making", duration: "—", type: "Process Film", videoSrc: "/videos/prem-samatva/making.mp4" },

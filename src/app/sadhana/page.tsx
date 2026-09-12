@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Sadhana",
   description:
-    "Sadhana — the practice. The design approach, philosophy, principles and product pillars Shailesh Rajput Studio runs on.",
+    "Sadhana, the practice. The design approach, philosophy, principles and product pillars Shailesh Rajput Studio runs on.",
 };
 
 const principles = [
@@ -74,7 +74,7 @@ export default function SadhanaPage() {
           <Reveal delay={0.05}>
             <p className="text-[var(--ink)]/70 leading-relaxed">
               This is the emotional and strategic role design plays in the
-              brand — why design matters to the studio, and what role it
+              brand, why design matters to the studio, and what role it
               plays in people&apos;s lives. It brings joy and satisfaction
               into everyday living and making.
             </p>

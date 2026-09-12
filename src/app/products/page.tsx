@@ -8,7 +8,7 @@ import { products, productCategories } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Browse Shailesh Rajput Studio's work by category — wall sconces, pendant lights, floor lamps, and more.",
+  description: "Browse Shailesh Rajput Studio's work by category, wall sconces, pendant lights, floor lamps, and more.",
 };
 
 export default function ProductsPage() {
@@ -22,7 +22,7 @@ export default function ProductsPage() {
         </RevealText>
         <Reveal delay={0.05}>
           <p className="font-sans-ui mt-2 text-sm text-[var(--ink)]/60">
-            Made to order — browse by type below.
+            Made to order, browse by type below.
           </p>
         </Reveal>
       </section>

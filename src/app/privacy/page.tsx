@@ -12,14 +12,14 @@ const sections = [
   {
     heading: "Information We Collect",
     body: [
-      "When you reach out through our Converse or Contact forms, we collect the details you choose to share — typically your name, email address or phone number, city or country, the collection or product you're interested in, and any message you send.",
+      "When you reach out through our Converse or Contact forms, we collect the details you choose to share, typically your name, email address or phone number, city or country, the collection or product you're interested in, and any message you send.",
       "We do not ask for payment details, government identifiers, or other sensitive personal information anywhere on this site.",
     ],
   },
   {
     heading: "How We Use It",
     body: [
-      "Your details are used solely to respond to your enquiry — over WhatsApp or email, whichever you choose to send it through — and to continue the conversation about a piece, collection, or collaboration.",
+      "Your details are used solely to respond to your enquiry, over WhatsApp or email, whichever you choose to send it through, and to continue the conversation about a piece, collection, or collaboration.",
       "We do not sell, rent, or share your information with third parties for marketing purposes.",
     ],
   },
@@ -33,7 +33,7 @@ const sections = [
   {
     heading: "Cookies & Local Storage",
     body: [
-      "This site does not use tracking cookies or third-party analytics. We use your browser's session storage for one purpose only — to remember that you've already seen the entry animation on the home page, so it doesn't replay on every visit within the same browsing session. This is cleared automatically when you close your browser.",
+      "This site does not use tracking cookies or third-party analytics. We use your browser's session storage for one purpose only, to remember that you've already seen the entry animation on the home page, so it doesn't replay on every visit within the same browsing session. This is cleared automatically when you close your browser.",
     ],
   },
   {

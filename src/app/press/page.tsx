@@ -33,7 +33,7 @@ export default function PressPage() {
         <Reveal delay={0.05}>
           <p className="text-[var(--ink)]/70 leading-relaxed">
             Where the studio has shown its work in person, and how design
-            publications have covered it — profiles, projects, and features
+            publications have covered it, profiles, projects, and features
             from around the world.
           </p>
         </Reveal>

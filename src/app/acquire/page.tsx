@@ -52,7 +52,7 @@ export default async function AcquirePage({
         <Reveal delay={0.05}>
           <p className="text-[var(--ink)]/70 leading-relaxed">
             The work is presented the way collectible art is presented
-            globally — without prices, on request. Tell us what you&apos;re
+            globally, without prices, on request. Tell us what you&apos;re
             drawn to, and the studio will follow up directly.
           </p>
         </Reveal>

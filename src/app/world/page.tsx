@@ -38,7 +38,7 @@ const belief = [
     icon: PurposeIcon,
     statement: "SRS exists to create moments of pause, reflection, and inner connection.",
     supporting:
-      "Each object placed into the world carries a story. Childlike curiosity, observing deeply, feeling deeply, translating emotion into form — SRS creates slowly and intuitively, allowing story, material, process, and emotion to shape each piece.",
+      "Each object placed into the world carries a story. Childlike curiosity, observing deeply, feeling deeply, translating emotion into form, SRS creates slowly and intuitively, allowing story, material, process, and emotion to shape each piece.",
   },
   {
     name: "Vision",
@@ -73,13 +73,13 @@ const values = [
     name: "Elemental Wisdom",
     icon: ElementalWisdomIcon,
     description:
-      "We trust intuition and nature as forms of intelligence — listening deeply before shaping form.",
+      "We trust intuition and nature as forms of intelligence, listening deeply before shaping form.",
   },
   {
     name: "Layered Simplicity",
     icon: LayeredSimplicityIcon,
     description:
-      "We seek depth through essence — creating work that is simple, yet reveals deeper truths in its layers.",
+      "We seek depth through essence, creating work that is simple, yet reveals deeper truths in its layers.",
   },
 ];
 
@@ -140,7 +140,7 @@ export default function WorldPage() {
         <Reveal delay={0.1}>
           <p className="mb-6 text-[var(--ink)]/80 leading-relaxed">
             At SRS, objects are not viewed as static possessions, but as
-            living presences within everyday life — carrying atmosphere,
+            living presences within everyday life, carrying atmosphere,
             memory, story, and emotion into the spaces they inhabit. Each
             creation is approached as an exploration, allowing material and
             discovery to guide its evolution.
@@ -172,7 +172,7 @@ export default function WorldPage() {
             <div>
               <Reveal>
                 <p className="mb-6 text-lg leading-relaxed sm:text-xl">
-                  The observer, seeker and maker — Shailesh and Manasi
+                  The observer, seeker and maker, Shailesh and Manasi
                   approach design as a process of discovery rather than
                   control. Questions arrive before answers. Intuition
                   arrives before logic.
@@ -188,7 +188,7 @@ export default function WorldPage() {
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mb-6 text-lg leading-relaxed text-white/80 sm:text-xl">
-                  Their practice is rooted in looking closely — at nature,
+                  Their practice is rooted in looking closely, at nature,
                   materials, forms, light, shadow, and the quiet details of
                   everyday life. Rather than beginning with a fixed answer,
                   they allow each idea to unfold through the process of
@@ -201,14 +201,14 @@ export default function WorldPage() {
                   For Shailesh and Manasi, design is not simply about
                   creating products. It is a way of observing, questioning,
                   and understanding the world. A way of translating moments
-                  of curiosity into something tangible — something that can
+                  of curiosity into something tangible, something that can
                   be experienced, lived with, and discovered over time.
                 </p>
               </Reveal>
               <Reveal delay={0.2}>
                 <p className="mb-14 text-lg leading-relaxed text-white/80 sm:text-xl">
                   This way of seeing became the foundation of Shailesh
-                  Rajput Studio — a practice where observation becomes
+                  Rajput Studio, a practice where observation becomes
                   form, intuition meets craft, and design becomes a way of
                   understanding and participating in life.
                 </p>
@@ -281,7 +281,7 @@ export default function WorldPage() {
           </p>
         </Reveal>
         <RevealText as="h2" className="mx-auto mb-8 max-w-xl text-3xl leading-snug sm:text-4xl">
-          Design approach, philosophy, principles and product pillars — the
+          Design approach, philosophy, principles and product pillars, the
           practice the studio has always run on.
         </RevealText>
         <Reveal delay={0.1} className="inline-block">

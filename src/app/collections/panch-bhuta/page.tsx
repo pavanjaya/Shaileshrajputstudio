@@ -12,7 +12,7 @@ import { RevealText } from "@/components/motion/RevealText";
 
 export const metadata: Metadata = {
   title: "Panch Bhuta",
-  description: "Panch Bhuta — the studio's six elemental principles: Bhumi, Jal, Agni, Vayu, Vyom, and Dhatu.",
+  description: "Panch Bhuta, the studio's six elemental principles: Bhumi, Jal, Agni, Vayu, Vyom, and Dhatu.",
 };
 
 export default function PanchBhutaPage() {

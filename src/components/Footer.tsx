@@ -37,7 +37,7 @@ export function Footer() {
               className="mb-4 h-[37px] w-auto"
             />
             <p className="font-sans-ui max-w-xs text-sm text-[var(--ink)]/60">
-              An evolving practice of life and design — objects and experiences
+              An evolving practice of life and design, objects and experiences
               inspired by the intelligence of nature.
             </p>
           </div>

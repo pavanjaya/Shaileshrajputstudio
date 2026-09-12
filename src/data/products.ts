@@ -1219,7 +1219,7 @@ const mirrors: Product[] = [
     category: "Mirror",
     placeholder: false,
     about: [
-      "An organically shaped mirror, its frame built entirely from the studio's signature coil-textured blackened metalwork — hand-etched rings that read differently in every light.",
+      "An organically shaped mirror, its frame built entirely from the studio's signature coil-textured blackened metalwork, hand-etched rings that read differently in every light.",
     ],
     closing: [],
     details: {
@@ -1296,7 +1296,7 @@ const mirrors: Product[] = [
     category: "Mirror",
     placeholder: false,
     about: [
-      "The most sculptural of the Eraya family — its coil-textured frame loops back on itself in a small knot before completing the mirror's edge.",
+      "The most sculptural of the Eraya family, its coil-textured frame loops back on itself in a small knot before completing the mirror's edge.",
     ],
     closing: [],
     details: {
@@ -2343,7 +2343,7 @@ const artisanalPieces: Product[] = [
     category: "Artisanal Pieces",
     placeholder: false,
     about: [
-      "A floor lamp cascading in hundreds of hand-set faceted glass scales over a bronze frame, crowned with a bronze crest — the studio's peacock silhouette rendered in light.",
+      "A floor lamp cascading in hundreds of hand-set faceted glass scales over a bronze frame, crowned with a bronze crest, the studio's peacock silhouette rendered in light.",
     ],
     closing: [],
     details: {
@@ -2376,7 +2376,7 @@ export const products: Product[] = [
     placeholder: false,
     about: [
       "From the Parth:Sarathi series, MAR:GA embodies the sacred idea of the path, not merely a direction in space, but a journey of understanding.",
-      "A luminous line rises quietly through a textured, woven form like guidance emerging through the layered complexity of life. The surrounding structure holds density, movement and multiplicity, while the central light stands steady, unwavering — a symbol of clarity within confusion.",
+      "A luminous line rises quietly through a textured, woven form like guidance emerging through the layered complexity of life. The surrounding structure holds density, movement and multiplicity, while the central light stands steady, unwavering, a symbol of clarity within confusion.",
     ],
     closing: [
       "MAR:GA reflects the eternal dialogue between the seeker and the guide.",

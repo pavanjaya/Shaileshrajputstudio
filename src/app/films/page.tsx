@@ -22,7 +22,7 @@ const filmGroups = [
 
 export const metadata: Metadata = {
   title: "Films",
-  description: "The storytelling archive — every film made for Shailesh Rajput Studio, in one place.",
+  description: "The storytelling archive, every film made for Shailesh Rajput Studio, in one place.",
 };
 
 export default function FilmsPage() {
@@ -41,7 +41,7 @@ export default function FilmsPage() {
         </RevealText>
         <Reveal delay={0.05}>
           <p className="text-[var(--ink)]/70 leading-relaxed">
-            Every film made for the brand, in one place — origin films,
+            Every film made for the brand, in one place, origin films,
             process films, and pieces seen in situ.
           </p>
         </Reveal>

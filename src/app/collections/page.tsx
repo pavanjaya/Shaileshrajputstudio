@@ -9,7 +9,7 @@ import { collections, coverImage } from "@/data/collections";
 
 export const metadata: Metadata = {
   title: "Collections",
-  description: "The six main stories of Shailesh Rajput Studio — presented as immersive chapters, not SKUs.",
+  description: "The six main stories of Shailesh Rajput Studio, presented as immersive chapters, not SKUs.",
 };
 
 export default function CollectionsPage() {
@@ -29,7 +29,7 @@ export default function CollectionsPage() {
         <Reveal delay={0.05}>
           <p className="text-[var(--ink)]/70 leading-relaxed">
             Each collection is presented the way collectible art is
-            presented globally — through its myth, its films, its material
+            presented globally, through its myth, its films, its material
             story. Prices are not displayed; every piece is available on
             request.
           </p>

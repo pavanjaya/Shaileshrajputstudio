@@ -62,7 +62,7 @@ export default function ArrivalPage() {
         <Reveal delay={0.05}>
           <p className="mb-5 leading-relaxed text-[var(--ink)]/70">
             The purest expression of an idea, feeling, or experience
-            distilled to what truly matters — depth through simplicity,
+            distilled to what truly matters, depth through simplicity,
             meaning through restraint.
           </p>
         </Reveal>
@@ -70,7 +70,7 @@ export default function ArrivalPage() {
           <p className="mb-5 leading-relaxed text-[var(--ink)]/70">
             Shailesh and Manasi approach design as a process of discovery
             rather than control. Questions arrive before answers. Intuition
-            arrives before logic — through sketching, experimentation, and
+            arrives before logic, through sketching, experimentation, and
             making, their observations take shape as objects that invite
             others into the same sense of wonder.
           </p>
@@ -79,7 +79,7 @@ export default function ArrivalPage() {
           <p className="mb-8 leading-relaxed text-[var(--ink)]/70">
             Rooted in looking closely at nature, materials, and the quiet
             details of everyday life, this way of seeing became the
-            foundation of Shailesh Rajput Studio — where observation becomes
+            foundation of Shailesh Rajput Studio, where observation becomes
             form, and design becomes a way of participating in life.
           </p>
         </Reveal>

@@ -34,7 +34,7 @@ export const pressEntries: PressEntry[] = [
     category: "Exhibition",
     placeholder: true,
     description:
-      "The studio's next milestone show — details to be confirmed as the exhibition approaches.",
+      "The studio's next milestone show, details to be confirmed as the exhibition approaches.",
   },
   {
     title: "ID Exhibit — Collectible",
@@ -44,7 +44,7 @@ export const pressEntries: PressEntry[] = [
     category: "Exhibition",
     placeholder: false,
     description:
-      "The studio's wall-mounted collectible sculpture, shown as part of ID Exhibit — an Ogaan Media initiative at Asian Paints India Design 2026.",
+      "The studio's wall-mounted collectible sculpture, shown as part of ID Exhibit, an Ogaan Media initiative at Asian Paints India Design 2026.",
     image: "/images/press/asian-paints-id-exhibit-2026.jpg",
   },
   {
@@ -55,7 +55,7 @@ export const pressEntries: PressEntry[] = [
     category: "Press",
     placeholder: false,
     description:
-      "A feature on the Sama:Yantar collection — Rudrak:Sha Mala, Math:Than, and Ku:Rma — sculptural lamps drawing from Indian mythology, hand-shaped without fixed moulds.",
+      "A feature on the Sama:Yantar collection, Rudrak:Sha Mala, Math:Than, and Ku:Rma, sculptural lamps drawing from Indian mythology, hand-shaped without fixed moulds.",
     url: "https://www.newindianexpress.com/magazine/2026/Sep/06/from-rudraksha-beads-to-vishnus-tortoise-inside-samayantar-a-narrative-led-lighting-collection",
     image: "/images/collections/sama-yantar-cover.jpg",
     logo: "/images/press/logos/tnie.svg",
@@ -68,7 +68,7 @@ export const pressEntries: PressEntry[] = [
     category: "Press",
     placeholder: false,
     description:
-      "A 12,000-square-foot home by Design ni Dukaan, built with over 20 Indian artisans and designers — the studio's mirror and sconces, in epoxy and aluminium, hang in the foyer.",
+      "A 12,000-square-foot home by Design ni Dukaan, built with over 20 Indian artisans and designers, the studio's mirror and sconces, in epoxy and aluminium, hang in the foyer.",
     url: "https://interiordesign.net/projects/design-ni-dukaan-navsari-home/",
     image: "/images/products/eraya-i/1.jpg",
     logo: "/images/press/logos/interior-design.svg",
@@ -81,7 +81,7 @@ export const pressEntries: PressEntry[] = [
     category: "Press",
     placeholder: false,
     description:
-      "A profile on how the studio merges functionality with emotional narrative — drawing from nature, Indian cultural tradition, and storytelling.",
+      "A profile on how the studio merges functionality with emotional narrative, drawing from nature, Indian cultural tradition, and storytelling.",
     url: "https://www.platform-mag.com/design/shailesh-rajput-studio.html",
     logo: "/images/press/logos/platform-magazine.svg",
   },
@@ -93,7 +93,7 @@ export const pressEntries: PressEntry[] = [
     category: "Press",
     placeholder: false,
     description:
-      "A brand profile on the studio's handcrafted lighting, furniture, and sculpture — hand-blown glass, copper, and brass, shaped by Maharashtrian jewellery and yogic form.",
+      "A brand profile on the studio's handcrafted lighting, furniture, and sculpture, hand-blown glass, copper, and brass, shaped by Maharashtrian jewellery and yogic form.",
     url: "https://www.designpataki.com/dp-cult/shailesh-rajput/",
     logo: "/images/press/logos/design-pataki.svg",
   },

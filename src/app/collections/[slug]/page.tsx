@@ -191,7 +191,7 @@ export default async function CollectionChapterPage({
           </p>
         </Reveal>
         <RevealText as="h2" className="mx-auto mb-8 max-w-xl text-3xl leading-snug sm:text-4xl">
-          Every piece is presented the way collectible art is presented —
+          Every piece is presented the way collectible art is presented,
           begin a conversation with the studio.
         </RevealText>
         <Reveal delay={0.1} className="inline-block">
