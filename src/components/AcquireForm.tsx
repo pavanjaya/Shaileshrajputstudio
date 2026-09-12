@@ -64,7 +64,7 @@ export function AcquireForm({
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+            className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
           />
         </div>
         <div>
@@ -74,7 +74,7 @@ export function AcquireForm({
           <input
             value={contact}
             onChange={(e) => setContact(e.target.value)}
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+            className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
           />
         </div>
       </div>
@@ -83,18 +83,28 @@ export function AcquireForm({
         <label className="mb-2 block text-xs tracking-[0.15em] text-[var(--ash)] uppercase">
           Collection of Interest
         </label>
-        <select
-          value={piece}
-          onChange={(e) => setPiece(e.target.value)}
-          className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
-        >
-          <option value="">Not sure yet</option>
-          {pieces.map((p) => (
-            <option key={p.slug} value={p.slug}>
-              {p.label}
-            </option>
-          ))}
-        </select>
+        <div className="relative">
+          <select
+            value={piece}
+            onChange={(e) => setPiece(e.target.value)}
+            className="w-full appearance-none rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 pr-11 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+          >
+            <option value="">Not sure yet</option>
+            {pieces.map((p) => (
+              <option key={p.slug} value={p.slug}>
+                {p.label}
+              </option>
+            ))}
+          </select>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            className="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-[var(--ink)]/50"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
       </div>
 
       <div className="mb-5">
@@ -110,7 +120,7 @@ export function AcquireForm({
               className={`rounded-lg border px-4 py-3 text-left text-sm transition ${
                 intent === option
                   ? "border-[var(--ink)] bg-[var(--ink)] text-white"
-                  : "border-[var(--line)] bg-white text-[var(--ink)] hover:border-[var(--ink)]"
+                  : "border-[var(--line)] bg-[var(--footer-bg)] text-[var(--ink)] hover:border-[var(--ink)]"
               }`}
             >
               {option}
@@ -126,7 +136,7 @@ export function AcquireForm({
         <input
           value={geography}
           onChange={(e) => setGeography(e.target.value)}
-          className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+          className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
         />
       </div>
 
@@ -138,7 +148,7 @@ export function AcquireForm({
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           rows={4}
-          className="w-full rounded-lg border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
+          className="w-full rounded-lg border border-[var(--line)] bg-[var(--footer-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--ink)]"
         />
       </div>
 
