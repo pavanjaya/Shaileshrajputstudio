@@ -40,14 +40,13 @@ export default function SadhanaPage() {
     <>
       <Nav />
 
-      <section className="mx-auto max-w-3xl px-6 pt-20 pb-16 text-center sm:pt-28">
+      <section className="mx-auto max-w-4xl px-6 pt-20 pb-8 text-center sm:pt-28">
         <Reveal>
-          <p className="font-sans-ui mb-4 flex items-center justify-center gap-2.5 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
+          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] text-[var(--ash)] uppercase">
             Sadhana
-            <span className="text-sm text-[var(--ink)]/40 normal-case">· साधना</span>
           </p>
         </Reveal>
-        <RevealText as="h1" className="text-4xl leading-tight sm:text-5xl">
+        <RevealText as="h1" className="text-3xl leading-tight sm:text-4xl">
           The practice the studio has always run on.
         </RevealText>
       </section>
