@@ -37,7 +37,7 @@ export default function CollectionsPage() {
       </section>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24">
-        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal as="div" staggerChildren className="grid grid-cols-1 gap-x-10 gap-y-24 sm:grid-cols-2 lg:grid-cols-3">
           {collections.map((c) => (
             <Link
               key={c.slug}
