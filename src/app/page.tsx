@@ -131,7 +131,7 @@ export default function ArrivalPage() {
       <section className="bg-[var(--footer-bg)] px-6 py-28 sm:px-10 sm:py-36 lg:px-16">
         <Reveal className="flex flex-col items-center">
           <SrsIcon className="mb-8 h-12 w-12 text-[var(--accent)]" />
-          <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed sm:text-3xl">
+          <p className="mx-auto max-w-2xl text-center text-[21.12px] leading-relaxed sm:text-[26.4px]">
             “I believe every form has a story within it. Our role as
             designers is to find that story, give it shape, and let it
             speak in its own quiet way. And when it leaves the studio, it
