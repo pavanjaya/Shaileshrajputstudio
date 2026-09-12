@@ -132,9 +132,16 @@ export default function ArrivalPage() {
         <Reveal className="flex flex-col items-center">
           <SrsIcon className="mb-8 h-12 w-12 text-[var(--accent)]" />
           <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed sm:text-3xl">
-            Every object leaves the studio carrying more than its
-            form — a <span className="text-[var(--accent)]">story</span>{" "}
-            it was shaped to tell.
+            “I believe every form has a story within it. Our role as
+            designers is to find that story, give it shape, and let it
+            speak in its own quiet way. And when it leaves the studio, it
+            carries more than its form. It carries a thought, an
+            intention, and a{" "}
+            <span className="text-[var(--accent)]">story</span> waiting to
+            be told.”
+          </p>
+          <p className="font-sans-ui mt-6 text-xs tracking-[0.2em] text-[var(--ink)]/60 uppercase">
+            — Shailesh Rajput
           </p>
         </Reveal>
       </section>
