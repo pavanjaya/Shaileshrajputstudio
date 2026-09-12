@@ -95,7 +95,7 @@ export default function ArrivalPage() {
       </section>
 
       <div className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16">
-        <div className="border-t border-[#EFE8D5]" />
+        <div className="border-t border-[#D6CEB5]" />
       </div>
 
       <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24 pt-24">

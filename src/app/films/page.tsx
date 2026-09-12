@@ -52,7 +52,7 @@ export default function FilmsPage() {
         {filmGroups.map((g, i) => (
           <section
             key={g.slug}
-            className={`mb-16 ${i > 0 ? "border-t border-[#EFE8D5] pt-16" : ""}`}
+            className={`mb-16 ${i > 0 ? "border-t border-[#D6CEB5] pt-16" : ""}`}
           >
             <div className="mb-6 flex items-baseline justify-between">
               <h2 className="text-xl">{g.title}</h2>
