@@ -113,6 +113,9 @@ export function Footer() {
             <Link href="/privacy" className={`hover:text-[var(--ink)] ${linkUnderline}`}>
               Privacy Policy
             </Link>
+            <Link href="/terms" className={`hover:text-[var(--ink)] ${linkUnderline}`}>
+              Terms of Use
+            </Link>
             <a
               href="https://www.hueness.com/"
               target="_blank"
