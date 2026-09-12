@@ -30,7 +30,7 @@ const principles = [
 ];
 
 const pillars = [
-  { name: "Made to be touched", icon: TouchedIcon, description: "Designs evolve naturally through process, intuition, and time." },
+  { name: "Made to be touched", icon: TouchedIcon, description: "Every surface invites touch, its texture and weight considered as carefully as its form." },
   { name: "Quiet, yet alive", icon: QuietAliveIcon, description: "A subtle presence carrying depth, beneath the surface." },
   { name: "A story within", icon: StoryWithinIcon, description: "Every object carries a narrative." },
 ];

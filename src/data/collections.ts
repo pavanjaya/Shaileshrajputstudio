@@ -118,7 +118,7 @@ const panchBhutaElements: Element[] = [
     coverExt: "png",
     stillsExt: "svg",
     placeholder: true,
-    myth: "The lightest collection, in weight and in intention, forms that seem to hover, lit from within, carrying almost nothing but presence.",
+    myth: "The lightest collection, in weight and in intention: forms that seem to hover, lit from within, carrying almost nothing but presence.",
     materialStory: "Suspended lighting in hand-worked metal mesh and blown glass, engineered to feel weightless despite their scale.",
     films: [
       { slug: "vayu-i", title: "Vayu — Origin", duration: "2:22", type: "Collection Film" },
@@ -170,7 +170,7 @@ export const collections: Collection[] = [
     placeholder: false,
     // Real copy, from the studio's own Panch Bhuta story materials.
     myth: "This collection is an exploration of the five elements that build our universe. Each piece is an invitation to witness the delicate balance between creation and destruction, stillness and motion, presence and absence. The elements are alive and ever-changing.",
-    materialStory: "Each element carries its own material language, clay and stone for Bhumi, blown glass for Jal, fire-cast bronze for Agni, suspended metal mesh for Vayu, cast voids for Vyom, and hand-worked metal for Dhatu.",
+    materialStory: "Each element carries its own material language: clay and stone for Bhumi, blown glass for Jal, fire-cast bronze for Agni, suspended metal mesh for Vayu, cast voids for Vyom, and hand-worked metal for Dhatu.",
     films: [
       { slug: "panch-bhuta-cinematic", title: "Panch Bhuta — Cinematic", duration: "—", type: "Brand Film", videoSrc: "/videos/panch-bhuta/cinematic.mp4" },
       { slug: "panch-bhuta-product", title: "Panch Bhuta — Product", duration: "—", type: "Collection Film", videoSrc: "/videos/panch-bhuta/product.mp4" },
@@ -188,7 +188,7 @@ export const collections: Collection[] = [
     stillsExt: "jpg",
     placeholder: false,
     myth: "This series is a tribute to the mystic poet Saint Kabir, whose verses speak beyond time, language, and religion. Each light draws from his wisdom, simple in form, profound in meaning, reminding us that truth is not found outside, but within.",
-    materialStory: "Each piece is carried the way Kabir himself was said to carry his own lamp, a wandering jhola strung with light, a humble bowl, a quiet glow, handcrafted in stainless steel, wire mesh, and blown glass.",
+    materialStory: "Each piece is carried the way Kabir himself was said to carry his own lamp: a wandering jhola strung with light, a humble bowl, a quiet glow, handcrafted in stainless steel, wire mesh, and blown glass.",
     films: [
       { slug: "jhola", title: "Jhola", duration: "—", type: "Collection Film", videoSrc: "/videos/kabir-ke-dohe/jhola.mp4" },
       { slug: "vikaya", title: "Vikaya", duration: "—", type: "Collection Film", videoSrc: "/videos/kabir-ke-dohe/vikaya.mp4" },
@@ -203,7 +203,7 @@ export const collections: Collection[] = [
     stillsExt: "jpg",
     placeholder: false,
     myth: "We entered the forest seeking what could be seen, the animals, and the wild in between. But the forest spoke softer, through textures and trace, through patterns and the stillness of space.",
-    materialStory: "Each piece takes its silhouette from a different creature of the forest, the rhino's layered hide, the turtle's sculpted shell, the elephant's sensitive ear, the crocodile's patience, the moth's woven cocoon, worked by hand in aluminium, brass, and compound epoxy texture.",
+    materialStory: "Each piece takes its silhouette from a different creature of the forest: the rhino's layered hide, the turtle's sculpted shell, the elephant's sensitive ear, the crocodile's patience, the moth's woven cocoon, worked by hand in aluminium, brass, and compound epoxy texture.",
     films: [
       { slug: "aranya-product", title: "Aranya — Product", duration: "—", type: "Collection Film", videoSrc: "/videos/aranya/product.mp4" },
       { slug: "aranya-making", title: "Aranya — Making", duration: "—", type: "Process Film", videoSrc: "/videos/aranya/making.mp4" },
@@ -218,7 +218,7 @@ export const collections: Collection[] = [
     stillsExt: "jpg",
     placeholder: false,
     myth: "The Dance of Eternity, a meditation on the turtle that bears the weight of time, the cycle that carries us through it, and the beads that mark our way back to stillness.",
-    materialStory: "Each piece is cast in aluminium and hand-finished bronze, Kurma's ancient shell, Samsara's endless turn, Rudraksha's counted beads, objects that hold time rather than measure it.",
+    materialStory: "Each piece is cast in aluminium and hand-finished bronze: Kurma's ancient shell, Samsara's endless turn, Rudraksha's counted beads, objects that hold time rather than measure it.",
     films: [
       { slug: "samsara", title: "Samsara", duration: "—", type: "Collection Film", videoSrc: "/videos/sama-yantar/samsara.mp4" },
       { slug: "rudraksh", title: "Rudraksh", duration: "—", type: "Collection Film", videoSrc: "/videos/sama-yantar/rudraksh.mp4" },

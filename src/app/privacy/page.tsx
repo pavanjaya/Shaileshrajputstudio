@@ -12,22 +12,22 @@ const sections = [
   {
     heading: "Information We Collect",
     body: [
-      "When you reach out through our Converse or Contact forms, we collect the details you choose to share, typically your name, email address or phone number, city or country, the collection or product you're interested in, and any message you send.",
+      "When you reach out through our Converse form, we collect the details you choose to share, typically your name, email address or phone number, city or country, the collection or product you're interested in, and any message you send.",
       "We do not ask for payment details, government identifiers, or other sensitive personal information anywhere on this site.",
     ],
   },
   {
     heading: "How We Use It",
     body: [
-      "Your details are used solely to respond to your enquiry, over WhatsApp or email, whichever you choose to send it through, and to continue the conversation about a piece, collection, or collaboration.",
+      "Your details are used solely to respond to your enquiry by email, and to continue the conversation about a piece, collection, or collaboration.",
       "We do not sell, rent, or share your information with third parties for marketing purposes.",
     ],
   },
   {
     heading: "How Enquiries Are Sent",
     body: [
-      "The Converse and Contact forms on this site do not store your message on a server. When you tap \"Send via WhatsApp\" or \"Send via Email,\" your browser opens WhatsApp or your mail client directly with the message pre-filled, and the enquiry is sent from your own device through that service.",
-      "Messages sent this way are subject to WhatsApp's or your email provider's own privacy practices once they leave your device.",
+      "The Converse form on this site does not store your message on a server. When you tap \"Send Message,\" your browser opens your own email app directly with the message pre-filled, and the enquiry is sent from your own device through your own email account.",
+      "Messages sent this way are subject to your email provider's own privacy practices once they leave your device.",
     ],
   },
   {
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
         <h1 className="mb-3 text-4xl leading-tight sm:text-5xl">
           How we handle your information.
         </h1>
-        <p className="font-sans-ui text-sm text-[var(--ink)]/50">Last updated 16 August 2026</p>
+        <p className="font-sans-ui text-sm text-[var(--ink)]/50">Last updated 12 September 2026</p>
       </section>
 
       <section className="mx-auto max-w-2xl px-6 pb-28">

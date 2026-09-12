@@ -55,7 +55,7 @@ export const pressEntries: PressEntry[] = [
     category: "Press",
     placeholder: false,
     description:
-      "A feature on the Sama:Yantar collection, Rudrak:Sha Mala, Math:Than, and Ku:Rma, sculptural lamps drawing from Indian mythology, hand-shaped without fixed moulds.",
+      "A feature on the Sama:Yantar collection: Rudrak:Sha Mala, Math:Than, and Ku:Rma, sculptural lamps drawing from Indian mythology, hand-shaped without fixed moulds.",
     url: "https://www.newindianexpress.com/magazine/2026/Sep/06/from-rudraksha-beads-to-vishnus-tortoise-inside-samayantar-a-narrative-led-lighting-collection",
     image: "/images/collections/sama-yantar-cover.jpg",
     logo: "/images/press/logos/tnie.svg",
@@ -68,7 +68,7 @@ export const pressEntries: PressEntry[] = [
     category: "Press",
     placeholder: false,
     description:
-      "A 12,000-square-foot home by Design ni Dukaan, built with over 20 Indian artisans and designers, the studio's mirror and sconces, in epoxy and aluminium, hang in the foyer.",
+      "A 12,000-square-foot home by Design ni Dukaan, built with over 20 Indian artisans and designers. The studio's mirror and sconces, in epoxy and aluminium, hang in the foyer.",
     url: "https://interiordesign.net/projects/design-ni-dukaan-navsari-home/",
     image: "/images/products/eraya-i/1.jpg",
     logo: "/images/press/logos/interior-design.svg",
@@ -93,7 +93,7 @@ export const pressEntries: PressEntry[] = [
     category: "Press",
     placeholder: false,
     description:
-      "A brand profile on the studio's handcrafted lighting, furniture, and sculpture, hand-blown glass, copper, and brass, shaped by Maharashtrian jewellery and yogic form.",
+      "A brand profile on the studio's handcrafted lighting, furniture, and sculpture: hand-blown glass, copper, and brass, shaped by Maharashtrian jewellery and yogic form.",
     url: "https://www.designpataki.com/dp-cult/shailesh-rajput/",
     logo: "/images/press/logos/design-pataki.svg",
   },

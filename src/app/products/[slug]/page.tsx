@@ -132,7 +132,7 @@ export default async function ProductPage({
                   href={`/acquire?product=${product.slug}`}
                   className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-[var(--ink)] px-7 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--accent)] hover:text-[var(--ink)]"
                 >
-                  Enquire
+                  Converse
                 </Link>
               </Magnetic>
             </Reveal>

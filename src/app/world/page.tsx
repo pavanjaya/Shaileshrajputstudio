@@ -36,14 +36,14 @@ const belief = [
   {
     name: "Purpose",
     icon: PurposeIcon,
-    statement: "SRS exists to create moments of pause, reflection, and inner connection.",
+    statement: "To create moments of pause, reflection, and inner connection.",
     supporting:
       "Each object placed into the world carries a story. Childlike curiosity, observing deeply, feeling deeply, translating emotion into form, SRS creates slowly and intuitively, allowing story, material, process, and emotion to shape each piece.",
   },
   {
     name: "Vision",
     icon: VisionIcon,
-    statement: "An evolving practice of life and design.",
+    statement: "To be an evolving practice of life and design.",
     supporting:
       "Bringing together creators, artisans, materials, stories, and philosophies that inspire people to live with presence. Reimagining humanity's relationship with creation.",
   },
@@ -124,9 +124,10 @@ export default function WorldPage() {
           </p>
         </Reveal>
         <RevealText as="p" className="mb-6 text-xl leading-relaxed sm:text-2xl">
-          Shailesh Rajput Studio is a design practice creating sculptural
-          lighting, objects, and experiences inspired by the intelligence of
-          nature and the deeper patterns that shape existence.
+          Shailesh Rajput Studio (SRS) is a design practice creating
+          sculptural lighting, objects, and experiences inspired by the
+          intelligence of nature and the deeper patterns that shape
+          existence.
         </RevealText>
         <Reveal delay={0.05}>
           <p className="mb-6 text-[var(--ink)]/80 leading-relaxed">
@@ -166,13 +167,13 @@ export default function WorldPage() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-[180px_1fr] sm:gap-16">
             <Reveal>
               <p className="font-sans-ui text-xs tracking-[0.2em] text-white/50 uppercase">
-                (The Founder Story)
+                The Founder Story
               </p>
             </Reveal>
             <div>
               <Reveal>
                 <p className="mb-6 text-lg leading-relaxed sm:text-xl">
-                  The observer, seeker and maker, Shailesh and Manasi
+                  As observers, seekers, and makers, Shailesh and Manasi
                   approach design as a process of discovery rather than
                   control. Questions arrive before answers. Intuition
                   arrives before logic.

@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-// A floating "Enquire" bar for product pages. The real CTA lives inline at
+// A floating "Converse" bar for product pages. The real CTA lives inline at
 // the bottom of the page (after photos, story, and spec table) — this bar
-// exists so a visitor can start an enquiry without having to scroll all the
+// exists so a visitor can start a conversation without having to scroll all the
 // way down to find it. It appears once they've scrolled past the hero/title
 // area, and hides whenever the real CTA (id="product-enquire-cta") is on
 // screen or already scrolled past (so it never sits over the footer).
@@ -49,7 +49,7 @@ export function StickyEnquire({ slug, label }: { slug: string; label: string }) 
           tabIndex={visible ? 0 : -1}
           className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-medium text-white transition hover:bg-[var(--accent)] hover:text-[var(--ink)] sm:w-auto"
         >
-          Enquire
+          Converse
         </Link>
       </div>
     </div>

@@ -191,8 +191,8 @@ export default async function CollectionChapterPage({
           </p>
         </Reveal>
         <RevealText as="h2" className="mx-auto mb-8 max-w-xl text-3xl leading-snug sm:text-4xl">
-          Every piece is presented the way collectible art is presented,
-          begin a conversation with the studio.
+          Every piece is presented the way collectible art is presented.
+          Begin a conversation with the studio.
         </RevealText>
         <Reveal delay={0.1} className="inline-block">
           <Magnetic>
@@ -200,7 +200,7 @@ export default async function CollectionChapterPage({
               href={`/acquire?collection=${collection.slug}`}
               className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent)]"
             >
-              Enquire About {collection.title}
+              Begin a Conversation
             </Link>
           </Magnetic>
         </Reveal>
