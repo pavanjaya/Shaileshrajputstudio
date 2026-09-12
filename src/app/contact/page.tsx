@@ -169,8 +169,7 @@ export default function ContactPage() {
                   Studio Timings
                 </p>
                 <p className="leading-relaxed text-[var(--ink)]">
-                  <span className="block">Mon – Sat: 10:00 AM – 6:00 PM</span>
-                  <span className="block">Sunday: Holiday</span>
+                  <span className="block">Mon – Sat: 10:00 AM – 6:00 PM · Sunday: Holiday</span>
                 </p>
               </div>
             </Reveal>
