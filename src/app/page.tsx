@@ -94,7 +94,7 @@ export default function ArrivalPage() {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-[1800px] px-6 sm:px-10 lg:px-16 pb-24 pt-24">
+      <section className="mx-auto max-w-[1800px] border-t border-[#EFE8D5] px-6 sm:px-10 lg:px-16 pb-24 pt-24">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
             <Reveal>
