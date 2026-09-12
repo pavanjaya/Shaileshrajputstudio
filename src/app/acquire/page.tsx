@@ -48,7 +48,7 @@ export default async function AcquirePage({
           </p>
         </Reveal>
         <RevealText as="h1" className="mb-6 text-4xl leading-tight sm:text-5xl">
-          Every visit ends in a conversation.
+          Every piece begins with a conversation.
         </RevealText>
         <Reveal delay={0.05}>
           <p className="text-[var(--ink)]/70 leading-relaxed">
