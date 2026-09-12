@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { AcquireForm } from "@/components/AcquireForm";
@@ -51,9 +52,21 @@ export default async function AcquirePage({
         </RevealText>
         <Reveal delay={0.05}>
           <p className="text-[var(--ink)]/70 leading-relaxed">
-            The work is presented the way collectible art is presented
-            globally, without prices, on request. Tell us what you&apos;re
-            drawn to, and the studio will follow up directly.
+            The quickest way to reach the studio. Tell us what you&apos;re
+            drawn to, and we&apos;ll follow up directly, no prices, no
+            pressure.
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="font-sans-ui mt-5 text-sm text-[var(--ink)]/60">
+            Planning a studio visit, or have a general question?{" "}
+            <Link
+              href="/contact"
+              className="text-[var(--ink)] underline decoration-[var(--line)] underline-offset-4 hover:decoration-[var(--ink)]"
+            >
+              Contact
+            </Link>{" "}
+            has hours, address, and direct lines.
           </p>
         </Reveal>
       </section>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/motion/Reveal";
@@ -92,6 +93,18 @@ export default function ContactPage() {
           <p className="text-[var(--ink)]/70 leading-relaxed">
             The work is best experienced in person. Reach out to arrange a
             visit, or send a note directly.
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="font-sans-ui mt-5 text-sm text-[var(--ink)]/60">
+            Already know what you&apos;re drawn to?{" "}
+            <Link
+              href="/acquire"
+              className="text-[var(--ink)] underline decoration-[var(--line)] underline-offset-4 hover:decoration-[var(--ink)]"
+            >
+              Converse
+            </Link>{" "}
+            is the quicker way to start.
           </p>
         </Reveal>
       </section>

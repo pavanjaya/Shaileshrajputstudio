@@ -51,7 +51,6 @@ export function Footer() {
               <li><Link href="/sadhana" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Sadhana</Link></li>
               <li><Link href="/films" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Films</Link></li>
               <li><Link href="/press" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Exhibitions &amp; Press</Link></li>
-              <li><Link href="/acquire" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Converse</Link></li>
               <li><Link href="/contact" className={`hover:text-[var(--ink)] ${linkUnderline}`}>Contact</Link></li>
             </ul>
           </div>

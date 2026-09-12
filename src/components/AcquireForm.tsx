@@ -48,14 +48,7 @@ export function AcquireForm({
       .join("\n");
   }
 
-  function handleWhatsApp() {
-    window.open(
-      `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(buildMessage())}`,
-      "_blank",
-    );
-  }
-
-  function handleEmail() {
+  function handleSubmit() {
     const subject = encodeURIComponent("Enquiry — Shailesh Rajput Studio");
     const body = encodeURIComponent(buildMessage());
     window.location.href = `mailto:${studio.email}?subject=${subject}&body=${body}`;
@@ -149,20 +142,16 @@ export function AcquireForm({
         />
       </div>
 
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <button
-          onClick={handleWhatsApp}
-          className="flex-1 rounded-full bg-[var(--ink)] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--accent)] hover:text-[var(--ink)]"
-        >
-          Send via WhatsApp
-        </button>
-        <button
-          onClick={handleEmail}
-          className="flex-1 rounded-full border border-[var(--line)] bg-white px-6 py-3.5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink)]"
-        >
-          Send via Email
-        </button>
-      </div>
+      <button
+        onClick={handleSubmit}
+        className="w-full rounded-full bg-[var(--ink)] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--accent)] hover:text-[var(--ink)]"
+      >
+        Send Message
+      </button>
+      <p className="mt-3 text-center text-xs text-[var(--ink)]/50">
+        Opens your email app with this pre-filled, nothing is sent
+        automatically.
+      </p>
     </div>
   );
 }
