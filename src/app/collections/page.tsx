@@ -5,6 +5,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/motion/Reveal";
 import { RevealText } from "@/components/motion/RevealText";
+import { Magnetic } from "@/components/motion/Magnetic";
 import { collections, coverImage } from "@/data/collections";
 
 export const metadata: Metadata = {
@@ -62,6 +63,28 @@ export default function CollectionsPage() {
               <p className="text-sm leading-relaxed text-[var(--ink)]/70">{c.myth}</p>
             </Link>
           ))}
+        </Reveal>
+      </section>
+
+      <section className="border-t border-[var(--line)] bg-[var(--ink)] px-6 py-24 text-center text-white">
+        <Reveal>
+          <p className="font-sans-ui mb-4 text-xs tracking-[0.2em] uppercase text-white/60">
+            Own a Piece of the Story
+          </p>
+        </Reveal>
+        <RevealText as="h2" className="mx-auto mb-8 max-w-2xl text-3xl leading-snug sm:text-4xl">
+          Every collection is available to acquire, priced individually,
+          and shared only on request.
+        </RevealText>
+        <Reveal delay={0.1} className="inline-block">
+          <Magnetic>
+            <Link
+              href="/acquire"
+              className="font-sans-ui inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent)]"
+            >
+              Begin a Conversation
+            </Link>
+          </Magnetic>
         </Reveal>
       </section>
 
